@@ -1,79 +1,79 @@
 "use client";
 
 import { useState } from "react";
-import { Award, Clock } from "@/components/Icons";
+import { Award, Clock } from "lucide-react";
 
 export default function CaseStudies() {
   const [filter, setFilter] = useState("all");
 
   const caseStudies = [
     {
-      id: "fintech",
-      tag: "FinTech & Banking",
-      category: "fintech",
-      client: "NovaPay Global",
-      title: "Zero-Latency Financial Settlement & Payment Gateway",
+      id: "clinic",
+      tag: "Clinic & Healthcare",
+      category: "clinic",
+      client: "Aarogyam Polyclinic & Diagnostics",
+      title: "Online Doctor Booking System with WhatsApp Reminders",
       description:
-        "Engineered an enterprise Next.js and microservice payments dashboard capable of processing 25,000 transactions per second with institutional-grade security.",
+        "Replaced a manual register book with a 24/7 web booking engine and automated WhatsApp visit alerts, drastically eliminating waiting room congestion.",
       metrics: [
-        { label: "Checkout Speed", value: "+340%" },
-        { label: "Peak TPS", value: "25k / sec" },
-        { label: "Uptime Record", value: "99.999%" },
+        { label: "Patient Bookings", value: "+380%" },
+        { label: "No-Show Drop", value: "-75%" },
+        { label: "Patient Rating", value: "4.9 ★" },
       ],
-      stack: ["Next.js", "TypeScript", "Kafka", "PostgreSQL", "AWS KMS"],
-      gradient: "from-emerald-500/20 to-teal-500/10",
-      accent: "text-emerald-400",
+      stack: ["Next.js", "WhatsApp API", "PostgreSQL", "Calendar Engine"],
+      gradient: "from-[#F28D52]/20 via-[#1f1f1f] to-[#171717]",
+      accent: "text-[#F28D52]",
     },
     {
-      id: "ai",
-      tag: "Healthcare & AI",
-      category: "ai",
-      client: "HealthPulse Diagnostics",
-      title: "HIPAA-Compliant Diagnostic Assistant & Automated Clinical Workflow",
+      id: "retail",
+      tag: "Retail & Supermarket",
+      category: "retail",
+      client: "Royal Mart Grocery & Department Store",
+      title: "High-Speed POS Billing & WhatsApp Product Catalogue",
       description:
-        "Built a specialized HIPAA-certified AI diagnostic copilot that synthesizes patient histories and generates automated summaries, eliminating clinical burnout.",
+        "Built a lightning-fast counter billing software with barcode scanning and an interactive WhatsApp catalogue where neighbourhood customers order in 3 clicks.",
       metrics: [
-        { label: "Admin Time Saved", value: "18 hrs/wk" },
-        { label: "Diagnostic Accuracy", value: "99.4%" },
-        { label: "HIPAA Audited", value: "100% Passed" },
+        { label: "Billing Speed", value: "8 Seconds" },
+        { label: "Monthly Repeat Orders", value: "+52%" },
+        { label: "Stock Accuracy", value: "99.8%" },
       ],
-      stack: ["React", "FastAPI", "OpenAI / RAG", "ChromaDB", "Azure Health"],
-      gradient: "from-cyan-500/20 to-blue-500/10",
-      accent: "text-cyan-400",
+      stack: ["React 19", "Node.js", "Barcode POS", "UPI QR Engine"],
+      gradient: "from-[#E94C29]/20 via-[#1f1f1f] to-[#171717]",
+      accent: "text-[#E94C29]",
     },
     {
-      id: "enterprise",
-      tag: "GreenTech & IoT",
-      category: "enterprise",
-      client: "EcoStream Fleet Logistics",
-      title: "Autonomous Fleet Routing & Carbon Offset Telemetry Platform",
+      id: "coaching",
+      tag: "Coaching & Education",
+      category: "coaching",
+      client: "Pinnacle Science Academy",
+      title: "Student Admission Portal, Online Test Engine & Mobile App",
       description:
-        "Modern real-time telematics dashboard processing live GPS sensors across 4,200 commercial EV freight vehicles with dynamic route rebalancing.",
+        "Designed a complete student learning portal with online MCQ tests, instant rank generation, digital fee receipts, and homework notification app.",
       metrics: [
-        { label: "Fuel/Power Saved", value: "$2.4M / yr" },
-        { label: "Carbon Reduction", value: "-32%" },
-        { label: "Live Active Telemetry", value: "4,200 trucks" },
+        { label: "Active Students", value: "1,450+" },
+        { label: "Fee Collection", value: "98% Online" },
+        { label: "Parent Satisfaction", value: "99%" },
       ],
-      stack: ["Next.js", "Go", "WebSockets", "TimescaleDB", "GCP Edge"],
-      gradient: "from-teal-500/20 to-emerald-500/10",
-      accent: "text-teal-400",
+      stack: ["Flutter App", "Next.js", "Quiz Engine", "SMS Gateway"],
+      gradient: "from-[#F28D52]/20 via-[#1f1f1f] to-[#171717]",
+      accent: "text-[#F28D52]",
     },
     {
-      id: "saas",
-      tag: "SaaS & E-Commerce",
-      category: "saas",
-      client: "Veloce Commerce Platform",
-      title: "Headless High-Converting Commerce Architecture",
+      id: "local",
+      tag: "Restaurant & Local Business",
+      category: "local",
+      client: "FreshBites Café & Bistro",
+      title: "Contactless QR Code Menu & Google Maps Lead Funnel",
       description:
-        "Architected an ultra-fast headless storefront with instantaneous edge caching, resulting in an unprecedented boost in cart completion and mobile engagement.",
+        "Engineered an elegant mobile QR menu with table ordering and optimized their Google Maps profile to rank #1 in their city for café searches.",
       metrics: [
-        { label: "Mobile Conversion", value: "+4.2x" },
-        { label: "Core Web Vitals", value: "100 Score" },
-        { label: "Global Edge Latency", value: "28ms" },
+        { label: "Google Footfall", value: "+4.2x" },
+        { label: "Average Table Ticket", value: "+28%" },
+        { label: "5-Star Reviews", value: "850+" },
       ],
-      stack: ["Next.js 16", "Tailwind CSS", "Shopify API", "Cloudflare Workers"],
-      gradient: "from-amber-500/20 to-emerald-500/10",
-      accent: "text-amber-400",
+      stack: ["Next.js", "QR Code Engine", "Google Maps SEO", "Stripe/UPI"],
+      gradient: "from-[#A94322]/20 via-[#1f1f1f] to-[#171717]",
+      accent: "text-[#E94C29]",
     },
   ];
 
@@ -83,38 +83,36 @@ export default function CaseStudies() {
       : caseStudies.filter((item) => item.category === filter);
 
   return (
-    <section id="case-studies" className="py-24 relative">
+    <section id="case-studies" className="py-20 lg:py-28 relative bg-[#171717] border-t border-[#F9F7E3]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
-              <Award className="w-3.5 h-3.5" />
-              <span>Proven Business Impact</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-              Case Studies & <span className="text-gradient">Featured Work</span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#F9F7E3] tracking-tight">
+              Case Studies &amp; <span className="text-gradient-orange">Featured Work</span>
             </h2>
-            <p className="mt-3 text-base text-slate-300 max-w-xl">
-              Real metrics, quantifiable revenue jumps, and rock-solid systems delivered for high-growth tech innovators.
+            <p className="mt-3 text-base text-[#F9F7E3]/75 max-w-xl">
+              See how our custom websites and software helped local doctors, retailers, coaching centers, and business owners thrive.
             </p>
           </div>
 
           {/* Category Filter */}
           <div className="flex flex-wrap gap-2">
             {[
-              { id: "all", label: "All Works" },
-              { id: "fintech", label: "FinTech" },
-              { id: "ai", label: "AI & Health" },
-              { id: "enterprise", label: "IoT & Cloud" },
-              { id: "saas", label: "SaaS & Web" },
+              { id: "all", label: "All Projects" },
+              { id: "clinic", label: "Clinics" },
+              { id: "retail", label: "Retail Stores" },
+              { id: "coaching", label: "Coaching" },
+              { id: "local", label: "Local Businesses" },
             ].map((btn) => (
               <button
                 key={btn.id}
                 onClick={() => setFilter(btn.id)}
-                className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-200 ${
+                className={`px-5 py-2 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
                   filter === btn.id
-                    ? "bg-emerald-500 text-slate-950 font-bold shadow-lg shadow-emerald-500/25"
-                    : "bg-slate-900 border border-slate-800 text-slate-400 hover:text-white"
+                    ? "bg-gradient-to-r from-[#F28D52] to-[#E94C29] text-white shadow-lg shadow-[#E94C29]/25 font-bold"
+                    : "bg-[#1f1f1f] border border-[#F9F7E3]/10 text-[#F9F7E3]/70 hover:text-white"
                 }`}
               >
                 {btn.label}
@@ -128,37 +126,37 @@ export default function CaseStudies() {
           {filtered.map((study) => (
             <div
               key={study.id}
-              className={`glass-card rounded-2xl p-8 flex flex-col justify-between border border-slate-800/80 hover:border-emerald-500/40 transition-all duration-300 relative group overflow-hidden bg-gradient-to-br ${study.gradient}`}
+              className={`luxury-card rounded-3xl p-8 flex flex-col justify-between border border-[#F9F7E3]/10 hover:border-[#F28D52]/40 transition-all duration-300 relative group overflow-hidden bg-gradient-to-br ${study.gradient}`}
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs font-semibold tracking-wide uppercase px-3 py-1 rounded-full bg-slate-900/80 border border-slate-800 text-slate-300">
+                  <span className="text-xs font-semibold tracking-wide uppercase px-3 py-1 rounded-full bg-[#171717] border border-[#F9F7E3]/15 text-[#F9F7E3]">
                     {study.tag}
                   </span>
-                  <span className="text-xs font-mono text-slate-400 flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-emerald-400" />
-                    Delivered in 6 weeks
+                  <span className="text-xs font-mono text-[#F9F7E3]/70 flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-[#F28D52]" />
+                    Delivered in 7 days
                   </span>
                 </div>
 
-                <div className="text-xs font-medium text-emerald-400 tracking-wider uppercase mb-1">
+                <div className="text-xs font-semibold text-[#F28D52] tracking-wider uppercase mb-1">
                   {study.client}
                 </div>
-                <h3 className="text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors duration-200">
+                <h3 className="text-2xl font-bold text-white group-hover:text-[#F28D52] transition-colors duration-200">
                   {study.title}
                 </h3>
-                <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+                <p className="mt-3 text-sm text-[#F9F7E3]/75 leading-relaxed">
                   {study.description}
                 </p>
 
                 {/* Metrics Highlight Banner */}
-                <div className="grid grid-cols-3 gap-3 my-6 p-4 rounded-xl bg-slate-950/70 border border-slate-800/80">
+                <div className="grid grid-cols-3 gap-3 my-6 p-4 rounded-xl bg-[#171717]/80 border border-[#F9F7E3]/10">
                   {study.metrics.map((m, mIdx) => (
                     <div key={mIdx} className="text-center">
                       <div className={`text-xl sm:text-2xl font-extrabold ${study.accent}`}>
                         {m.value}
                       </div>
-                      <div className="text-[11px] text-slate-400 mt-0.5">
+                      <div className="text-[11px] text-[#F9F7E3]/60 mt-0.5">
                         {m.label}
                       </div>
                     </div>
@@ -167,11 +165,11 @@ export default function CaseStudies() {
               </div>
 
               <div>
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-[#F9F7E3]/10">
                   {study.stack.map((item, sIdx) => (
                     <span
                       key={sIdx}
-                      className="text-xs font-mono text-slate-300 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800"
+                      className="text-xs font-mono text-[#F9F7E3]/75 px-2.5 py-1 rounded-md bg-[#171717] border border-[#F9F7E3]/10"
                     >
                       {item}
                     </span>
@@ -181,6 +179,7 @@ export default function CaseStudies() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

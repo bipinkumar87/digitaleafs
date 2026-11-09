@@ -1,0 +1,67 @@
+[
+  {
+    "id": "digitaleafs-greetingsly-launch",
+    "category": "latest-news",
+    "categoryName": "Latest News",
+    "title": "Digitaleafs Announces Launch of Greetingsly & Expands Direct Developer Solutions",
+    "excerpt": "We are proud to release Greetingsly — our in-house bulk personalized card generation platform — alongside new transparent fixed-rate engineering suites starting from ₹9,999 with zero monthly agency lock-in.",
+    "readTime": "3 min read",
+    "date": "Nov 2026",
+    "tag": "Company Update",
+    "image": "/blogimg/latest-news.jpg",
+    "content": "We are thrilled to officially introduce Greetingsly (greetingsly.digitaleafs.com), our proprietary in-house digital platform designed to solve large-scale bulk invitation and personalized greeting card generation.\n\nTraditional design workflows require hours of manual copy-pasting for events, weddings, corporate announcements, and holiday greetings. Greetingsly completely automates this workflow: users can upload an Excel sheet, CSV file, or input names manually, and generate hundreds of tailored, high-resolution greeting cards and invite links in seconds.\n\nAlongside Greetingsly, Digitaleafs is expanding its direct lead developer suites starting from ₹9,999. We believe modern businesses deserve bespoke, lightning-fast digital assets with 100% full code ownership and zero predatory monthly retainer fees.",
+    "link": "https://wa.me/919934399990?text=Hi%20Digitaleafs!%20I%20saw%20your%20Latest%20News%20about%20Greetingsly%20and%20want%20to%20learn%20more."
+  },
+  {
+    "id": "modern-technology-architecture",
+    "category": "technology",
+    "categoryName": "Technology",
+    "title": "Modern Web Architecture: Why High-Performance Frameworks Outperform Legacy WordPress",
+    "excerpt": "Slow page loads cost modern businesses over 40% of their prospective leads. Discover how Next.js, static edge rendering, and cloud architectures deliver lightning-fast speed and unhackable security.",
+    "readTime": "4 min read",
+    "date": "Nov 2026",
+    "tag": "Tech Architecture",
+    "image": "/blogimg/technology.jpg",
+    "content": "For over a decade, WordPress was the default choice for small businesses. However, in 2026, the modern web demands sub-second load times, mobile-first responsiveness, and rock-solid cybersecurity.\n\nLegacy CMS platforms rely heavily on dozens of bloated plugins, PHP server overhead, and vulnerable database endpoints. Studies demonstrate that for every 1-second delay in page load time, conversions drop by up to 20%.\n\nAt Digitaleafs, we engineer web applications with Next.js, Tailwind CSS, and global edge CDNs. By compiling pages into static HTML and serving them from edge nodes nearest to the user, our websites achieve 99+ Google Lighthouse scores, instant mobile rendering, and virtually unhackable architecture.",
+    "link": "https://wa.me/919934399990?text=Hi%20Digitaleafs!%20I%20want%20to%20upgrade%20my%20website%20technology."
+  },
+  {
+    "id": "ai-workflow-automation",
+    "category": "ai-automation",
+    "categoryName": "AI & Automation",
+    "title": "How Smart Businesses Deploy AI & WhatsApp Automation to Capture Inquiries 24/7",
+    "excerpt": "Stop losing late-night client inquiries. Learn how intelligent automated WhatsApp funnels, auto-responses, and automated calendar slotting increase conversion by 3x without hiring extra staff.",
+    "readTime": "5 min read",
+    "date": "Nov 2026",
+    "tag": "AI & Workflow",
+    "image": "/blogimg/ai-automation.jpg",
+    "content": "Nearly 65% of potential clients browse services after 8:00 PM, when traditional offices and shops are closed. If an inquiry isn't answered within 15 minutes, the prospect usually moves on to a competitor.\n\nBy integrating intelligent WhatsApp Business API funnels and AI-powered workflow automations, your digital portal can greet leads instantly, answer frequently asked questions, collect appointment requirements, and confirm bookings directly on your calendar.\n\nThis delivers a 3x higher conversion rate without needing extra customer support staff, turning your website into a 24/7 revenue engine.",
+    "link": "https://wa.me/919934399990?text=Hi%20Digitaleafs!%20I%20want%20to%20set%20up%20AI%20and%20WhatsApp%20Automation."
+  },
+  {
+    "id": "custom-software-engineering",
+    "category": "software-development",
+    "categoryName": "Software Development",
+    "title": "Custom Software Engineering: The Strategic Roadmap From Idea to Production-Ready App",
+    "excerpt": "Building a reliable cross-platform app or business management system requires solid foundations: scalable database schemas, high-speed APIs, intuitive UI design, and seamless payment gateway integrations.",
+    "readTime": "6 min read",
+    "date": "Nov 2026",
+    "tag": "Engineering",
+    "image": "/blogimg/software-development.jpg",
+    "content": "Every business operates with unique operational friction: a polyclinic has distinct doctor schedules, a supermarket manages fast-moving inventory, and an institute handles recurring student fees.\n\nOff-the-shelf software forces you to adjust your business to fit their generic template. In contrast, custom software is engineered around your exact workflow.\n\nOur engineering approach focuses on 4 foundational pillars: responsive mobile-first UI, ACID-compliant database architecture, bank-grade encryption with direct UPI payment processing, and continuous staging previews that keep you in full control throughout development.",
+    "link": "https://wa.me/919934399990?text=Hi%20Digitaleafs!%20I%20want%20to%20develop%20a%20custom%20software%20or%20mobile%20app."
+  },
+  {
+    "id": "startup-economics-code-ownership",
+    "category": "business-startup",
+    "categoryName": "Business & Startup",
+    "title": "Startup & Small Business Economics: Why 100% Code Ownership Beats Monthly SaaS Traps",
+    "excerpt": "Paying ₹5,000 to ₹15,000 in monthly platform retainers drains precious startup runway. Understand why a one-time investment starting at ₹9,999 gives you full intellectual property ownership and zero recurring fees.",
+    "readTime": "4 min read",
+    "date": "Nov 2026",
+    "tag": "Startup Growth",
+    "image": "/blogimg/business-startup.jpg",
+    "content": "When you build on proprietary closed platforms, you don't own your software — you rent it. Over 3 years, paying ₹8,000 per month adds up to nearly ₹3,00,000 in software overhead, and if you ever stop paying, your entire online presence disappears.\n\nWith Digitaleafs, your investment begins from a transparent one-time rate of ₹9,999. You receive the complete source code, direct administrative ownership, database exports, and full deployment rights.\n\nYou remain 100% independent with zero recurring agency traps, ensuring long-term profitability and true enterprise valuation for your company.",
+    "link": "https://wa.me/919934399990?text=Hi%20Digitaleafs!%20I%20want%20to%20discuss%20custom%20software%20for%20my%20startup."
+  }
+]

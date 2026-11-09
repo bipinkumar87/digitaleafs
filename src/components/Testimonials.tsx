@@ -5,75 +5,75 @@ import { Star, Quote, CheckCircle2 } from "@/components/Icons";
 export default function Testimonials() {
   const reviews = [
     {
-      name: "Marcus Vance",
-      role: "CTO, NovaPay Global",
+      name: "Dr. Rajiv Sen",
+      role: "Founder, Sen Dental Care & Polyclinic",
       quote:
-        "Digitaleafs rebuilt our entire payment processing architecture in Next.js within 6 weeks. We saw an immediate 340% drop in page load latency and zero downtime during Black Friday.",
+        "Digitaleafs built our clinic appointment website and connected automated WhatsApp visit reminders. Our waiting room chaos vanished, and new patient bookings increased by over 300% in the very first month!",
       rating: 5,
-      avatar: "MV",
-      avatarBg: "from-emerald-500 to-teal-500",
-      companyMetric: "25k TPS handeled seamlessly",
+      avatar: "RS",
+      avatarBg: "from-[#F28D52] to-[#E94C29]",
+      metric: "380% More Patient Bookings",
     },
     {
-      name: "Dr. Elena Rostova",
-      role: "Head of Product, HealthPulse AI",
+      name: "Suresh Agarwal",
+      role: "Owner, Agarwal Departmental & Grocery Store",
       quote:
-        "Their team delivered a fully HIPAA-compliant AI triage assistant that saved our physicians over 18 hours per week of manual documentation. The code quality and security standards are immaculate.",
+        "The POS billing and WhatsApp grocery catalog software they created is unbelievable. Counter billing takes just 8 seconds per customer now, and local residents order their weekly groceries directly over WhatsApp.",
       rating: 5,
-      avatar: "ER",
-      avatarBg: "from-cyan-500 to-blue-500",
-      companyMetric: "100% HIPAA Audit Pass",
+      avatar: "SA",
+      avatarBg: "from-[#E94C29] to-[#A94322]",
+      metric: "8-Second Fast Counter Billing",
     },
     {
-      name: "Julian Thorne",
-      role: "Founder & CEO, Veloce Commerce",
+      name: "Amit Verma",
+      role: "Director, Apex Coaching Academy",
       quote:
-        "Finding an agency that truly understands modern web engineering, Tailwind design systems, and conversion psychology is rare. Digitaleafs is hands down the best technical partner we've had.",
+        "Our students love the online test series engine and mobile app. Fee collection used to take endless phone calls, but now parents pay online via UPI and receive instant automated digital receipts.",
       rating: 5,
-      avatar: "JT",
-      avatarBg: "from-teal-500 to-emerald-400",
-      companyMetric: "4.2x Conversion Increase",
+      avatar: "AV",
+      avatarBg: "from-[#F28D52] to-[#A94322]",
+      metric: "98% Online Fee Collection",
     },
   ];
 
-  const partners = [
-    { name: "NovaPay", tag: "FINTECH" },
-    { name: "HealthPulse", tag: "AI DIAGNOSTICS" },
-    { name: "EcoStream", tag: "IOT LOGISTICS" },
-    { name: "Veloce", tag: "E-COMMERCE" },
-    { name: "QuantEdge", tag: "DATA ANALYTICS" },
+  const highlights = [
+    { title: "60+ Local Businesses", sub: "Successfully digitized" },
+    { title: "5.0 ★ Google Rating", sub: "100% happy clients" },
+    { title: "7-14 Days Launch", sub: "Fastest delivery guarantee" },
+    { title: "Zero Tech Skills Needed", sub: "We handle everything" },
   ];
 
   return (
-    <section id="testimonials" className="py-24 relative bg-slate-950/70 border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Partner Ticker / Logos */}
-        <div className="mb-20 text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-8">
-            Trusted by founders, CTOs & technology innovators worldwide
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-70">
-            {partners.map((partner, pIdx) => (
-              <div
-                key={pIdx}
-                className="flex items-center gap-2 text-slate-300 font-mono tracking-wider font-bold text-sm sm:text-base hover:text-emerald-400 transition-colors"
-              >
-                <span>{partner.name}</span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
-                  {partner.tag}
-                </span>
+    <section id="testimonials" className="py-24 relative bg-[#F9F7E3] text-[#171717] border-t border-[#171717]/10 overflow-hidden">
+      {/* Architectural grid on cream */}
+      <div className="absolute inset-0 bg-cream-grid opacity-50 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Metric Badges Banner */}
+        <div className="mb-20 grid grid-cols-2 md:grid-cols-4 gap-4">
+          {highlights.map((h, idx) => (
+            <div
+              key={idx}
+              className="luxury-card-cream p-5 rounded-2xl border border-[#171717]/10 text-center bg-white shadow-sm"
+            >
+              <div className="text-xl sm:text-2xl font-black text-[#171717]">
+                {h.title}
               </div>
-            ))}
-          </div>
+              <div className="text-xs text-[#E94C29] font-bold mt-1">
+                {h.sub}
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Client <span className="text-gradient">Endorsements</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#171717] tracking-tight">
+            Loved By <span className="text-gradient-fire">Local Business Owners</span>
           </h2>
-          <p className="mt-3 text-base text-slate-300">
-            Hear directly from the engineering leaders and executives we collaborate with.
+          <p className="mt-3 text-base text-[#444444]">
+            Hear directly from doctors, retailers, and coaching founders whose businesses transformed with Digitaleafs.
           </p>
         </div>
 
@@ -82,44 +82,45 @@ export default function Testimonials() {
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="glass-card rounded-2xl p-7 flex flex-col justify-between relative group hover:border-emerald-500/40"
+              className="luxury-card-cream rounded-3xl p-7 flex flex-col justify-between relative group bg-white shadow-md hover:border-[#E94C29]/40"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-amber-400">
+                  <div className="flex items-center gap-1 text-[#F28D52]">
                     {[...Array(rev.rating)].map((_, r) => (
-                      <Star key={r} className="w-4 h-4 fill-amber-400" />
+                      <Star key={r} className="w-4 h-4 fill-[#F28D52]" />
                     ))}
                   </div>
-                  <Quote className="w-6 h-6 text-slate-700 group-hover:text-emerald-500/40 transition-colors" />
+                  <Quote className="w-6 h-6 text-[#171717]/15 group-hover:text-[#E94C29]/40 transition-colors" />
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed italic mb-6">
+                <p className="text-sm text-[#333333] leading-relaxed italic mb-6">
                   &ldquo;{rev.quote}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-5 border-t border-slate-800/80">
+              <div className="pt-5 border-t border-[#171717]/10">
                 <div className="flex items-center gap-3">
                   <div
-                    className={`w-10 h-10 rounded-full bg-gradient-to-tr ${rev.avatarBg} flex items-center justify-center font-bold text-slate-950 text-sm`}
+                    className={`w-10 h-10 rounded-full bg-gradient-to-tr ${rev.avatarBg} flex items-center justify-center font-bold text-white text-sm shadow`}
                   >
                     {rev.avatar}
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white">{rev.name}</h4>
-                    <p className="text-xs text-slate-400">{rev.role}</p>
+                    <h4 className="text-sm font-bold text-[#171717]">{rev.name}</h4>
+                    <p className="text-xs text-[#666666]">{rev.role}</p>
                   </div>
                 </div>
 
-                <div className="mt-3 inline-flex items-center gap-1.5 text-[11px] text-emerald-400 font-mono bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">
-                  <CheckCircle2 className="w-3 h-3" />
-                  <span>{rev.companyMetric}</span>
+                <div className="mt-3 inline-flex items-center gap-1.5 text-[11px] text-[#A94322] font-mono bg-[#F9F7E3] px-2.5 py-1 rounded-md border border-[#E94C29]/30 font-semibold">
+                  <CheckCircle2 className="w-3 h-3 text-[#E94C29]" />
+                  <span>{rev.metric}</span>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

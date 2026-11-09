@@ -1,203 +1,257 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, Send, CheckCircle2, Shield, Clock, Sparkles } from "@/components/Icons";
+import { Mail, Send, CheckCircle2, Shield, Clock } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    company: "",
-    service: "Web & Full-Stack",
-    budget: "$15k - $35k",
+    phone: "",
+    businessName: "",
+    businessType: "Clinic / Healthcare",
+    service: "Custom Website",
+    budget: "₹15,000 - ₹35,000",
     message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const businessTypes = [
+    "Clinic / Healthcare",
+    "Retail Store / Supermarket",
+    "Coaching / School",
+    "Local Shop / Restaurant",
+    "Custom Mobile App",
+  ];
+
   const budgetOptions = [
-    "< $10k",
-    "$10k - $25k",
-    "$25k - $50k",
-    "$50k+",
+    "₹5,000 - ₹15,000",
+    "₹15,000 - ₹35,000",
+    "₹35,000 - ₹75,000",
+    "₹75,000+",
   ];
 
   const serviceOptions = [
-    "Web & Full-Stack",
-    "AI & Automation",
-    "Cloud & DevOps",
-    "Mobile Apps",
-    "UI/UX Design",
+    "Custom Website",
+    "Android Mobile App",
+    "POS Billing Software",
+    "WhatsApp Automation",
+    "Full Software Suite",
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxwWNR6H2M3PAgzNrvvPkPptILswULqXQkLjwYPFD62wqKe8RCc1hZwEA_Xf_GFalms/exec";
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API request
-    setTimeout(() => {
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify({
+          formType: "consultation",
+          name: formData.name,
+          phone: formData.phone,
+          email: "N/A",
+          businessType: `${formData.businessName ? formData.businessName + " (" + formData.businessType + ")" : formData.businessType}`,
+          budget: formData.budget,
+          message: `Service: ${formData.service}. ${formData.message || ""}`,
+        }),
+      });
+    } catch (err) {
+      console.error("Contact form submission error:", err);
+    } finally {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 1000);
+    }
   };
 
   return (
-    <section id="contact" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 lg:py-28 relative bg-[#F9F7E3] text-[#171717] border-t border-[#171717]/10 overflow-hidden">
+      {/* Architectural grid on cream */}
+      <div className="absolute inset-0 bg-cream-grid opacity-50 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Info & Trust */}
+          
+          {/* Left Column: Direct Connect & Guarantees */}
           <div className="lg:col-span-5 space-y-8">
             <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Let&apos;s Build Together</span>
-              </div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                Turn Your Vision Into <span className="text-gradient">Production Code.</span>
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-[#171717] tracking-tight leading-tight">
+                Turn Your Business Idea Into <span className="text-gradient-fire">Working Software.</span>
               </h2>
-              <p className="mt-4 text-base text-slate-300 leading-relaxed">
-                Whether you need a brand-new platform, an AI overhaul, or high-performance scaling, our senior engineering squad is ready to deploy.
+              <p className="mt-4 text-base text-[#444444] leading-relaxed">
+                Whether you run a clinic, retail store, coaching academy, or have a brand new mobile app idea — speak directly with our senior developers today.
               </p>
             </div>
 
-            {/* Guarantees Box */}
-            <div className="space-y-4 rounded-xl bg-slate-900/60 border border-slate-800 p-6">
+            {/* Quick Guarantees Box */}
+            <div className="space-y-4 rounded-2xl bg-white border border-[#171717]/10 p-6 shadow-sm">
               <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                <Clock className="w-5 h-5 text-[#E94C29] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-white">Rapid 4-Hour Response</h4>
-                  <p className="text-xs text-slate-400">
-                    We review technical requirements and reply within 4 business hours.
+                  <h4 className="text-sm font-bold text-[#171717]">15-Minute Direct Response</h4>
+                  <p className="text-xs text-[#666666]">
+                    We review your requirement and call you back directly within 15 minutes.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <Shield className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
+                <Shield className="w-5 h-5 text-[#A94322] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-white">Strict Mutual NDA</h4>
-                  <p className="text-xs text-slate-400">
-                    Your intellectual property, proprietary algorithms, and data stay 100% confidential.
+                  <h4 className="text-sm font-bold text-[#171717]">Zero Hidden Costs Guarantee</h4>
+                  <p className="text-xs text-[#666666]">
+                    The price we quote includes domain, hosting, design, coding, and post-launch support.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-[#E94C29] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-white">Direct Lead Architect Call</h4>
-                  <p className="text-xs text-slate-400">
-                    No pushy sales reps — speak directly with senior engineers and architects.
+                  <h4 className="text-sm font-bold text-[#171717]">Direct Developer Consultation</h4>
+                  <p className="text-xs text-[#666666]">
+                    No middlemen or junior sales reps — talk directly to the engineers building your product.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Direct Contact Info */}
-            <div className="space-y-3 pt-4 border-t border-slate-800 text-sm text-slate-300">
+            <div className="space-y-4 pt-2 border-t border-[#171717]/10 text-sm text-[#444444]">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-emerald-400 border border-slate-800">
+                <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center text-[#A94322] border border-[#171717]/10 shadow-sm">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span>contact@digitaleafs.io</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-teal-400 border border-slate-800">
-                  <Phone className="w-4 h-4" />
+                <div>
+                  <div className="text-xs text-[#666666]">Official Email Support</div>
+                  <a href="mailto:contact@digitaleafs.com" className="font-bold text-[#171717] hover:text-[#E94C29] transition-colors">
+                    contact@digitaleafs.com
+                  </a>
                 </div>
-                <span>+1 (800) 459-LEAF / +91 (80) 4000-LEAF</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-cyan-400 border border-slate-800">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <span>San Francisco, CA • Bengaluru, IN • London, UK</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Interactive Form */}
+          {/* Right Column: Interactive Proposal Form */}
           <div className="lg:col-span-7">
-            <div className="glass-card rounded-2xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative">
+            <div className="luxury-card-cream rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#171717]/10 shadow-xl bg-white relative">
               {isSubmitted ? (
-                <div className="text-center py-12 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/40">
-                    <CheckCircle2 className="w-8 h-8" />
+                <div className="text-center py-12 space-y-5">
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-500/40 text-2xl">
+                    ✅
                   </div>
-                  <h3 className="text-2xl font-bold text-white">Consultation Request Received!</h3>
-                  <p className="text-sm text-slate-300 max-w-md mx-auto">
-                    Thank you, {formData.name}. Our principal architect is reviewing your inquiry and will reach out to <span className="text-emerald-400">{formData.email}</span> within 4 hours.
+                  <h3 className="text-2xl font-bold text-[#171717]">Project Request Received!</h3>
+                  <p className="text-sm text-[#444444] max-w-md mx-auto">
+                    Thank you, <span className="text-[#171717] font-bold">{formData.name}</span>! Our lead engineer is reviewing your inquiry for <span className="text-[#E94C29] font-semibold">{formData.businessName || "your business"}</span> and will reply within 15 minutes.
                   </p>
-                  <button
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setFormData({
-                        name: "",
-                        email: "",
-                        company: "",
-                        service: "Web & Full-Stack",
-                        budget: "$15k - $35k",
-                        message: "",
-                      });
-                    }}
-                    className="mt-4 px-6 py-2.5 rounded-xl bg-slate-800 text-slate-200 text-xs font-semibold hover:bg-slate-700 transition-colors"
-                  >
-                    Submit Another Inquiry
-                  </button>
+                  
+                  <div className="pt-2">
+                    <button
+                      onClick={() => {
+                        setIsSubmitted(false);
+                        setFormData({
+                          name: "",
+                          phone: "",
+                          businessName: "",
+                          businessType: "Clinic / Healthcare",
+                          service: "Custom Website",
+                          budget: "₹15,000 - ₹35,000",
+                          message: "",
+                        });
+                      }}
+                      className="px-6 py-3 rounded-full btn-primary-gradient text-white font-bold text-xs sm:text-sm hover:scale-105 transition-all shadow-md cursor-pointer"
+                    >
+                      Submit Another Inquiry
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    Request Architecture Review & Proposal
-                  </h3>
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#171717]">
+                      Get a Free Project Proposal &amp; Quote
+                    </h3>
+                    <p className="text-xs text-[#666666] mt-1">
+                      Fill out this quick form or message us directly on WhatsApp.
+                    </p>
+                  </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                        Your Name *
+                      <label className="block text-xs font-semibold text-[#171717] mb-1.5">
+                        Your Full Name *
                       </label>
                       <input
                         type="text"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Alex Morgan"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 transition-colors"
+                        placeholder="Dr. Rajesh Sharma / Amit Patel"
+                        className="w-full px-4 py-3 rounded-xl bg-[#F9F7E3]/80 border border-[#171717]/15 text-[#171717] placeholder-[#666666]/70 text-sm focus:outline-none focus:border-[#E94C29] focus:bg-white transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                        Work Email *
+                      <label className="block text-xs font-semibold text-[#171717] mb-1.5">
+                        Phone Number *
                       </label>
                       <input
-                        type="email"
+                        type="tel"
                         required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="alex@company.com"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 transition-colors"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+91 98765 43210"
+                        className="w-full px-4 py-3 rounded-xl bg-[#F9F7E3]/80 border border-[#171717]/15 text-[#171717] placeholder-[#666666]/70 text-sm focus:outline-none focus:border-[#E94C29] focus:bg-white transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                      Company / Organization Name
+                    <label className="block text-xs font-semibold text-[#171717] mb-1.5">
+                      Business, Clinic, Shop, or Academy Name
                     </label>
                     <input
                       type="text"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      placeholder="NextScale Inc."
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 transition-colors"
+                      value={formData.businessName}
+                      onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+                      placeholder="e.g. Sharma Dental Clinic / City Supermart"
+                      className="w-full px-4 py-3 rounded-xl bg-[#F9F7E3]/80 border border-[#171717]/15 text-[#171717] placeholder-[#666666]/70 text-sm focus:outline-none focus:border-[#E94C29] focus:bg-white transition-colors"
                     />
                   </div>
 
-                  {/* Primary Service */}
+                  {/* Business Type Selector */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-2">
-                      Primary Service Interest
+                    <label className="block text-xs font-semibold text-[#171717] mb-2">
+                      Business Category
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {businessTypes.map((type) => (
+                        <button
+                          type="button"
+                          key={type}
+                          onClick={() => setFormData({ ...formData, businessType: type })}
+                          className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
+                            formData.businessType === type
+                              ? "bg-gradient-to-r from-[#F28D52] to-[#E94C29] text-white font-bold shadow-md"
+                              : "bg-[#F9F7E3] border border-[#171717]/10 text-[#444444] hover:text-[#171717] hover:bg-[#171717]/10"
+                          }`}
+                        >
+                          {type}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Primary Service Interested In */}
+                  <div>
+                    <label className="block text-xs font-semibold text-[#171717] mb-2">
+                      What are you looking to build?
                     </label>
                     <div className="flex flex-wrap gap-2">
                       {serviceOptions.map((serv) => (
@@ -205,10 +259,10 @@ export default function Contact() {
                           type="button"
                           key={serv}
                           onClick={() => setFormData({ ...formData, service: serv })}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                          className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all cursor-pointer ${
                             formData.service === serv
-                              ? "bg-emerald-500 text-slate-950 font-bold"
-                              : "bg-slate-900 border border-slate-800 text-slate-400 hover:text-white"
+                              ? "bg-gradient-to-r from-[#F28D52] to-[#E94C29] text-white font-bold shadow-md"
+                              : "bg-[#F9F7E3] border border-[#171717]/10 text-[#444444] hover:text-[#171717] hover:bg-[#171717]/10"
                           }`}
                         >
                           {serv}
@@ -219,8 +273,8 @@ export default function Contact() {
 
                   {/* Budget Allocation */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-2">
-                      Target Investment Range
+                    <label className="block text-xs font-semibold text-[#171717] mb-2">
+                      Target Investment Budget
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                       {budgetOptions.map((opt) => (
@@ -228,10 +282,10 @@ export default function Contact() {
                           type="button"
                           key={opt}
                           onClick={() => setFormData({ ...formData, budget: opt })}
-                          className={`py-2 px-3 rounded-lg text-xs font-semibold text-center transition-all ${
+                          className={`py-2 px-3 rounded-lg text-xs font-semibold text-center transition-all cursor-pointer ${
                             formData.budget === opt
-                              ? "bg-emerald-500 text-slate-950 font-bold"
-                              : "bg-slate-900 border border-slate-800 text-slate-400 hover:text-white"
+                              ? "bg-gradient-to-r from-[#F28D52] to-[#E94C29] text-white font-bold shadow-md"
+                              : "bg-[#F9F7E3] border border-[#171717]/10 text-[#444444] hover:text-[#171717] hover:bg-[#171717]/10"
                           }`}
                         >
                           {opt}
@@ -240,18 +294,18 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Project Details */}
+                  {/* Details textarea */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1.5">
-                      Project Goals & Scope Details *
+                    <label className="block text-xs font-semibold text-[#171717] mb-1.5">
+                      Tell us about your project requirements *
                     </label>
                     <textarea
                       required
-                      rows={4}
+                      rows={3}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell us about your project, current tech stack, timelines, and main objectives..."
-                      className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-emerald-500 transition-colors resize-none"
+                      placeholder="e.g. I need a website for my dental clinic where patients can book appointments and receive WhatsApp confirmations..."
+                      className="w-full px-4 py-3 rounded-xl bg-[#F9F7E3]/80 border border-[#171717]/15 text-[#171717] placeholder-[#666666]/70 text-sm focus:outline-none focus:border-[#E94C29] focus:bg-white transition-colors resize-none"
                     />
                   </div>
 
@@ -259,17 +313,17 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white font-semibold text-sm shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+                    className="w-full py-4 rounded-full btn-primary-gradient font-bold text-sm shadow-xl flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">
                         <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                        Transmitting Proposal...
+                        Submitting Proposal...
                       </span>
                     ) : (
                       <span className="flex items-center gap-2">
                         <Send className="w-4 h-4" />
-                        Submit Consultation Request
+                        Get Free Proposal &amp; Instant Quote
                       </span>
                     )}
                   </button>
@@ -277,6 +331,7 @@ export default function Contact() {
               )}
             </div>
           </div>
+
         </div>
       </div>
     </section>

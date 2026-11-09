@@ -1,55 +1,57 @@
 "use client";
 
-import { Compass, Cpu, ShieldCheck, Rocket } from "@/components/Icons";
+import { Compass, Cpu, ShieldCheck, Rocket } from "lucide-react";
 
 export default function Process() {
   const steps = [
     {
       num: "01",
-      icon: <Compass className="w-6 h-6 text-emerald-400" />,
-      title: "Discovery & Architectural Blueprint",
+      icon: <Compass className="w-6 h-6 text-[#F28D52]" />,
+      title: "15-Min Free Consultation",
       description:
-        "We dissect your business goals, target audience, and bottlenecks to craft a clear technical roadmap, UX wireframes, and scalable cloud topology.",
-      highlights: ["Technical feasibility audit", "Product requirements document", "Interactive Figma prototype"],
+        "We discuss your business on WhatsApp or phone call, understand what you need (website, booking, billing, app), and give you an instant transparent quote.",
+      highlights: ["No pushy sales", "Clear price & timeline estimate", "Zero technical jargon"],
     },
     {
       num: "02",
-      icon: <Cpu className="w-6 h-6 text-teal-400" />,
-      title: "Agile Engineering Sprints",
+      icon: <Cpu className="w-6 h-6 text-[#E94C29]" />,
+      title: "Live Prototype in 48 Hours",
       description:
-        "High-velocity development using Next.js 16, TypeScript, and clean code principles. You get staging links and weekly demos so there are no surprises.",
-      highlights: ["2-week sprint cycles", "Live staging environments", "Async daily progress updates"],
+        "We craft a custom, modern luxury design for your brand. You get a private link to review on your phone and give instant feedback until you love it.",
+      highlights: ["Mobile-first demo link", "Unlimited design revisions", "100% custom look"],
     },
     {
       num: "03",
-      icon: <ShieldCheck className="w-6 h-6 text-cyan-400" />,
-      title: "Rigorous QA & Security Hardening",
+      icon: <ShieldCheck className="w-6 h-6 text-[#F28D52]" />,
+      title: "Rapid Development & Testing",
       description:
-        "End-to-end automated testing, Core Web Vitals speed optimization, and vulnerability scans before a single line goes live in production.",
-      highlights: ["Lighthouse 95+ score target", "Automated Playwright/Jest tests", "OWASP security verification"],
+        "We code the full system using Next.js & modern tech: connecting appointment booking, POS billing, WhatsApp alerts, and payment gateways seamlessly.",
+      highlights: ["Speed optimized under 1 second", "Security & UPI payment verification", "Google SEO setup"],
     },
     {
       num: "04",
-      icon: <Rocket className="w-6 h-6 text-lime-400" />,
-      title: "Zero-Downtime Launch & Scale",
+      icon: <Rocket className="w-6 h-6 text-[#E94C29]" />,
+      title: "Launch & WhatsApp Support",
       description:
-        "Seamless production release with automated CI/CD pipelines, global CDN edge caching, 24/7 error telemetry, and ongoing feature expansion.",
-      highlights: ["Zero-downtime deployment", "Real-time error monitoring", "Dedicated SLA post-launch support"],
+        "We connect your domain, deploy on high-speed servers or publish to Google Play Store, and provide a 1-on-1 video tutorial so you can easily run it.",
+      highlights: ["Cloud deployment & live launch", "Google My Business index", "Lifetime WhatsApp support"],
     },
   ];
 
   return (
-    <section id="process" className="py-24 relative bg-slate-950/80">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
-            <span>Our Methodology</span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            From Concept To Market In <span className="text-gradient">6 Weeks</span>
+    <section id="process" className="py-20 lg:py-28 relative bg-[#F9F7E3] text-[#171717] border-t border-[#171717]/10 overflow-hidden">
+      {/* Architectural grid on cream */}
+      <div className="absolute inset-0 bg-cream-grid opacity-50 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#171717] tracking-tight">
+            How We Turn Your Idea Into <span className="text-gradient-fire">Reality In 7 Days</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-300">
-            A transparent, collaborative engineering process designed to eliminate friction, prevent scope creep, and deliver high ROI.
+          <p className="mt-4 text-base sm:text-lg text-[#444444]">
+            A stress-free, transparent experience built for busy shopkeepers, doctors, and business founders. You focus on your customers — we handle all the tech.
           </p>
         </div>
 
@@ -57,30 +59,30 @@ export default function Process() {
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="glass-card rounded-2xl p-6 flex flex-col justify-between relative group hover:border-emerald-500/40"
+              className="luxury-card-cream rounded-2xl p-6 flex flex-col justify-between relative group bg-white shadow-md hover:border-[#E94C29]/40"
             >
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:scale-110 group-hover:border-emerald-500/40 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-[#F9F7E3] border border-[#E94C29]/20 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                     {step.icon}
                   </div>
-                  <span className="text-3xl font-extrabold text-slate-700/60 font-mono group-hover:text-emerald-500/40 transition-colors">
+                  <span className="text-3xl font-extrabold text-[#171717]/15 font-mono group-hover:text-[#E94C29]/40 transition-colors">
                     {step.num}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-300 transition-colors">
+                <h3 className="text-lg font-bold text-[#171717] mb-2 group-hover:text-[#E94C29] transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                <p className="text-xs sm:text-sm text-[#444444] leading-relaxed mb-6">
                   {step.description}
                 </p>
               </div>
 
-              <div className="space-y-2 pt-4 border-t border-slate-800/80">
+              <div className="space-y-2 pt-4 border-t border-[#171717]/10">
                 {step.highlights.map((h, hIdx) => (
-                  <div key={hIdx} className="text-[11px] text-slate-400 flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <div key={hIdx} className="text-[11px] text-[#171717] font-medium flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#E94C29]"></span>
                     <span>{h}</span>
                   </div>
                 ))}
@@ -88,6 +90,7 @@ export default function Process() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

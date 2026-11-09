@@ -1,20 +1,77 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Digitaleafs — We Meet Soon",
-  description: "Next-generation digital experience under construction. We will meet soon.",
+  metadataBase: new URL("https://digitaleafs.com"),
+  title: {
+    default: "Digitaleafs — Custom Websites, Mobile Apps & Business Software",
+    template: "%s | Digitaleafs",
+  },
+  description:
+    "High-converting custom websites, Android/iOS mobile apps, and business management software starting at ₹9,999. 100% full source code ownership, zero monthly agency retainers.",
+  keywords: [
+    "website development starting 9999",
+    "custom software development",
+    "mobile app development company",
+    "clinic management software",
+    "doctor appointment website",
+    "retail pos billing software",
+    "coaching institute website",
+    "school management portal",
+    "local business website builder",
+    "next.js agency india",
+    "digitaleafs software studio",
+    "direct developer web design",
+  ],
+  authors: [{ name: "Digitaleafs Engineering Team", url: "https://digitaleafs.com" }],
+  creator: "Digitaleafs",
+  publisher: "Digitaleafs Studio",
+  alternates: {
+    canonical: "https://digitaleafs.com",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://digitaleafs.com",
+    title: "Digitaleafs — Custom Websites, Mobile Apps & Digital Software",
+    description:
+      "World-class websites and custom software starting at just ₹9,999 with 100% full source code ownership. Built for clinics, retail shops, coaching centers, and startups.",
+    siteName: "Digitaleafs",
+    images: [
+      {
+        url: "/img/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Digitaleafs Software & Web Development",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Digitaleafs — Custom Websites, Apps & Software",
+    description:
+      "High-converting custom websites and business software starting from ₹9,999 with zero monthly agency retainers.",
+    images: ["/img/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/img/favicon/favicon.ico" },
@@ -27,6 +84,73 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://digitaleafs.com/#organization",
+      name: "Digitaleafs",
+      url: "https://digitaleafs.com",
+      logo: "https://digitaleafs.com/img/logo.png",
+      image: "https://digitaleafs.com/img/logo.png",
+      description:
+        "Custom websites, Android & iOS mobile applications, and management software engineered for small businesses, clinics, retail shops, and coaching centers.",
+      priceRange: "₹9,999 - ₹75,000",
+      email: "contact@digitaleafs.com",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "IN",
+      },
+      offers: {
+        "@type": "AggregateOffer",
+        priceCurrency: "INR",
+        lowPrice: "9999",
+        highPrice: "75000",
+        offerCount: "5",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://digitaleafs.com/#faq",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What does 'Starting at ₹9,999' mean? Are there any hidden charges later?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Zero hidden charges. Before writing a single line of code, we provide a crystal-clear written proposal with exact deliverables. ₹9,999 covers a full ready-to-launch responsive business website with instant inquiry capture forms, Google Maps local SEO, mobile optimization, and SSL security.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do I get 100% full source code ownership, or will I be locked into monthly retainers?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "You get 100% complete source code ownership and full administrative control. Unlike platforms like Shopify or agencies that trap you into paying monthly retainers forever, Digitaleafs hands over the complete codebase, database access, and hosting credentials.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How fast is delivery, and how can I track live progress while you build?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A standard small business or clinic website is completed in 5 to 7 days. Custom management software or mobile apps take 10 to 14 days. From Day 2 onwards, we share a private live staging demo link.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can my patients or customers pay me directly using Google Pay, PhonePe, Paytm, or UPI?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, built-in standard. We integrate zero-fee direct UPI QR codes and payment gateway setups that deposit customer payments straight into your bank account.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -35,9 +159,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      className={`${manrope.variable} h-full antialiased dark scroll-smooth`}
     >
-      <body className="h-full bg-[#0E0806] text-[#F5F5DC] selection:bg-[#E35336] selection:text-[#0E0806] font-sans overflow-x-hidden">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="h-full bg-[#171717] text-[#F9F7E3] selection:bg-[#E94C29] selection:text-white font-sans overflow-x-hidden">
         {children}
       </body>
     </html>
