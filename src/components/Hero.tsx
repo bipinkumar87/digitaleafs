@@ -20,12 +20,11 @@ export default function Hero() {
   return (
     <section className="relative min-h-[95vh] lg:min-h-screen flex flex-col justify-end pb-3 sm:pb-5 lg:pb-6 pt-24 overflow-hidden bg-[#171717]">
       {/* ========================================================
-         BACKGROUND VIDEO (Top 75% Clean & Visible, Bottom Gradient)
+         BACKGROUND VIDEO (WebM first for 3x faster load, MP4 fallback)
          ======================================================== */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <video
           ref={videoRef}
-          src="/video/herovideo.mp4"
           autoPlay
           loop
           muted
@@ -33,6 +32,7 @@ export default function Hero() {
           preload="auto"
           className="w-full h-full object-cover scale-100"
         >
+          <source src="/video/herovideo.webm" type="video/webm" />
           <source src="/video/herovideo.mp4" type="video/mp4" />
         </video>
 

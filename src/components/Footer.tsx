@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Mail } from "@/components/Icons";
 
 export default function Footer() {
@@ -134,15 +135,15 @@ export default function Footer() {
             &copy; 2026 Digitaleafs Studio. Designed for Excellence — Modern luxury · Elegant · Premium technology.
           </div>
           <div className="flex items-center gap-6">
-            <a href="#solutions" className="hover:text-[#F28D52] transition-colors">
+            <Link href="/privacy-policy" className="hover:text-[#F28D52] transition-colors">
               Privacy Policy
-            </a>
-            <a href="#contact" className="hover:text-[#F28D52] transition-colors">
+            </Link>
+            <Link href="/terms-of-service" className="hover:text-[#F28D52] transition-colors">
               Terms of Service
-            </a>
-            <a href="#contact" className="hover:text-[#F28D52] transition-colors">
+            </Link>
+            <Link href="/support" className="hover:text-[#F28D52] transition-colors">
               Support
-            </a>
+            </Link>
           </div>
         </div>
 
