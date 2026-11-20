@@ -2,41 +2,50 @@
 
 import { useRef, useEffect } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
-import dynamic from "next/dynamic";
-
-const IsometricOffice3D = dynamic(() => import("@/components/IsometricOffice3D"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-[#171717]">
-      <div className="flex flex-col items-center gap-3">
-        <div className="w-10 h-10 border-2 border-[#F28D52] border-t-transparent rounded-full animate-spin"></div>
-        <span className="text-xs font-mono text-[#F9F7E3]/60">Rendering 3D Studio...</span>
-      </div>
-    </div>
-  ),
-});
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Ensure video autoplays smoothly with 100% clean quality
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch((err) => {
+        console.log("Video autoplay hint:", err);
+      });
+    }
+  }, []);
+
   return (
     <section className="relative min-h-[95vh] lg:min-h-screen flex flex-col justify-end pb-4 sm:pb-6 lg:pb-8 pt-24 overflow-hidden bg-[#171717]">
-      
       {/* ========================================================
-         BACKGROUND: THREE.JS 3D ISOMETRIC DEVELOPER STUDIO
+         BACKGROUND VIDEO: ORIGINAL CLEAN HD OFFICE VIDEO
          ======================================================== */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <IsometricOffice3D />
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover scale-100"
+        >
+          <source src="/video/herovideo.mp4" type="video/mp4" />
+        </video>
 
         {/* Top subtle shadow for navbar clarity */}
-        <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-[#171717]/85 to-transparent pointer-events-none z-[5]" />
+        <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-[#171717]/85 to-transparent pointer-events-none" />
 
-        {/* Bottom dark gradient: soft vignette so 3D office stays completely visible above, while text remains 100% crisp */}
-        <div className="absolute bottom-0 left-0 right-0 h-[46%] sm:h-[40%] lg:h-[35%] bg-gradient-to-t from-[#171717] via-[#171717]/90 to-transparent pointer-events-none z-[5]" />
+        {/* Bottom dark gradient: soft vignette so video stays completely visible above, while text remains 100% crisp */}
+        <div className="absolute bottom-0 left-0 right-0 h-[46%] sm:h-[40%] lg:h-[35%] bg-gradient-to-t from-[#171717] via-[#171717]/90 to-transparent pointer-events-none" />
       </div>
 
       {/* ========================================================
-         HERO CONTENT ANCHORED AT THE BOTTOM OVER 3D BACKGROUND
+         HERO CONTENT ANCHORED AT THE BOTTOM OVER BACKGROUND VIDEO
          ======================================================== */}
-      <div className="w-full relative z-10 pointer-events-none max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center mt-auto">
+      <div className="w-full relative z-10 max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center mt-auto">
         <div className="w-full max-w-6xl xl:max-w-7xl space-y-2 sm:space-y-3">
           
           {/* Top Pill Badge */}
@@ -75,7 +84,7 @@ export default function Hero() {
                 onClick={() => {
                   window.dispatchEvent(new CustomEvent("open-consultation"));
                 }}
-                className="pointer-events-auto inline-flex items-center justify-center gap-2.5 px-8 py-3 rounded-full btn-primary-gradient font-bold text-xs sm:text-sm md:text-base shadow-2xl hover:scale-105 transition-all text-center cursor-pointer text-white"
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-3 rounded-full btn-primary-gradient font-bold text-xs sm:text-sm md:text-base shadow-2xl hover:scale-105 transition-all text-center cursor-pointer text-white"
               >
                 <span>Get Free Consultation</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
