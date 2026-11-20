@@ -197,7 +197,7 @@ export default function Pricing() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs sm:text-sm">
+            <table className="w-full min-w-[620px] text-left text-xs sm:text-sm">
               <thead className="bg-white/[0.03] text-[#F9F7E3]/60 uppercase tracking-wider font-mono text-[11px] border-b border-white/10">
                 <tr>
                   <th className="py-3 px-4 sm:px-6 font-semibold">Service</th>
@@ -209,23 +209,25 @@ export default function Pricing() {
               <tbody className="divide-y divide-white/5">
                 {PRICING_DATA.map((item) => (
                   <tr key={item.name} className="hover:bg-white/[0.02] transition-colors group">
-                    <td className="py-3.5 px-4 sm:px-6 font-semibold text-white flex items-center gap-3">
-                      <div className={`w-8 h-8 rounded-xl ${item.iconBg} border ${item.iconBorder} flex items-center justify-center shrink-0`}>
-                        {item.icon}
+                    <td className="py-3.5 px-4 sm:px-6 font-semibold text-white">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-8 h-8 rounded-xl ${item.iconBg} border ${item.iconBorder} flex items-center justify-center shrink-0`}>
+                          {item.icon}
+                        </div>
+                        <span className="whitespace-nowrap">{item.name}</span>
+                        {item.badge && (
+                          <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider whitespace-nowrap ${
+                            item.popular 
+                              ? "bg-[#F28D52]/20 text-[#F28D52] border border-[#F28D52]/40" 
+                              : "bg-white/10 text-[#F9F7E3]/70"
+                          }`}>
+                            {item.badge}
+                          </span>
+                        )}
                       </div>
-                      <span>{item.name}</span>
-                      {item.badge && (
-                        <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider ${
-                          item.popular 
-                            ? "bg-[#F28D52]/20 text-[#F28D52] border border-[#F28D52]/40" 
-                            : "bg-white/10 text-[#F9F7E3]/70"
-                        }`}>
-                          {item.badge}
-                        </span>
-                      )}
                     </td>
                     <td className="py-3.5 px-4 sm:px-6">
-                      <span className="text-sm sm:text-base font-bold text-[#F28D52] font-mono">
+                      <span className="text-sm sm:text-base font-bold text-[#F28D52] font-mono whitespace-nowrap">
                         {item.price}
                       </span>
                       {item.period && <span className="text-xs text-[#F9F7E3]/60">{item.period}</span>}
@@ -237,7 +239,7 @@ export default function Pricing() {
                       <button
                         type="button"
                         onClick={() => handleOpenConsultation(item.name)}
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/5 hover:bg-[#F28D52] hover:text-[#171717] border border-white/10 text-xs font-semibold text-[#F9F7E3] transition-all cursor-pointer"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/5 hover:bg-[#F28D52] hover:text-[#171717] border border-white/10 text-xs font-semibold text-[#F9F7E3] transition-all cursor-pointer whitespace-nowrap"
                       >
                         <span>Choose</span>
                         <ArrowRight className="w-3 h-3" />
@@ -251,14 +253,14 @@ export default function Pricing() {
         </div>
 
         {/* 8 Detailed Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {PRICING_DATA.map((item) => (
             <div
               key={item.name}
-              className={`relative rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 backdrop-blur-sm ${
+              className={`relative rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 backdrop-blur-sm ${
                 item.popular
-                  ? "bg-gradient-to-b from-[#221c18] to-[#181818] border-2 border-[#F28D52] shadow-[0_8px_30px_rgba(242,141,82,0.15)] -translate-y-1"
-                  : "bg-[#181818] border border-white/10 hover:border-[#F28D52]/40 hover:-translate-y-1 shadow-lg"
+                  ? "bg-gradient-to-b from-[#221c18] to-[#181818] border-2 border-[#F28D52] shadow-[0_8px_30px_rgba(242,141,82,0.15)] sm:-translate-y-1"
+                  : "bg-[#181818] border border-white/10 hover:border-[#F28D52]/40 sm:hover:-translate-y-1 shadow-lg"
               }`}
             >
               {/* Optional Top Badge */}
@@ -348,7 +350,7 @@ export default function Pricing() {
         </div>
 
         {/* Bottom Trust Guarantee Strip */}
-        <div className="mt-14 pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs text-[#F9F7E3]/75">
+        <div className="mt-12 sm:mt-14 pt-8 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-xs text-[#F9F7E3]/75">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#F28D52] shrink-0">
               <ShieldCheck className="w-5 h-5" />

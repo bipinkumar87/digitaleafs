@@ -156,7 +156,7 @@ export default function Calculator() {
 
           {/* Right Column: Live Estimate Card */}
           <div className="lg:col-span-5 sticky top-28">
-            <div className="rounded-3xl bg-gradient-to-b from-[#1f1f1f] via-[#171717] to-[#121212] p-7 sm:p-8 border-2 border-[#F28D52]/40 shadow-2xl relative space-y-6">
+            <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#1f1f1f] via-[#171717] to-[#121212] p-5 sm:p-8 border-2 border-[#F28D52]/40 shadow-2xl relative space-y-6">
               
               {/* Top Tag */}
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
@@ -171,7 +171,7 @@ export default function Calculator() {
               {/* Price Display */}
               <div>
                 <div className="text-xs text-[#F9F7E3]/60 mb-1">Estimated Investment (INR)</div>
-                <div className="text-4xl sm:text-5xl font-black text-white tracking-tight flex items-baseline gap-2">
+                <div className="text-3xl sm:text-5xl font-black text-white tracking-tight flex flex-wrap items-baseline gap-1.5 sm:gap-2">
                   <span className="text-[#F28D52]">₹</span>
                   <span>{calculatedPrice.toLocaleString("en-IN")}</span>
                   <span className="text-xs text-[#F9F7E3]/60 font-normal font-sans">

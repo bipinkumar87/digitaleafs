@@ -21,10 +21,10 @@ export default function QuoteBanner() {
         </div>
 
         {/* Main Power Headline with comfortable margins and line heights */}
-        <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-[3.8rem] font-black text-[#F9F7E3] tracking-tight leading-snug sm:leading-tight max-w-5xl mx-auto px-4">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.8rem] font-black text-[#F9F7E3] tracking-tight leading-snug sm:leading-tight max-w-5xl mx-auto px-2 sm:px-4">
           World-Class Websites &amp; Custom Software —{" "}
-          <span className="inline-block py-2 sm:py-3 px-2 mt-1 sm:mt-2 text-gradient-orange text-3.5xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-black leading-tight sm:leading-normal">
-            Starting at Just ₹9,999.
+          <span className="inline-block py-1 sm:py-3 px-1 sm:px-2 mt-1 sm:mt-2 text-gradient-orange text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-black leading-tight sm:leading-normal">
+            Starting at Just ₹7,999.
           </span>
         </h2>
 
@@ -86,7 +86,7 @@ export default function QuoteBanner() {
         <div className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-[#F9F7E3]/75 font-medium px-4">
           <div className="flex items-center gap-2">
             <Clock className="w-4 h-4 text-[#F28D52]" />
-            <span>15-Minute Direct Response</span>
+            <span>Fast Direct Response</span>
           </div>
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-[#F28D52]" />

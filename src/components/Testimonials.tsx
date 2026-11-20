@@ -51,11 +51,11 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Metric Badges Banner */}
-        <div className="mb-20 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="mb-14 sm:mb-20 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {highlights.map((h, idx) => (
             <div
               key={idx}
-              className="luxury-card-cream p-5 rounded-2xl border border-[#171717]/10 text-center bg-white shadow-sm"
+              className="luxury-card-cream p-4 sm:p-5 rounded-2xl border border-[#171717]/10 text-center bg-white shadow-sm"
             >
               <div className="text-xl sm:text-2xl font-black text-[#171717]">
                 {h.title}
@@ -78,11 +78,11 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials 3 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className="luxury-card-cream rounded-3xl p-7 flex flex-col justify-between relative group bg-white shadow-md hover:border-[#E94C29]/40"
+              className="luxury-card-cream rounded-2xl sm:rounded-3xl p-5 sm:p-7 flex flex-col justify-between relative group bg-white shadow-md hover:border-[#E94C29]/40"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">

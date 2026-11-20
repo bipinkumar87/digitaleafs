@@ -7,7 +7,7 @@ export default function Process() {
     {
       num: "01",
       icon: <Compass className="w-6 h-6 text-[#F28D52]" />,
-      title: "15-Min Free Consultation",
+      title: "Free 1-on-1 Consultation",
       description:
         "We discuss your business on WhatsApp or phone call, understand what you need (website, booking, billing, app), and give you an instant transparent quote.",
       highlights: ["No pushy sales", "Clear price & timeline estimate", "Zero technical jargon"],

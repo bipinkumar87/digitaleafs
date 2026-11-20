@@ -122,14 +122,14 @@ export default function CaseStudies() {
         </div>
 
         {/* Case Studies 2x2 Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {filtered.map((study) => (
             <div
               key={study.id}
-              className={`luxury-card rounded-3xl p-8 flex flex-col justify-between border border-[#F9F7E3]/10 hover:border-[#F28D52]/40 transition-all duration-300 relative group overflow-hidden bg-gradient-to-br ${study.gradient}`}
+              className={`luxury-card rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col justify-between border border-[#F9F7E3]/10 hover:border-[#F28D52]/40 transition-all duration-300 relative group overflow-hidden bg-gradient-to-br ${study.gradient}`}
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
                   <span className="text-xs font-semibold tracking-wide uppercase px-3 py-1 rounded-full bg-[#171717] border border-[#F9F7E3]/15 text-[#F9F7E3]">
                     {study.tag}
                   </span>
@@ -142,21 +142,21 @@ export default function CaseStudies() {
                 <div className="text-xs font-semibold text-[#F28D52] tracking-wider uppercase mb-1">
                   {study.client}
                 </div>
-                <h3 className="text-2xl font-bold text-white group-hover:text-[#F28D52] transition-colors duration-200">
+                <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-[#F28D52] transition-colors duration-200">
                   {study.title}
                 </h3>
-                <p className="mt-3 text-sm text-[#F9F7E3]/75 leading-relaxed">
+                <p className="mt-3 text-xs sm:text-sm text-[#F9F7E3]/75 leading-relaxed">
                   {study.description}
                 </p>
 
                 {/* Metrics Highlight Banner */}
-                <div className="grid grid-cols-3 gap-3 my-6 p-4 rounded-xl bg-[#171717]/80 border border-[#F9F7E3]/10">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 my-5 sm:my-6 p-3 sm:p-4 rounded-xl bg-[#171717]/80 border border-[#F9F7E3]/10">
                   {study.metrics.map((m, mIdx) => (
                     <div key={mIdx} className="text-center">
-                      <div className={`text-xl sm:text-2xl font-extrabold ${study.accent}`}>
+                      <div className={`text-lg sm:text-2xl font-extrabold ${study.accent}`}>
                         {m.value}
                       </div>
-                      <div className="text-[11px] text-[#F9F7E3]/60 mt-0.5">
+                      <div className="text-[10px] sm:text-[11px] text-[#F9F7E3]/60 mt-0.5">
                         {m.label}
                       </div>
                     </div>

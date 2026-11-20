@@ -169,7 +169,7 @@ export default function Contact() {
 
           {/* Right Column: Interactive Proposal Form */}
           <div className="lg:col-span-7">
-            <div className="luxury-card-cream rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#171717]/10 shadow-xl bg-white relative">
+            <div className="luxury-card-cream rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-[#171717]/10 shadow-xl bg-white relative">
               {isSubmitted ? (
                 <div className="text-center py-12 space-y-5">
                   <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-500/40 text-2xl">
@@ -311,7 +311,7 @@ export default function Contact() {
                           type="button"
                           key={opt}
                           onClick={() => setFormData({ ...formData, budget: opt })}
-                          className={`py-2 px-3 rounded-lg text-xs font-semibold text-center transition-all cursor-pointer ${
+                          className={`py-2 px-2 sm:px-3 rounded-lg text-[11px] sm:text-xs font-semibold text-center transition-all cursor-pointer ${
                             formData.budget === opt
                               ? "bg-gradient-to-r from-[#F28D52] to-[#E94C29] text-white font-bold shadow-md"
                               : "bg-[#F9F7E3] border border-[#171717]/10 text-[#444444] hover:text-[#171717] hover:bg-[#171717]/10"

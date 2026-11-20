@@ -139,8 +139,8 @@ export default function Solutions() {
         </div>
 
         {/* Interactive Industry Tab Switcher (Wide Single-Line Pill Bar) */}
-        <div className="flex justify-center mb-12 lg:mb-16">
-          <div className="inline-flex flex-wrap lg:flex-nowrap justify-center gap-1.5 sm:gap-2 p-1.5 rounded-full bg-white border border-[#171717]/10 shadow-sm max-w-5xl w-auto">
+        <div className="flex justify-center mb-10 sm:mb-14">
+          <div className="inline-flex flex-wrap lg:flex-nowrap justify-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl sm:rounded-full bg-white border border-[#171717]/10 shadow-sm max-w-5xl w-auto">
             {[
               { id: "clinics", label: "🏥 Clinics & Doctors" },
               { id: "retail", label: "🛍️ Retail & Supermarkets" },
@@ -151,7 +151,7 @@ export default function Solutions() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as typeof activeTab)}
-                className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap ${
                   activeTab === tab.id
                     ? "bg-gradient-to-r from-[#F28D52] via-[#E94C29] to-[#A94322] text-white shadow-lg shadow-[#E94C29]/30 scale-[1.02]"
                     : "text-[#444444] hover:text-[#171717] hover:bg-[#171717]/5"
@@ -164,7 +164,7 @@ export default function Solutions() {
         </div>
 
         {/* Selected Industry Feature Showcase Box */}
-        <div className="luxury-card-cream rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#171717]/10 relative overflow-hidden bg-white shadow-xl">
+        <div className="luxury-card-cream rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 border border-[#171717]/10 relative overflow-hidden bg-white shadow-xl">
           <div className="max-w-5xl mx-auto space-y-8">
             
             {/* Header info */}

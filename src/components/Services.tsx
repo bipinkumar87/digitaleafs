@@ -133,12 +133,12 @@ export default function Services() {
           </p>
 
           {/* Filter Pills */}
-          <div className="mt-8 flex flex-wrap justify-center gap-2 p-1.5 rounded-full bg-white border border-[#171717]/10 shadow-sm">
+          <div className="mt-8 flex flex-wrap justify-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl sm:rounded-full bg-white border border-[#171717]/10 shadow-sm max-w-full">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                className={`px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                   activeCategory === cat.id
                     ? "bg-gradient-to-r from-[#F28D52] to-[#E94C29] text-white shadow-md shadow-[#E94C29]/25"
                     : "text-[#444444] hover:text-[#171717] hover:bg-[#171717]/5"
@@ -151,11 +151,11 @@ export default function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {filteredServices.map((service, idx) => (
             <div
               key={idx}
-              className="luxury-card-cream rounded-2xl p-7 flex flex-col justify-between group relative overflow-hidden bg-white shadow-md"
+              className="luxury-card-cream rounded-2xl p-5 sm:p-7 flex flex-col justify-between group relative overflow-hidden bg-white shadow-md"
             >
               {/* Corner accent glow */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#F28D52]/10 rounded-full blur-2xl group-hover:bg-[#E94C29]/20 transition-all duration-300 pointer-events-none" />

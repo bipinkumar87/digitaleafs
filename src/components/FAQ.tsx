@@ -60,13 +60,13 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
+                  className="w-full p-4 sm:p-6 text-left flex items-center justify-between gap-3 sm:gap-4 cursor-pointer"
                 >
-                  <span className="text-base sm:text-lg font-bold text-white">
+                  <span className="text-sm sm:text-base md:text-lg font-bold text-white pr-2">
                     {faq.q}
                   </span>
                   <span
-                    className={`w-8 h-8 rounded-full bg-[#171717] border border-white/10 flex items-center justify-center text-[#F28D52] font-bold text-lg shrink-0 transition-transform duration-200 ${
+                    className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#171717] border border-white/10 flex items-center justify-center text-[#F28D52] font-bold text-base sm:text-lg shrink-0 transition-transform duration-200 ${
                       isOpen ? "rotate-45" : "rotate-0"
                     }`}
                   >
@@ -75,7 +75,7 @@ export default function FAQ() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm text-[#F9F7E3]/80 leading-relaxed border-t border-white/5">
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-1 text-xs sm:text-sm text-[#F9F7E3]/80 leading-relaxed border-t border-white/5">
                     {faq.a}
                   </div>
                 )}
