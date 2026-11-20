@@ -1,9 +1,26 @@
 "use client";
 
-import { Check, Sparkles, ArrowRight, MessageSquare, ShieldCheck, Zap } from "lucide-react";
+import React from "react";
+import { 
+  Check, 
+  Sparkles, 
+  ArrowRight, 
+  MessageSquare, 
+  ShieldCheck, 
+  Zap,
+  Globe,
+  Building2,
+  ShoppingBag,
+  Code2,
+  Smartphone,
+  Wrench,
+  Bot
+} from "lucide-react";
 
 interface PricingItem {
-  icon: string;
+  icon: React.ReactNode;
+  iconBg: string;
+  iconBorder: string;
   name: string;
   price: string;
   period?: string;
@@ -15,7 +32,9 @@ interface PricingItem {
 
 const PRICING_DATA: PricingItem[] = [
   {
-    icon: "🌐",
+    icon: <Globe className="w-5 h-5 text-[#F28D52]" />,
+    iconBg: "bg-[#F28D52]/10",
+    iconBorder: "border-[#F28D52]/30",
     name: "Landing Page",
     price: "₹7,999",
     description: "High-converting single-page website built for ad campaigns, local lead generation, and fast conversions.",
@@ -27,7 +46,9 @@ const PRICING_DATA: PricingItem[] = [
     ],
   },
   {
-    icon: "🏢",
+    icon: <Building2 className="w-5 h-5 text-amber-400" />,
+    iconBg: "bg-amber-500/10",
+    iconBorder: "border-amber-500/30",
     name: "Business Website",
     price: "₹14,999",
     badge: "Most Popular",
@@ -41,7 +62,9 @@ const PRICING_DATA: PricingItem[] = [
     ],
   },
   {
-    icon: "✨",
+    icon: <Sparkles className="w-5 h-5 text-violet-400" />,
+    iconBg: "bg-violet-500/10",
+    iconBorder: "border-violet-500/30",
     name: "Professional Website",
     price: "₹24,999",
     badge: "Advanced",
@@ -54,7 +77,9 @@ const PRICING_DATA: PricingItem[] = [
     ],
   },
   {
-    icon: "🛒",
+    icon: <ShoppingBag className="w-5 h-5 text-emerald-400" />,
+    iconBg: "bg-emerald-500/10",
+    iconBorder: "border-emerald-500/30",
     name: "E-commerce Website",
     price: "₹39,999",
     description: "Full-scale online store with zero commissions, integrated payments, inventory management, and automated shipping.",
@@ -66,7 +91,9 @@ const PRICING_DATA: PricingItem[] = [
     ],
   },
   {
-    icon: "⚙️",
+    icon: <Code2 className="w-5 h-5 text-cyan-400" />,
+    iconBg: "bg-cyan-500/10",
+    iconBorder: "border-cyan-500/30",
     name: "Custom Software Development",
     price: "₹75,000",
     badge: "Enterprise",
@@ -79,7 +106,9 @@ const PRICING_DATA: PricingItem[] = [
     ],
   },
   {
-    icon: "📱",
+    icon: <Smartphone className="w-5 h-5 text-rose-400" />,
+    iconBg: "bg-rose-500/10",
+    iconBorder: "border-rose-500/30",
     name: "Mobile App Development",
     price: "₹1,25,000",
     badge: "Android + iOS",
@@ -92,7 +121,9 @@ const PRICING_DATA: PricingItem[] = [
     ],
   },
   {
-    icon: "🔧",
+    icon: <Wrench className="w-5 h-5 text-yellow-400" />,
+    iconBg: "bg-yellow-500/10",
+    iconBorder: "border-yellow-500/30",
     name: "Website Maintenance",
     price: "₹1,499",
     period: "/month",
@@ -105,7 +136,9 @@ const PRICING_DATA: PricingItem[] = [
     ],
   },
   {
-    icon: "🤖",
+    icon: <Bot className="w-5 h-5 text-fuchsia-400" />,
+    iconBg: "bg-fuchsia-500/10",
+    iconBorder: "border-fuchsia-500/30",
     name: "AI Automation",
     price: "₹15,000",
     badge: "AI Powered",
@@ -176,8 +209,10 @@ export default function Pricing() {
               <tbody className="divide-y divide-white/5">
                 {PRICING_DATA.map((item) => (
                   <tr key={item.name} className="hover:bg-white/[0.02] transition-colors group">
-                    <td className="py-3.5 px-4 sm:px-6 font-semibold text-white flex items-center gap-2.5">
-                      <span className="text-base sm:text-lg">{item.icon}</span>
+                    <td className="py-3.5 px-4 sm:px-6 font-semibold text-white flex items-center gap-3">
+                      <div className={`w-8 h-8 rounded-xl ${item.iconBg} border ${item.iconBorder} flex items-center justify-center shrink-0`}>
+                        {item.icon}
+                      </div>
                       <span>{item.name}</span>
                       {item.badge && (
                         <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider ${
@@ -241,10 +276,10 @@ export default function Pricing() {
 
               <div>
                 {/* Icon & Title */}
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-3xl p-2 rounded-2xl bg-white/5 border border-white/10">
+                <div className="flex items-center gap-3.5 mb-3">
+                  <div className={`w-12 h-12 rounded-2xl ${item.iconBg} border ${item.iconBorder} flex items-center justify-center shrink-0 shadow-sm`}>
                     {item.icon}
-                  </span>
+                  </div>
                   <div>
                     <h3 className="text-base font-bold text-white leading-snug">
                       {item.name}
