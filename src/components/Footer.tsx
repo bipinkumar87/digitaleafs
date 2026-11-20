@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Mail } from "@/components/Icons";
+import { Mail, Phone, MessageSquare } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -26,7 +26,24 @@ export default function Footer() {
               We engineer custom high-converting websites, fast Android &amp; iOS mobile apps, and business management software for local small businesses, clinics, retail shops, and coaching centers.
             </p>
 
-            <div className="flex flex-col gap-2 pt-2 text-xs">
+            <div className="flex flex-col gap-2.5 pt-2 text-xs">
+              <div className="flex items-center gap-2 text-white">
+                <Phone className="w-4 h-4 text-[#F28D52]" />
+                <a href="tel:+917851018751" className="hover:text-[#F28D52] transition-colors font-medium">
+                  +91 7851018751
+                </a>
+              </div>
+              <div className="flex items-center gap-2 text-white">
+                <MessageSquare className="w-4 h-4 text-emerald-400" />
+                <a
+                  href="https://wa.me/917851018751?text=Hi%20Digitaleafs%2C%20I%20am%20interested%20in%20discussing%20a%20project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-emerald-400 transition-colors"
+                >
+                  WhatsApp: +91 7851018751
+                </a>
+              </div>
               <div className="flex items-center gap-2 text-white">
                 <Mail className="w-4 h-4 text-[#E94C29]" />
                 <a href="mailto:contact@digitaleafs.com" className="hover:text-[#F28D52] transition-colors">

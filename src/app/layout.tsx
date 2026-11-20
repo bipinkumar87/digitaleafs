@@ -98,6 +98,7 @@ const jsonLd = {
       description:
         "Custom websites, Android & iOS mobile applications, and management software engineered for small businesses, clinics, retail shops, and coaching centers.",
       priceRange: "₹9,999 - ₹75,000",
+      telephone: "+91-7851018751",
       email: "contact@digitaleafs.com",
       address: {
         "@type": "PostalAddress",

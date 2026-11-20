@@ -271,10 +271,18 @@ export default function ConsultationModal({
                 </button>
               </div>
 
-              {/* Trust Footer */}
-              <div className="flex items-center justify-center gap-2 text-[11px] text-[#F9F7E3]/50 pt-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>100% Confidential • Zero Spam Guarantee</span>
+              {/* Trust Footer & Direct Call */}
+              <div className="flex flex-col items-center justify-center gap-1.5 text-[11px] text-[#F9F7E3]/60 pt-1">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>100% Confidential • Zero Spam Guarantee</span>
+                </div>
+                <div>
+                  Prefer direct call?{" "}
+                  <a href="tel:+917851018751" className="text-[#F28D52] hover:underline font-bold">
+                    +91 7851018751
+                  </a>
+                </div>
               </div>
             </form>
           </div>

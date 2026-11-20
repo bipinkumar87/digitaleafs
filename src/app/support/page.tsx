@@ -71,16 +71,26 @@ export default function SupportPage() {
             <Mail className="w-4 h-4 text-[#F28D52]" />
             <span>Official Support &amp; Communication Channels</span>
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+            <div className="p-4 rounded-xl bg-[#161616] border border-white/5 space-y-1">
+              <div className="text-xs text-[#F9F7E3]/60 uppercase tracking-wider font-mono">Direct Developer Phone Line</div>
+              <a href="tel:+917851018751" className="font-bold text-[#F28D52] text-sm sm:text-base block hover:underline">
+                +91 7851018751
+              </a>
+              <div className="text-[11px] text-[#F9F7E3]/50">Mon–Sat, 10:00 AM – 7:00 PM IST. Direct engineer response.</div>
+            </div>
+
             <div className="p-4 rounded-xl bg-[#161616] border border-white/5 space-y-1">
               <div className="text-xs text-[#F9F7E3]/60 uppercase tracking-wider font-mono">Primary Engineering Support Email</div>
-              <div className="font-bold text-[#F28D52] text-sm sm:text-base">contact@digitaleafs.com</div>
-              <div className="text-[11px] text-[#F9F7E3]/50">Monitored during business hours (10 AM–7 PM IST). Priority routing for verified clients.</div>
+              <a href="mailto:contact@digitaleafs.com" className="font-bold text-[#F28D52] text-sm sm:text-base block hover:underline">
+                contact@digitaleafs.com
+              </a>
+              <div className="text-[11px] text-[#F9F7E3]/50">Monitored during business hours (10 AM–7 PM IST). Priority routing.</div>
             </div>
 
             <div className="p-4 rounded-xl bg-[#161616] border border-white/5 space-y-1">
               <div className="text-xs text-[#F9F7E3]/60 uppercase tracking-wider font-mono">Emergency Critical Outage Desk</div>
-              <div className="font-bold text-white text-sm sm:text-base">Subject: [URGENT OUTAGE] - Client Name</div>
+              <div className="font-bold text-white text-sm sm:text-base">Subject: [URGENT OUTAGE]</div>
               <div className="text-[11px] text-[#F9F7E3]/50">Automated on-call developer paging for live website crashes and payment drops.</div>
             </div>
           </div>

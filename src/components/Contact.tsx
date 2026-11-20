@@ -125,6 +125,35 @@ export default function Contact() {
             {/* Direct Contact Info */}
             <div className="space-y-4 pt-2 border-t border-[#171717]/10 text-sm text-[#444444]">
               <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center text-[#F28D52] border border-[#171717]/10 shadow-sm">
+                  <span className="text-base">📞</span>
+                </div>
+                <div>
+                  <div className="text-xs text-[#666666]">Direct Developer Call Line</div>
+                  <a href="tel:+917851018751" className="font-bold text-[#171717] hover:text-[#E94C29] transition-colors">
+                    +91 7851018751
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600 border border-emerald-500/20 shadow-sm">
+                  <span className="text-base">💬</span>
+                </div>
+                <div>
+                  <div className="text-xs text-[#666666]">Instant WhatsApp Chat</div>
+                  <a
+                    href="https://wa.me/917851018751?text=Hi%20Digitaleafs%2C%20I%20am%20interested%20in%20a%20website%2Fsoftware%20project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-emerald-700 hover:text-emerald-800 transition-colors"
+                  >
+                    +91 7851018751 (Chat Now)
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center text-[#A94322] border border-[#171717]/10 shadow-sm">
                   <Mail className="w-4 h-4" />
                 </div>

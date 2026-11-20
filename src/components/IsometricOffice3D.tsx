@@ -2,10 +2,127 @@
 
 import { useEffect, useRef, useState } from "react";
 
+interface OfficeCoords {
+  camX: number;
+  camY: number;
+  camZ: number;
+  lookX: number;
+  lookY: number;
+  lookZ: number;
+  zoom: number;
+  rotY: number;
+  rotX: number;
+  posX: number;
+  posY: number;
+  posZ: number;
+  parallax: boolean;
+}
+
+const DEFAULT_COORDS: OfficeCoords = {
+  camX: 28,
+  camY: 23,
+  camZ: 28,
+  lookX: 0,
+  lookY: -1.0,
+  lookZ: 0,
+  zoom: 14.8,
+  rotY: 0,
+  rotX: 0,
+  posX: 0,
+  posY: 0,
+  posZ: 0,
+  parallax: false,
+};
+
+function roundCoord(val: number) {
+  return Math.round(val * 100) / 100;
+}
+
+function CoordSlider({
+  label,
+  value,
+  min,
+  max,
+  step,
+  unit = "",
+  onChange,
+}: {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  step: number;
+  unit?: string;
+  onChange: (val: number) => void;
+}) {
+  return (
+    <div className="flex items-center gap-2 text-[11px]">
+      <span className="w-16 shrink-0 font-mono text-[#F9F7E3]/75">{label}</span>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(parseFloat(e.target.value))}
+        className="flex-1 h-1.5 accent-[#F28D52] cursor-pointer bg-white/10 rounded-lg"
+      />
+      <div className="flex items-center gap-0.5 shrink-0">
+        <input
+          type="number"
+          step={step}
+          value={value}
+          onChange={(e) => {
+            const parsed = parseFloat(e.target.value);
+            if (!Number.isNaN(parsed)) onChange(parsed);
+          }}
+          className="w-16 px-1.5 py-0.5 rounded bg-black/50 border border-white/15 text-right font-mono text-[11px] text-[#F9F7E3] focus:outline-none focus:border-[#F28D52]"
+        />
+        {unit && <span className="text-[10px] text-[#F9F7E3]/50 font-mono">{unit}</span>}
+      </div>
+    </div>
+  );
+}
+
 export default function IsometricOffice3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeHotspot, setActiveHotspot] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [coords, setCoords] = useState<OfficeCoords>(() => ({
+    ...DEFAULT_COORDS,
+    zoom: typeof window !== "undefined" && window.innerWidth < 768 ? 19.5 : 14.8,
+  }));
+  const coordsRef = useRef<OfficeCoords>(coords);
+  const [showPanel, setShowPanel] = useState(true);
+  const [copied, setCopied] = useState(false);
+
+  const updateCoord = <K extends keyof OfficeCoords>(key: K, val: OfficeCoords[K]) => {
+    setCoords((prev) => {
+      const next = { ...prev, [key]: val };
+      coordsRef.current = next;
+      return next;
+    });
+  };
+
+  const applyPreset = (partial: Partial<OfficeCoords>) => {
+    setCoords((prev) => {
+      const next = { ...prev, ...partial };
+      coordsRef.current = next;
+      return next;
+    });
+  };
+
+  const copyCoordinates = async () => {
+    const c = coordsRef.current;
+    const text = `camera: [${c.camX}, ${c.camY}, ${c.camZ}], lookAt: [${c.lookX}, ${c.lookY}, ${c.lookZ}], zoom: ${c.zoom}, rotY: ${c.rotY}deg, rotX: ${c.rotX}deg, pos: [${c.posX}, ${c.posY}, ${c.posZ}]`;
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard fallback handled visually via selectable readout
+    }
+  };
 
   useEffect(() => {
     let isMounted = true;
@@ -44,8 +161,9 @@ export default function IsometricOffice3D() {
       scene.background = null;
 
       // 3. True Isometric Orthographic Camera (Open Front Diamond View)
+      const initCoords = coordsRef.current;
       const aspect = width / height;
-      const d = width < 768 ? 19.5 : 14.8;
+      const d = initCoords.zoom;
       camera = new THREE.OrthographicCamera(
         -d * aspect,
         d * aspect,
@@ -56,8 +174,8 @@ export default function IsometricOffice3D() {
       );
 
       // Classic 45-degree isometric angle looking into the open (+X, +Z) front cutaway
-      camera.position.set(28, 23, 28);
-      camera.lookAt(0, -1.0, 0);
+      camera.position.set(initCoords.camX, initCoords.camY, initCoords.camZ);
+      camera.lookAt(initCoords.lookX, initCoords.lookY, initCoords.lookZ);
 
       // 4. WebGL Renderer
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
@@ -544,13 +662,62 @@ export default function IsometricOffice3D() {
       createPlant(1.2, 11.2, 1.2);
       createPlant(3.6, -11.2, 1.0);
 
-      // 7. Interactive Mouse Parallax
+      // 7. Interactive Mouse Drag Orbit / Pan + Optional Parallax
       let targetRotY = 0;
       let targetRotX = 0;
       let currentRotY = 0;
       let currentRotX = 0;
+      let isDragging = false;
+      let isPanning = false;
+      let lastPointerX = 0;
+      let lastPointerY = 0;
+
+      const domElem = renderer.domElement;
+
+      const handlePointerDown = (e: PointerEvent) => {
+        isDragging = true;
+        isPanning = e.button === 2 || e.shiftKey;
+        lastPointerX = e.clientX;
+        lastPointerY = e.clientY;
+      };
+
+      const handlePointerUp = () => {
+        isDragging = false;
+        isPanning = false;
+      };
+
+      const handleContextMenu = (e: MouseEvent) => {
+        e.preventDefault();
+      };
 
       const handlePointerMove = (e: MouseEvent) => {
+        if (isDragging) {
+          const dx = e.clientX - lastPointerX;
+          const dy = e.clientY - lastPointerY;
+          lastPointerX = e.clientX;
+          lastPointerY = e.clientY;
+
+          const prev = coordsRef.current;
+          let next: OfficeCoords;
+          if (isPanning || e.shiftKey) {
+            next = {
+              ...prev,
+              posX: roundCoord(prev.posX + dx * 0.04),
+              posY: roundCoord(prev.posY - dy * 0.04),
+            };
+          } else {
+            const clampedRotX = Math.max(-75, Math.min(75, prev.rotX + dy * 0.35));
+            next = {
+              ...prev,
+              rotY: roundCoord(prev.rotY + dx * 0.35),
+              rotX: roundCoord(clampedRotX),
+            };
+          }
+          coordsRef.current = next;
+          setCoords(next);
+          return;
+        }
+
         const rect = container.getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
         const y = -(((e.clientY - rect.top) / rect.height) * 2 - 1);
@@ -558,6 +725,10 @@ export default function IsometricOffice3D() {
         targetRotX = y * 0.07;
       };
 
+      domElem.addEventListener("pointerdown", handlePointerDown);
+      domElem.addEventListener("contextmenu", handleContextMenu);
+      window.addEventListener("pointerup", handlePointerUp);
+      window.addEventListener("pointercancel", handlePointerUp);
       window.addEventListener("mousemove", handlePointerMove);
 
       // 8. Render Animation Loop
@@ -566,13 +737,36 @@ export default function IsometricOffice3D() {
         animationFrameId = requestAnimationFrame(animate);
         clock += 0.015;
 
+        const c = coordsRef.current;
+
         currentRotY += (targetRotY - currentRotY) * 0.05;
         currentRotX += (targetRotX - currentRotX) * 0.05;
 
+        if (camera && containerRef.current) {
+          const w = containerRef.current.clientWidth || 1;
+          const h = containerRef.current.clientHeight || 1;
+          const asp = w / h;
+          const currentD = Math.max(4, c.zoom);
+          if (
+            Math.abs(camera.top - currentD) > 0.001 ||
+            Math.abs(camera.right - currentD * asp) > 0.001
+          ) {
+            camera.left = -currentD * asp;
+            camera.right = currentD * asp;
+            camera.top = currentD;
+            camera.bottom = -currentD;
+            camera.updateProjectionMatrix();
+          }
+          camera.position.set(c.camX, c.camY, c.camZ);
+          camera.lookAt(c.lookX, c.lookY, c.lookZ);
+        }
+
         if (mainGroup) {
-          mainGroup.rotation.y = currentRotY;
-          mainGroup.rotation.x = currentRotX;
-          mainGroup.position.y = Math.sin(clock) * 0.06;
+          const baseRotY = (c.rotY * Math.PI) / 180;
+          const baseRotX = (c.rotX * Math.PI) / 180;
+          mainGroup.rotation.y = baseRotY + (c.parallax ? currentRotY : 0);
+          mainGroup.rotation.x = baseRotX + (c.parallax ? currentRotX : 0);
+          mainGroup.position.set(c.posX, c.posY + Math.sin(clock) * 0.05, c.posZ);
         }
 
         renderer.render(scene, camera);
@@ -587,7 +781,7 @@ export default function IsometricOffice3D() {
         const w = containerRef.current.clientWidth;
         const h = containerRef.current.clientHeight;
         const asp = w / h;
-        const currentD = w < 768 ? 19.5 : 14.8;
+        const currentD = Math.max(4, coordsRef.current.zoom);
 
         camera.left = -currentD * asp;
         camera.right = currentD * asp;
@@ -601,6 +795,10 @@ export default function IsometricOffice3D() {
       window.addEventListener("resize", handleResize);
 
       return () => {
+        domElem.removeEventListener("pointerdown", handlePointerDown);
+        domElem.removeEventListener("contextmenu", handleContextMenu);
+        window.removeEventListener("pointerup", handlePointerUp);
+        window.removeEventListener("pointercancel", handlePointerUp);
         window.removeEventListener("mousemove", handlePointerMove);
         window.removeEventListener("resize", handleResize);
         cancelAnimationFrame(animationFrameId);
@@ -611,11 +809,19 @@ export default function IsometricOffice3D() {
       };
     }
 
-    initThree();
+    let cleanupThree: (() => void) | undefined;
+    initThree().then((fn) => {
+      if (!isMounted && fn) {
+        fn();
+      } else {
+        cleanupThree = fn;
+      }
+    });
 
     return () => {
       isMounted = false;
       cancelAnimationFrame(animationFrameId);
+      if (cleanupThree) cleanupThree();
     };
   }, []);
 
@@ -624,7 +830,7 @@ export default function IsometricOffice3D() {
       {/* 3D WebGL Canvas Viewport */}
       <div
         ref={containerRef}
-        className="w-full h-full cursor-grab active:cursor-grabbing transition-opacity duration-700"
+        className="w-full h-full z-0 cursor-grab active:cursor-grabbing transition-opacity duration-700"
         style={{ opacity: isLoaded ? 1 : 0 }}
       />
 
@@ -705,12 +911,131 @@ export default function IsometricOffice3D() {
         </div>
       )}
 
-      {/* Top 3D Interactive Studio Live Badge */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 pointer-events-none z-30">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1b1b1b]/80 border border-white/10 backdrop-blur-md text-[11px] font-mono text-[#F9F7E3]/70 shadow-lg">
-          <span className="w-2 h-2 rounded-full bg-[#F28D52] animate-pulse"></span>
-          <span>Three.js 3D Interactive Studio</span>
+      {/* 3D Coordinate Tuner HUD (Below Navbar, Clickable & Collapsible) */}
+      <div className="absolute top-20 left-4 sm:top-24 sm:left-6 z-40 pointer-events-auto flex flex-col items-start gap-2 max-w-[calc(100vw-2rem)]">
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setShowPanel((s) => !s)}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1b1b1b]/90 hover:bg-[#242424] border border-[#F28D52]/40 backdrop-blur-md text-[11px] font-mono text-[#F9F7E3] shadow-xl transition cursor-pointer"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#F28D52] animate-pulse"></span>
+            <span>{showPanel ? "− Minimize Panel" : "+ Open 3D Coordinates"}</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={copyCoordinates}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#F28D52] hover:bg-[#e57c3f] text-[#171717] font-bold text-[11px] font-mono shadow-xl transition cursor-pointer"
+          >
+            {copied ? "Copied!" : "Copy Coordinates"}
+          </button>
         </div>
+
+        {showPanel && (
+          <div className="w-[320px] sm:w-[350px] max-h-[68vh] overflow-y-auto p-3.5 rounded-2xl bg-[#161616]/90 border border-white/15 backdrop-blur-xl shadow-2xl text-[#F9F7E3] space-y-3">
+            <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-2">
+              <div>
+                <div className="text-xs font-bold text-white">3D Camera &amp; Room Tuner</div>
+                <div className="text-[10px] text-[#F9F7E3]/60">
+                  Drag canvas to rotate • Shift+Drag to move
+                </div>
+              </div>
+              <div className="flex items-center gap-1.5 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => applyPreset(DEFAULT_COORDS)}
+                  className="px-2 py-1 rounded-md bg-white/10 hover:bg-white/20 text-[10px] font-mono text-[#F9F7E3] cursor-pointer transition"
+                >
+                  Reset
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowPanel(false)}
+                  title="Minimize panel"
+                  className="px-2 py-1 rounded-md bg-[#F28D52]/20 hover:bg-[#F28D52]/35 border border-[#F28D52]/40 text-[10px] font-mono text-[#F9F7E3] cursor-pointer transition"
+                >
+                  − Minimize
+                </button>
+              </div>
+            </div>
+
+            {/* Quick Presets */}
+            <div className="flex flex-wrap gap-1.5">
+              <button
+                type="button"
+                onClick={() => applyPreset({ camX: 28, camY: 23, camZ: 28, lookX: 0, lookY: -1, lookZ: 0, rotY: 0, rotX: 0, posX: 0, posY: 0, posZ: 0, zoom: 14.8 })}
+                className="px-2 py-1 rounded bg-white/10 hover:bg-[#F28D52]/25 border border-white/10 text-[10px] font-mono cursor-pointer"
+              >
+                Iso Default
+              </button>
+              <button
+                type="button"
+                onClick={() => applyPreset({ camX: 0, camY: 12, camZ: 36, lookX: 0, lookY: 0, lookZ: 0, rotY: 0, rotX: 0, zoom: 13.5 })}
+                className="px-2 py-1 rounded bg-white/10 hover:bg-[#F28D52]/25 border border-white/10 text-[10px] font-mono cursor-pointer"
+              >
+                Front Flat
+              </button>
+              <button
+                type="button"
+                onClick={() => applyPreset({ camX: 0, camY: 42, camZ: 14, lookX: 0, lookY: 0, lookZ: 0, rotY: 0, rotX: 0, zoom: 15 })}
+                className="px-2 py-1 rounded bg-white/10 hover:bg-[#F28D52]/25 border border-white/10 text-[10px] font-mono cursor-pointer"
+              >
+                Top View
+              </button>
+            </div>
+
+            {/* Camera Position */}
+            <div className="space-y-1.5">
+              <div className="text-[10px] uppercase tracking-wider font-mono text-[#F28D52] font-bold">
+                Camera Position (X, Y, Z)
+              </div>
+              <CoordSlider label="Cam X" value={coords.camX} min={-100} max={100} step={0.5} onChange={(v) => updateCoord("camX", v)} />
+              <CoordSlider label="Cam Y" value={coords.camY} min={-40} max={100} step={0.5} onChange={(v) => updateCoord("camY", v)} />
+              <CoordSlider label="Cam Z" value={coords.camZ} min={-100} max={100} step={0.5} onChange={(v) => updateCoord("camZ", v)} />
+            </div>
+
+            {/* LookAt Target */}
+            <div className="space-y-1.5 border-t border-white/10 pt-2">
+              <div className="text-[10px] uppercase tracking-wider font-mono text-[#F28D52] font-bold">
+                LookAt Target &amp; Zoom
+              </div>
+              <CoordSlider label="Look X" value={coords.lookX} min={-30} max={30} step={0.5} onChange={(v) => updateCoord("lookX", v)} />
+              <CoordSlider label="Look Y" value={coords.lookY} min={-30} max={30} step={0.5} onChange={(v) => updateCoord("lookY", v)} />
+              <CoordSlider label="Look Z" value={coords.lookZ} min={-30} max={30} step={0.5} onChange={(v) => updateCoord("lookZ", v)} />
+              <CoordSlider label="Zoom (d)" value={coords.zoom} min={4} max={40} step={0.2} onChange={(v) => updateCoord("zoom", v)} />
+            </div>
+
+            {/* Room Rotation & Position */}
+            <div className="space-y-1.5 border-t border-white/10 pt-2">
+              <div className="text-[10px] uppercase tracking-wider font-mono text-[#F28D52] font-bold">
+                Room Angle &amp; Position
+              </div>
+              <CoordSlider label="Rot Y" value={coords.rotY} min={-360} max={360} step={1} unit="°" onChange={(v) => updateCoord("rotY", v)} />
+              <CoordSlider label="Rot X" value={coords.rotX} min={-75} max={75} step={1} unit="°" onChange={(v) => updateCoord("rotX", v)} />
+              <CoordSlider label="Pos X" value={coords.posX} min={-30} max={30} step={0.5} onChange={(v) => updateCoord("posX", v)} />
+              <CoordSlider label="Pos Y" value={coords.posY} min={-30} max={30} step={0.5} onChange={(v) => updateCoord("posY", v)} />
+              <CoordSlider label="Pos Z" value={coords.posZ} min={-30} max={30} step={0.5} onChange={(v) => updateCoord("posZ", v)} />
+            </div>
+
+            {/* Parallax Toggle + Live Readout */}
+            <div className="border-t border-white/10 pt-2 space-y-2">
+              <label className="flex items-center justify-between text-[11px] font-mono text-[#F9F7E3]/80 cursor-pointer">
+                <span>Mouse Hover Parallax</span>
+                <input
+                  type="checkbox"
+                  checked={coords.parallax}
+                  onChange={(e) => updateCoord("parallax", e.target.checked)}
+                  className="accent-[#F28D52] w-3.5 h-3.5 cursor-pointer"
+                />
+              </label>
+
+              <div className="p-2 rounded-lg bg-black/55 border border-white/10 font-mono text-[10px] text-[#F9F7E3]/85 select-all break-all leading-relaxed">
+                camera: [{coords.camX}, {coords.camY}, {coords.camZ}] | lookAt: [{coords.lookX}, {coords.lookY}, {coords.lookZ}] | zoom: {coords.zoom} | rot: [{coords.rotY}°, {coords.rotX}°] | pos: [{coords.posX}, {coords.posY}, {coords.posZ}]
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
