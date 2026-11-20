@@ -62,10 +62,23 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2.5">
+            <a
+              href="https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20discuss%20a%20website%20%2F%20app%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/30 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#25D366]">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.96.536 1.761.813 2.796.813 3.179 0 5.767-2.587 5.767-5.766.001-3.187-2.575-5.77-6.767-6.001zm0 10.453c-.917 0-1.636-.26-2.392-.713l-.17-.101-1.579.414.421-1.54-.112-.178c-.495-.788-.756-1.564-.755-2.57.001-2.585 2.104-4.688 4.69-4.688 2.584 0 4.687 2.103 4.688 4.688 0 2.586-2.104 4.689-4.791 4.688zm2.569-3.504c-.141-.07-.832-.41-.961-.457-.129-.047-.224-.07-.318.07-.094.141-.365.457-.448.551-.082.094-.165.106-.306.035-.141-.07-.597-.22-1.137-.701-.42-.375-.704-.838-.786-.979-.082-.141-.009-.217.062-.287.063-.063.141-.165.212-.247.071-.082.094-.141.141-.235.047-.094.024-.176-.012-.247-.035-.07-.318-.765-.436-1.047-.115-.274-.233-.237-.318-.241l-.271-.005c-.094 0-.247.035-.376.176-.129.141-.494.482-.494 1.176s.506 1.365.576 1.459c.071.094 1.002 1.53 2.428 2.146.339.147.604.235.811.301.341.108.652.093.898.056.274-.041.844-.345.963-.679.119-.334.119-.62.083-.679-.036-.059-.13-.094-.271-.165z"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+
             <a
               href="tel:+917851018751"
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-[#F9F7E3] hover:text-[#F28D52] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-[#F9F7E3] hover:text-[#F28D52] transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-[#F28D52]" />
               <span>+91 7851018751</span>
@@ -76,7 +89,7 @@ export default function Navbar() {
               onClick={() => {
                 window.dispatchEvent(new CustomEvent("open-consultation"));
               }}
-              className="btn-primary-gradient px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-2 cursor-pointer shadow-lg hover:scale-105 transition-all"
+              className="btn-primary-gradient px-4.5 py-2.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-2 cursor-pointer shadow-lg hover:scale-105 transition-all"
             >
               <span>Get Free Consultation</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -121,6 +134,18 @@ export default function Navbar() {
             ))}
           </div>
           <div className="pt-3 flex flex-col gap-3">
+            <a
+              href="https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20discuss%20a%20website%20%2F%20app%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-center py-2.5 rounded-full bg-[#25D366]/20 border border-[#25D366]/40 text-emerald-300 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-[#25D366]">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.96.536 1.761.813 2.796.813 3.179 0 5.767-2.587 5.767-5.766.001-3.187-2.575-5.77-6.767-6.001zm0 10.453c-.917 0-1.636-.26-2.392-.713l-.17-.101-1.579.414.421-1.54-.112-.178c-.495-.788-.756-1.564-.755-2.57.001-2.585 2.104-4.688 4.69-4.688 2.584 0 4.687 2.103 4.688 4.688 0 2.586-2.104 4.689-4.791 4.688zm2.569-3.504c-.141-.07-.832-.41-.961-.457-.129-.047-.224-.07-.318.07-.094.141-.365.457-.448.551-.082.094-.165.106-.306.035-.141-.07-.597-.22-1.137-.701-.42-.375-.704-.838-.786-.979-.082-.141-.009-.217.062-.287.063-.063.141-.165.212-.247.071-.082.094-.141.141-.235.047-.094.024-.176-.012-.247-.035-.07-.318-.765-.436-1.047-.115-.274-.233-.237-.318-.241l-.271-.005c-.094 0-.247.035-.376.176-.129.141-.494.482-.494 1.176s.506 1.365.576 1.459c.071.094 1.002 1.53 2.428 2.146.339.147.604.235.811.301.341.108.652.093.898.056.274-.041.844-.345.963-.679.119-.334.119-.62.083-.679-.036-.059-.13-.094-.271-.165z"/>
+              </svg>
+              <span>Chat on WhatsApp</span>
+            </a>
+
             <a
               href="tel:+917851018751"
               className="w-full text-center py-2.5 rounded-full bg-white/5 border border-white/10 text-[#F9F7E3] hover:text-[#F28D52] font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors"

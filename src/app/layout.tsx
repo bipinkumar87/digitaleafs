@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import Script from "next/script";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -210,6 +211,7 @@ export default function RootLayout({
           />
         </noscript>
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );
