@@ -31,8 +31,8 @@ export default function FAQ() {
       a: "Yes, built-in standard. We integrate instant booking and lead inquiry forms, optimize your Google Business Profile to rank for local 'near me' searches, and embed zero-fee direct UPI QR codes (Google Pay, PhonePe, Paytm) that deposit customer payments straight into your bank account.",
     },
     {
-      q: "What happens after launch? What if something breaks or I need a small change?",
-      a: "Every project includes 30 days of free dedicated 1-on-1 developer support. If you encounter a bug, need small adjustments, or have any technical question, our senior lead engineer resolves it within hours — no annoying ticket queues or bot replies.",
+      q: "Can I add new features, custom pages, or mobile apps later as my business grows?",
+      a: "Yes, absolutely! Every system we build is engineered with clean, modular architecture (Next.js, TypeScript, Cloud APIs). Because you retain 100% full source code ownership, you are never locked into a rigid platform. Whether you want to add online payment gateways, launch dedicated Android & iOS mobile apps, integrate AI WhatsApp bots, or expand your product catalog, our engineering team can plug in new capabilities seamlessly at any stage without rebuilding from scratch.",
     },
   ];
 
