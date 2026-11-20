@@ -122,7 +122,7 @@ export default function ConsultationModal({
             </div>
             <h3 className="text-2xl font-bold text-[#F9F7E3]">Consultation Request Received!</h3>
             <p className="text-sm text-[#F9F7E3]/75 max-w-md mx-auto leading-relaxed">
-              Thank you, <strong className="text-white">{formData.name || "Client"}</strong>. Our senior software lead will review your requirement and connect directly on <strong className="text-[#F28D52]">{formData.phone}</strong> within 15 minutes.
+              Thank you, <strong className="text-white">{formData.name || "Client"}</strong>. Our senior software lead will review your requirement and connect directly on <strong className="text-[#F28D52]">{formData.phone}</strong> soon.
             </p>
             <div className="pt-4">
               <button

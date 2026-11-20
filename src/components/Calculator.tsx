@@ -208,7 +208,7 @@ export default function Calculator() {
               {/* Direct WhatsApp Call to Action */}
               <div className="pt-2">
                 <a
-                  href={`https://wa.me/919934399990?text=${encodeURIComponent(whatsappMessage)}`}
+                  href={`https://wa.me/917851018751?text=${encodeURIComponent(whatsappMessage)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-4 rounded-full btn-primary-gradient font-bold text-sm flex items-center justify-center gap-2 shadow-xl shadow-[#E94C29]/20"
@@ -218,7 +218,7 @@ export default function Calculator() {
                 </a>
 
                 <p className="text-center text-[11px] text-[#F9F7E3]/50 mt-2 font-mono">
-                  Direct reply within 15 minutes guaranteed.
+                  Direct reply soon guaranteed.
                 </p>
               </div>
 

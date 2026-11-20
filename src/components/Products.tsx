@@ -336,7 +336,7 @@ export default function Products() {
             {/* Bottom Contact / Inquire Button */}
             <div className="pt-6 border-t border-white/5 space-y-2.5">
               <a
-                href="https://wa.me/919934399990?text=Hi%20Digitaleafs!%20I%20saw%20Greetingsly%20and%20want%20to%20discuss%20a%20product%20/%20custom%20software."
+                href="https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20saw%20Greetingsly%20and%20want%20to%20discuss%20a%20product%20/%20custom%20software."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-center py-3 rounded-full bg-[#262626] hover:bg-[#323232] border border-white/10 hover:border-[#F28D52]/40 text-[#F9F7E3] font-semibold text-xs flex items-center justify-center gap-2 transition-colors"

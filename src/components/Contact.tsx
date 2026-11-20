@@ -94,9 +94,9 @@ export default function Contact() {
               <div className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-[#E94C29] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-bold text-[#171717]">15-Minute Direct Response</h4>
+                  <h4 className="text-sm font-bold text-[#171717]">Fast Direct Response</h4>
                   <p className="text-xs text-[#666666]">
-                    We review your requirement and call you back directly within 15 minutes.
+                    We review your requirement and call you back directly soon.
                   </p>
                 </div>
               </div>
@@ -177,7 +177,7 @@ export default function Contact() {
                   </div>
                   <h3 className="text-2xl font-bold text-[#171717]">Project Request Received!</h3>
                   <p className="text-sm text-[#444444] max-w-md mx-auto">
-                    Thank you, <span className="text-[#171717] font-bold">{formData.name}</span>! Our lead engineer is reviewing your inquiry for <span className="text-[#E94C29] font-semibold">{formData.businessName || "your business"}</span> and will reply within 15 minutes.
+                    Thank you, <span className="text-[#171717] font-bold">{formData.name}</span>! Our lead engineer is reviewing your inquiry for <span className="text-[#E94C29] font-semibold">{formData.businessName || "your business"}</span> and will reply soon.
                   </p>
                   
                   <div className="pt-2">
