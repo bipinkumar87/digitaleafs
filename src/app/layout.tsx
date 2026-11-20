@@ -14,24 +14,27 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://digitaleafs.com"),
   title: {
-    default: "Digitaleafs — Custom Websites, Mobile Apps & Business Software",
-    template: "%s | Digitaleafs",
+    default: "Digitaleafs — Custom Websites, Mobile Apps & Software Development",
+    template: "%s | Digitaleafs Studio",
   },
   description:
-    "High-converting custom websites, Android/iOS mobile apps, and business management software starting at ₹9,999. 100% full source code ownership, zero monthly agency retainers.",
+    "High-converting custom websites, Android/iOS mobile apps, and business management software starting from ₹7,999. 100% full source code ownership, zero monthly retainers, direct lead developer support.",
   keywords: [
-    "website development starting 9999",
-    "custom software development",
-    "mobile app development company",
+    "website development starting 7999",
+    "landing page design 7999",
+    "business website development 14999",
+    "ecommerce website development india",
+    "custom software development starting 75000",
+    "mobile app development company android ios",
     "clinic management software",
     "doctor appointment website",
     "retail pos billing software",
-    "coaching institute website",
-    "school management portal",
-    "local business website builder",
-    "next.js agency india",
+    "coaching institute student portal",
+    "website maintenance 1499 per month",
+    "whatsapp ai automation bot",
+    "next.js developer agency india",
     "digitaleafs software studio",
-    "direct developer web design",
+    "direct developer web design studio",
   ],
   authors: [{ name: "Digitaleafs Engineering Team", url: "https://digitaleafs.com" }],
   creator: "Digitaleafs",
@@ -45,7 +48,7 @@ export const metadata: Metadata = {
     url: "https://digitaleafs.com",
     title: "Digitaleafs — Custom Websites, Mobile Apps & Digital Software",
     description:
-      "World-class websites and custom software starting at just ₹9,999 with 100% full source code ownership. Built for clinics, retail shops, coaching centers, and startups.",
+      "World-class websites and custom software starting at just ₹7,999 with 100% full source code ownership. Built for clinics, retail shops, coaching centers, and startups.",
     siteName: "Digitaleafs",
     images: [
       {
@@ -58,9 +61,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digitaleafs — Custom Websites, Apps & Software",
+    title: "Digitaleafs — Custom Websites, Apps & Software Starting from ₹7,999",
     description:
-      "High-converting custom websites and business software starting from ₹9,999 with zero monthly agency retainers.",
+      "High-converting custom websites and business software starting from ₹7,999 with zero monthly agency retainers and 100% code ownership.",
     images: ["/img/logo.png"],
   },
   robots: {
@@ -90,27 +93,117 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://digitaleafs.com/#website",
+      url: "https://digitaleafs.com",
+      name: "Digitaleafs",
+      description: "Custom Websites, Mobile Apps & Business Software Development",
+      publisher: {
+        "@id": "https://digitaleafs.com/#organization",
+      },
+      inLanguage: "en-IN",
+    },
+    {
       "@type": "ProfessionalService",
       "@id": "https://digitaleafs.com/#organization",
-      name: "Digitaleafs",
+      name: "Digitaleafs Studio",
       url: "https://digitaleafs.com",
       logo: "https://digitaleafs.com/img/logo.png",
       image: "https://digitaleafs.com/img/logo.png",
       description:
         "Custom websites, Android & iOS mobile applications, and management software engineered for small businesses, clinics, retail shops, and coaching centers.",
-      priceRange: "₹9,999 - ₹75,000",
+      priceRange: "₹7,999 - ₹1,25,000",
+      currenciesAccepted: "INR",
+      paymentAccepted: "UPI, Net Banking, Credit Card, Debit Card",
       telephone: "+91-7851018751",
       email: "contact@digitaleafs.com",
       address: {
         "@type": "PostalAddress",
         addressCountry: "IN",
       },
-      offers: {
-        "@type": "AggregateOffer",
-        priceCurrency: "INR",
-        lowPrice: "9999",
-        highPrice: "75000",
-        offerCount: "5",
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          opens: "10:00",
+          closes: "19:00",
+        },
+      ],
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "48",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+91-7851018751",
+        contactType: "customer service",
+        areaServed: "IN",
+        availableLanguage: ["English", "Hindi"],
+      },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Digitaleafs Software & Web Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            name: "Landing Page",
+            price: "7999",
+            priceCurrency: "INR",
+            description: "High-converting single-page website built for ad campaigns and local lead generation.",
+          },
+          {
+            "@type": "Offer",
+            name: "Business Website",
+            price: "14999",
+            priceCurrency: "INR",
+            description: "Complete professional multi-page website tailored for clinics, coaching centers, and retail shops.",
+          },
+          {
+            "@type": "Offer",
+            name: "Professional Website",
+            price: "24999",
+            priceCurrency: "INR",
+            description: "Custom UI/UX with smooth interactive animations, dynamic CMS, and appointment scheduling.",
+          },
+          {
+            "@type": "Offer",
+            name: "E-commerce Website",
+            price: "39999",
+            priceCurrency: "INR",
+            description: "Full-scale online store with zero commissions, integrated UPI payments, and order tracking.",
+          },
+          {
+            "@type": "Offer",
+            name: "Custom Software Development",
+            price: "75000",
+            priceCurrency: "INR",
+            description: "Tailored management software, billing POS, clinic patient records, or internal operations ERP.",
+          },
+          {
+            "@type": "Offer",
+            name: "Mobile App Development",
+            price: "125000",
+            priceCurrency: "INR",
+            description: "Native-quality Android & iOS mobile applications published on Google Play & App Store.",
+          },
+          {
+            "@type": "Offer",
+            name: "Website Maintenance",
+            price: "1499",
+            priceCurrency: "INR",
+            description: "Monthly security, uptime monitoring, cloud backups, and priority developer support.",
+          },
+          {
+            "@type": "Offer",
+            name: "AI Automation",
+            price: "15000",
+            priceCurrency: "INR",
+            description: "24/7 intelligent WhatsApp AI auto-responder and automated lead qualification bots.",
+          },
+        ],
       },
     },
     {
@@ -119,10 +212,10 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "What does 'Starting at ₹9,999' mean? Are there any hidden charges later?",
+          name: "What does starting prices mean? Are there any hidden charges later?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Zero hidden charges. Before writing a single line of code, we provide a crystal-clear written proposal with exact deliverables. ₹9,999 covers a full ready-to-launch responsive business website with instant inquiry capture forms, Google Maps local SEO, mobile optimization, and SSL security.",
+            text: "Zero hidden charges. Before writing a single line of code, we provide a crystal-clear written proposal with exact deliverables and fixed milestone pricing starting from ₹7,999. Every package includes SSL security, mobile responsiveness, and clean code.",
           },
         },
         {
@@ -147,6 +240,14 @@ const jsonLd = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Yes, built-in standard. We integrate zero-fee direct UPI QR codes and payment gateway setups that deposit customer payments straight into your bank account.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I add new features, custom pages, or mobile apps later as my business grows?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, absolutely! Every system we build is engineered with clean, modular architecture (Next.js, TypeScript, Cloud APIs). Because you retain 100% full source code ownership, you are never locked into a rigid platform.",
           },
         },
       ],
