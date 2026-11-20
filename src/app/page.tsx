@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Solutions from "@/components/Solutions";
 import Services from "@/components/Services";
+import Pricing from "@/components/Pricing";
 import Products from "@/components/Products";
 import Blog from "@/components/Blog";
 import Process from "@/components/Process";
@@ -26,6 +27,9 @@ export default function Home() {
 
         {/* Core Services Matrix */}
         <Services />
+
+        {/* Transparent Rates & Pricing Section */}
+        <Pricing />
 
         {/* In-House Digital Products (Greetingsly & Ecosystem SaaS) */}
         <Products />
