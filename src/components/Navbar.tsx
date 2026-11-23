@@ -1,12 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { Menu, X, ArrowRight, Phone } from "lucide-react";
+import { Menu, X, ArrowRight, Phone, ChevronDown, Briefcase, Rocket, Sparkles } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [workDropdownOpen, setWorkDropdownOpen] = useState(false);
+  const [mobileWorkOpen, setMobileWorkOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,14 +19,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: "Solutions", href: "#solutions" },
-    { name: "Services", href: "#services" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Products", href: "#products" },
-    { name: "Blog", href: "#blog" },
-    { name: "FAQ", href: "#faq" },
-  ];
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setWorkDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <header
@@ -50,16 +54,131 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#F9F7E3]/85">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
+            <a
+              href="#solutions"
+              className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
+            >
+              Solutions
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F28D52] to-[#E94C29] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <a
+              href="#services"
+              className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
+            >
+              Services
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F28D52] to-[#E94C29] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <a
+              href="#pricing"
+              className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
+            >
+              Pricing
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F28D52] to-[#E94C29] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            {/* Our Work / Our Universe Dropdown */}
+            <div
+              ref={dropdownRef}
+              className="relative"
+              onMouseEnter={() => setWorkDropdownOpen(true)}
+              onMouseLeave={() => setWorkDropdownOpen(false)}
+            >
+              <button
+                type="button"
+                onClick={() => setWorkDropdownOpen(!workDropdownOpen)}
+                className={`flex items-center gap-1.5 transition-colors duration-200 relative group py-1 cursor-pointer ${
+                  workDropdownOpen ? "text-[#F28D52]" : "hover:text-[#F28D52]"
+                }`}
+                aria-expanded={workDropdownOpen}
               >
-                {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F28D52] to-[#E94C29] transition-all duration-300 group-hover:w-full"></span>
-              </a>
-            ))}
+                <span>Our Work</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    workDropdownOpen ? "rotate-180 text-[#F28D52]" : "text-[#F9F7E3]/60"
+                  }`}
+                />
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#F28D52] to-[#E94C29] transition-all duration-300 ${
+                    workDropdownOpen ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
+              </button>
+
+              {/* Dropdown Menu Box */}
+              {workDropdownOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 z-50 animate-fadeIn">
+                  <div className="w-72 rounded-2xl bg-[#1b1b1b]/95 backdrop-blur-2xl border border-white/10 p-2 shadow-2xl shadow-black/90 space-y-1">
+                    {/* Header Label: Our Universe */}
+                    <div className="px-3 py-1.5 text-[10px] font-mono uppercase tracking-wider text-[#F28D52] font-bold flex items-center justify-between border-b border-white/5">
+                      <div className="flex items-center gap-1.5">
+                        <Sparkles className="w-3 h-3 text-[#F28D52]" />
+                        <span>Our Universe</span>
+                      </div>
+                      <span className="text-[9px] text-[#F9F7E3]/40">Explore</span>
+                    </div>
+
+                    {/* Option 1: Client Projects */}
+                    <a
+                      href="#case-studies"
+                      onClick={() => setWorkDropdownOpen(false)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group/item"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#F28D52]/10 border border-[#F28D52]/30 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:scale-105 transition-transform">
+                        <Briefcase className="w-4 h-4 text-[#F28D52]" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-white group-hover/item:text-[#F28D52] transition-colors">
+                          Projects &amp; Case Studies
+                        </div>
+                        <div className="text-[11px] text-[#F9F7E3]/60 leading-tight mt-0.5">
+                          Delivered clinic, retail &amp; web apps
+                        </div>
+                      </div>
+                    </a>
+
+                    {/* Option 2: In-House Products */}
+                    <a
+                      href="#products"
+                      onClick={() => setWorkDropdownOpen(false)}
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group/item"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:scale-105 transition-transform">
+                        <Rocket className="w-4 h-4 text-emerald-400" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-xs font-bold text-white group-hover/item:text-[#F28D52] transition-colors flex items-center gap-1.5">
+                          <span>In-House Products</span>
+                          <span className="text-[9px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-mono">
+                            Live
+                          </span>
+                        </div>
+                        <div className="text-[11px] text-[#F9F7E3]/60 leading-tight mt-0.5">
+                          Greetingsly &amp; proprietary platforms
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <a
+              href="#blog"
+              className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
+            >
+              Blog
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F28D52] to-[#E94C29] transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <a
+              href="#faq"
+              className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
+            >
+              FAQ
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#F28D52] to-[#E94C29] transition-all duration-300 group-hover:w-full"></span>
+            </a>
           </nav>
 
           {/* Right Action Buttons */}
@@ -122,18 +241,112 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden luxury-nav border-b border-[#F28D52]/20 px-6 pt-4 pb-6 mt-3 space-y-4">
-          <div className="flex flex-col space-y-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
+          <div className="flex flex-col space-y-2">
+            <a
+              href="#solutions"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
+            >
+              Solutions
+            </a>
+
+            <a
+              href="#services"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
+            >
+              Services
+            </a>
+
+            <a
+              href="#pricing"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
+            >
+              Pricing
+            </a>
+
+            {/* Mobile Expandable Our Work / Universe Accordion */}
+            <div className="border-b border-white/5 py-1">
+              <button
+                type="button"
+                onClick={() => setMobileWorkOpen(!mobileWorkOpen)}
+                className="w-full flex items-center justify-between text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors cursor-pointer"
               >
-                {link.name}
-              </a>
-            ))}
+                <div className="flex items-center gap-2">
+                  <span>Our Work</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#F28D52]/15 text-[#F28D52] border border-[#F28D52]/30">
+                    Universe
+                  </span>
+                </div>
+                <ChevronDown
+                  className={`w-4 h-4 text-[#F28D52] transition-transform duration-200 ${
+                    mobileWorkOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {mobileWorkOpen && (
+                <div className="pl-2 pr-1 pb-2 pt-1 space-y-2">
+                  <a
+                    href="#case-studies"
+                    onClick={() => {
+                      setMobileWorkOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-[#F28D52]/10 border border-[#F28D52]/30 flex items-center justify-center text-[#F28D52] shrink-0">
+                      <Briefcase className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <div className="text-sm font-bold text-white">Client Projects</div>
+                      <div className="text-[11px] text-[#F9F7E3]/60">Case studies &amp; live deliveries</div>
+                    </div>
+                  </a>
+
+                  <a
+                    href="#products"
+                    onClick={() => {
+                      setMobileWorkOpen(false);
+                      setMobileMenuOpen(false);
+                    }}
+                    className="flex items-center gap-3 p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/5 transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+                      <Rocket className="w-4 h-4" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm font-bold text-white flex items-center gap-2">
+                        <span>In-House Products</span>
+                        <span className="text-[9px] px-1.5 py-0.2 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-mono">
+                          Live
+                        </span>
+                      </div>
+                      <div className="text-[11px] text-[#F9F7E3]/60">Greetingsly &amp; digital platforms</div>
+                    </div>
+                  </a>
+                </div>
+              )}
+            </div>
+
+            <a
+              href="#blog"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
+            >
+              Blog
+            </a>
+
+            <a
+              href="#faq"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
+            >
+              FAQ
+            </a>
           </div>
+
           <div className="pt-3 flex flex-col gap-3">
             <a
               href="https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20discuss%20a%20website%20%2F%20app%20project."
