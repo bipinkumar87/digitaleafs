@@ -43,6 +43,8 @@ export default function CaseStudies() {
       tag: "Restaurant & Hospitality",
       category: "local",
       title: "Luxury Restaurant Website",
+      description:
+        "Bespoke luxury web experience engineered for fine dining restaurants and cafés. Features interactive culinary menu showcases, online table reservation booking, and elegant mobile-first design.",
       url: "https://demo.resto.digitaleafs.com/",
       displayUrl: "demo.resto.digitaleafs.com",
       image: "/img/resto-preview.jpg",
