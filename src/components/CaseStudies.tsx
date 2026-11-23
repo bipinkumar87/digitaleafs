@@ -98,21 +98,25 @@ export default function CaseStudies() {
       accent: "text-[#F28D52]",
     },
     {
-      id: "local",
-      tag: "Restaurant & Local Business",
+      id: "resto-demo",
+      tag: "Restaurant & Hospitality",
       category: "local",
-      client: "FreshBites Café & Bistro",
-      title: "Contactless QR Code Menu & Google Maps Lead Funnel",
+      client: "Demo Restaurant & Fine Dining",
+      title: "Luxury Restaurant Digital Portal & Online Table Booking Engine",
       description:
-        "Engineered an elegant mobile QR menu with table ordering and optimized their Google Maps profile to rank #1 in their city for café searches.",
+        "Immersive luxury restaurant web application engineered with bespoke theatre-curtain visual styling, interactive gourmet culinary menu cards, online table reservation system, and mobile-first dining UI.",
+      url: "https://demo.resto.digitaleafs.com/",
+      displayUrl: "demo.resto.digitaleafs.com",
+      image: "/img/resto-preview.jpg",
+      badge: "Live Demo",
       metrics: [
-        { label: "Google Footfall", value: "+4.2x" },
-        { label: "Average Table Ticket", value: "+28%" },
-        { label: "5-Star Reviews", value: "850+" },
+        { label: "Table Reservations", value: "+320%" },
+        { label: "Online Menu Views", value: "3,000+ /mo" },
+        { label: "Customer Rating", value: "5.0 ★" },
       ],
-      stack: ["Next.js", "QR Code Engine", "Google Maps SEO", "Stripe/UPI"],
-      gradient: "from-[#A94322]/20 via-[#1f1f1f] to-[#171717]",
-      accent: "text-[#E94C29]",
+      stack: ["Next.js", "Tailwind CSS", "Table Booking", "Interactive Menu"],
+      gradient: "from-amber-500/20 via-[#1f1f1f] to-[#171717]",
+      accent: "text-amber-400",
     },
   ];
 
@@ -141,10 +145,10 @@ export default function CaseStudies() {
             {[
               { id: "all", label: "All Projects" },
               { id: "financial", label: "Insurance & Advisory" },
+              { id: "local", label: "Restaurants & Dining" },
               { id: "clinic", label: "Clinics" },
               { id: "retail", label: "Retail Stores" },
               { id: "coaching", label: "Coaching" },
-              { id: "local", label: "Local Businesses" },
             ].map((btn) => (
               <button
                 key={btn.id}
