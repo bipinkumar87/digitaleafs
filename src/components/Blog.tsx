@@ -19,79 +19,79 @@ export interface BlogArticle {
 
 const DEFAULT_ARTICLES: BlogArticle[] = [
   {
-    id: "digitaleafs-greetingsly-launch",
-    category: "latest-news",
-    categoryName: "Latest News",
-    title: "Digitaleafs Announces Launch of Greetingsly & Expands Direct Developer Solutions",
+    id: "why-every-business-needs-a-website",
+    category: "business-growth",
+    categoryName: "Business Growth",
+    title: "Why Every Business Needs a Modern Website in 2026: The Real Reason You Are Losing Customers",
     excerpt:
-      "We are proud to release Greetingsly — our in-house bulk personalized card generation platform — alongside new transparent fixed-rate engineering suites starting from ₹9,999 with zero monthly agency lock-in.",
-    readTime: "3 min read",
-    date: "Nov 2026",
-    tag: "Company Update",
-    image: "/blogimg/latest-news.jpg",
-    content:
-      "We are thrilled to officially introduce Greetingsly (greetingsly.digitaleafs.com), our proprietary in-house digital platform designed to solve large-scale bulk invitation and personalized greeting card generation.\n\nTraditional design workflows require hours of manual copy-pasting for events, weddings, corporate announcements, and holiday greetings. Greetingsly completely automates this workflow: users can upload an Excel sheet, CSV file, or input names manually, and generate hundreds of tailored, high-resolution greeting cards and invite links in seconds.\n\nAlongside Greetingsly, Digitaleafs is expanding its direct lead developer suites starting from ₹9,999. We believe modern businesses deserve bespoke, lightning-fast digital assets with 100% full code ownership and zero predatory monthly retainer fees.",
-    link: "https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20saw%20your%20Latest%20News%20about%20Greetingsly%20and%20want%20to%20learn%20more.",
-  },
-  {
-    id: "modern-technology-architecture",
-    category: "technology",
-    categoryName: "Technology",
-    title: "Modern Web Architecture: Why High-Performance Frameworks Outperform Legacy WordPress",
-    excerpt:
-      "Slow page loads cost modern businesses over 40% of their prospective leads. Discover how Next.js, static edge rendering, and cloud architectures deliver lightning-fast speed and unhackable security.",
+      "Over 78% of customers in your city search on Google and check a website before visiting or buying. If your business doesn't have a professional website, you are handing those high-paying clients directly to your competitors.",
     readTime: "4 min read",
     date: "Nov 2026",
-    tag: "Tech Architecture",
-    image: "/blogimg/technology.jpg",
+    tag: "High-Converting Guide",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
     content:
-      "For over a decade, WordPress was the default choice for small businesses. However, in 2026, the modern web demands sub-second load times, mobile-first responsiveness, and rock-solid cybersecurity.\n\nLegacy CMS platforms rely heavily on dozens of bloated plugins, PHP server overhead, and vulnerable database endpoints. Studies demonstrate that for every 1-second delay in page load time, conversions drop by up to 20%.\n\nAt Digitaleafs, we engineer web applications with Next.js, Tailwind CSS, and global edge CDNs. By compiling pages into static HTML and serving them from edge nodes nearest to the user, our websites achieve 99+ Google Lighthouse scores, instant mobile rendering, and virtually unhackable architecture.",
-    link: "https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20upgrade%20my%20website%20technology.",
+      "In 2026, the consumer journey starts online. Whether you run a retail shop, medical clinic, manufacturing unit, coaching institute, or professional consulting firm, over 78% of potential clients will search for your name or your services on Google before they ever dial your number or step into your office.\n\nHere is why having a modern, high-speed website is no longer optional — it is the single most valuable growth asset for your business:\n\n1. 24/7 Digital Salesperson That Never Sleeps\nWhile your physical office or store closes in the evening, your website continues working around the clock. Over 65% of customer research happens between 8:00 PM and midnight. A website answers frequently asked questions, highlights your past work, showcases client testimonials, and captures high-intent leads while you sleep.\n\n2. Unbeatable Trust & Credibility\nIn today's digital era, a business without an official website looks unverified and risky. Customers question whether your company is legitimate. A clean, branded website with your official domain name instantly establishes authority and separates you from casual roadside operators.\n\n3. Google Local SEO & Google Maps Domination\nWhen potential customers in your area search 'best interior designer near me' or 'top clinic in town', Google prioritizes verified businesses with fast-loading, mobile-friendly websites. Without a website, your Google Business profile has limited ranking power and you lose top positions to competitors.\n\n4. Stop Bleeding Money on Renting Social Media\nInstagram and Facebook algorithms change constantly, and organic reach continues to plummet. Furthermore, platforms like Justdial and Indiamart sell the exact same customer enquiry to 5 other competitors, triggering a destructive price race. Your website is 100% your own digital real estate — no competition, no algorithm penalties, and no shared leads.\n\n5. Transparent One-Time Investment Starting at Just ₹9,999\nAt Digitaleafs, we build custom, high-speed websites with 100% full source code ownership and zero predatory monthly retainers. With just 1 or 2 new customers gained through your website, your entire investment pays for itself.",
+    link: "https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20build%20a%20modern%20website%20for%20my%20business.",
   },
   {
-    id: "ai-workflow-automation",
-    category: "ai-automation",
-    categoryName: "AI & Automation",
-    title: "How Smart Businesses Deploy AI & WhatsApp Automation to Capture Inquiries 24/7",
+    id: "website-vs-social-media",
+    category: "digital-strategy",
+    categoryName: "Digital Strategy",
+    title: "Website vs. Social Media: Why Relying Only on Instagram & Justdial Is Costing You 60% Revenue",
     excerpt:
-      "Stop losing late-night client inquiries. Learn how intelligent automated WhatsApp funnels, auto-responses, and automated calendar slotting increase conversion by 3x without hiring extra staff.",
+      "Social media accounts can get blocked overnight and directory platforms sell your customer leads to rival competitors. Discover why having your own branded website with direct WhatsApp ordering protects your business.",
     readTime: "5 min read",
     date: "Nov 2026",
-    tag: "AI & Workflow",
-    image: "/blogimg/ai-automation.jpg",
+    tag: "Market Reality",
+    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=1200&q=80",
     content:
-      "Nearly 65% of potential clients browse services after 8:00 PM, when traditional offices and shops are closed. If an inquiry isn't answered within 15 minutes, the prospect usually moves on to a competitor.\n\nBy integrating intelligent WhatsApp Business API funnels and AI-powered workflow automations, your digital portal can greet leads instantly, answer frequently asked questions, collect appointment requirements, and confirm bookings directly on your calendar.\n\nThis delivers a 3x higher conversion rate without needing extra customer support staff, turning your website into a 24/7 revenue engine.",
-    link: "https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20set%20up%20AI%20and%20WhatsApp%20Automation.",
+      "Many small business owners say: 'I already have an Instagram page and a Facebook profile, why do I need a website?' While social media is great for casual awareness, relying on it as your sole business foundation is a dangerous mistake.\n\nHere is the harsh reality that every business owner must understand:\n\n1. You Are Building on Rented Land\nYou do not own your Instagram or Facebook profile. Meta changes its algorithm regularly; posts that used to reach 10,000 people now barely reach 500 without paying for sponsored ads. Worse, accounts can get flagged, restricted, or disabled without warning, killing your inbound sales overnight.\n\n2. The Justdial & Indiamart 'Lead Auction' Trap\nWhen an interested customer submits an inquiry on Justdial, Sulekha, or Indiamart, that same lead is forwarded simultaneously to 4 to 8 competing businesses. You are forced into an aggressive price-discount war where your profit margins vanish. On your own website, you own 100% of the customer's attention with zero competitor ads next to your name.\n\n3. High-Value Clients Require Official Legitimacy\nHigh-ticket clients, corporate buyers, and institutional customers do not close deals over an Instagram DM. They require an official website with clear case studies, certified credentials, transparent terms, and professional domain email addresses (e.g. contact@yourbusiness.com).\n\n4. Direct WhatsApp Integration & Instant Closures\nWith a Digitaleafs website, every product, service, and package comes with a direct 1-click WhatsApp button. The moment a visitor clicks, they land directly in your WhatsApp chat with a pre-filled inquiry, allowing you to close high-margin sales in under 60 seconds.",
+    link: "https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20stop%20relying%20on%20social%20media%20and%20build%20my%20own%20website.",
   },
   {
-    id: "custom-software-engineering",
-    category: "software-development",
-    categoryName: "Software Development",
-    title: "Custom Software Engineering: The Strategic Roadmap From Idea to Production-Ready App",
+    id: "how-clinics-doctors-double-appointments",
+    category: "clinic-healthcare",
+    categoryName: "Healthcare & Clinics",
+    title: "How a Custom Website Doubles Appointments & Patient Trust for Clinics, Doctors & Labs",
     excerpt:
-      "Building a reliable cross-platform app or business management system requires solid foundations: scalable database schemas, high-speed APIs, intuitive UI design, and seamless payment gateway integrations.",
-    readTime: "6 min read",
-    date: "Nov 2026",
-    tag: "Engineering",
-    image: "/blogimg/software-development.jpg",
-    content:
-      "Every business operates with unique operational friction: a polyclinic has distinct doctor schedules, a supermarket manages fast-moving inventory, and an institute handles recurring student fees.\n\nOff-the-shelf software forces you to adjust your business to fit their generic template. In contrast, custom software is engineered around your exact workflow.\n\nOur engineering approach focuses on 4 foundational pillars: responsive mobile-first UI, ACID-compliant database architecture, bank-grade encryption with direct UPI payment processing, and continuous staging previews that keep you in full control throughout development.",
-    link: "https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20develop%20a%20custom%20software%20or%20mobile%20app.",
-  },
-  {
-    id: "startup-economics-code-ownership",
-    category: "business-startup",
-    categoryName: "Business & Startup",
-    title: "Startup & Small Business Economics: Why 100% Code Ownership Beats Monthly SaaS Traps",
-    excerpt:
-      "Paying ₹5,000 to ₹15,000 in monthly platform retainers drains precious startup runway. Understand why a one-time investment starting at ₹9,999 gives you full intellectual property ownership and zero recurring fees.",
+      "Say goodbye to crowded waiting rooms and missed appointment calls. Learn how local clinics and healthcare providers use automated 24/7 web booking and instant WhatsApp reminders to attract premium patients.",
     readTime: "4 min read",
     date: "Nov 2026",
-    tag: "Startup Growth",
-    image: "/blogimg/business-startup.jpg",
+    tag: "Healthcare Growth",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
     content:
-      "When you build on proprietary closed platforms, you don't own your software — you rent it. Over 3 years, paying ₹8,000 per month adds up to nearly ₹3,00,000 in software overhead, and if you ever stop paying, your entire online presence disappears.\n\nWith Digitaleafs, your investment begins from a transparent one-time rate of ₹9,999. You receive the complete source code, direct administrative ownership, database exports, and full deployment rights.\n\nYou remain 100% independent with zero recurring agency traps, ensuring long-term profitability and true enterprise valuation for your company.",
-    link: "https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20discuss%20custom%20software%20for%20my%20startup.",
+      "For doctors, polyclinics, diagnostic centres, and dental practices, patient trust and seamless scheduling are the two most critical drivers of growth. Traditional paper registers and manual phone call bookings result in missed inquiries, long waiting queues, and high patient frustration.\n\nA dedicated medical practice website transforms clinic operations:\n\n1. 24/7 Online Doctor Appointment Booking\nPatients frequently search for doctors late in the evening or early in the morning when clinics are closed. An intuitive online appointment calendar allows patients to view available time slots, select their preferred doctor, and confirm appointments instantly from their mobile phone.\n\n2. Eliminating No-Shows with Automated WhatsApp Reminders\nPatient no-shows cost clinics up to 30% of their daily productive revenue. By integrating automated WhatsApp and SMS appointment confirmation alerts, clinics remind patients 2 hours prior to their visit, reducing no-show rates by over 75%.\n\n3. Showcasing Verified Doctor Credentials & Treatment Specializations\nPatients want to know their doctor's qualifications, years of experience, degrees, and hospital attachments before booking. A professional website highlights your medical background, before-and-after case photos (for dental and dermatology), and patient recovery stories that establish undisputed medical authority.\n\n4. Online Lab Test Booking & Report Downloads\nDiagnostic labs and polyclinics can offer online sample pickup requests and digital test report downloads, delivering a hospital-grade experience that keeps patients coming back year after year.",
+    link: "https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20am%20a%20doctor%20or%20clinic%20owner%20and%20want%20a%20patient%20booking%20website.",
+  },
+  {
+    id: "whatsapp-sales-automation-funnel",
+    category: "sales-automation",
+    categoryName: "Sales & Automation",
+    title: "The 5-Minute Lead Rule: How Automated WhatsApp Funnels Turn Website Visitors into Paying Clients",
+    excerpt:
+      "If you don't respond to a customer inquiry within 5 minutes, 80% will contact your competitor. Learn how smart businesses use integrated 1-click WhatsApp buttons and auto-funnels to close deals effortlessly.",
+    readTime: "4 min read",
+    date: "Nov 2026",
+    tag: "Conversion Secrets",
+    image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80",
+    content:
+      "According to global sales benchmark studies, responding to an inquiry within 5 minutes makes you 21 times more likely to qualify and close the lead compared to waiting 30 minutes. In India, email inquiry forms are largely ignored — customers want immediate conversation on WhatsApp.\n\nHere is how Digitaleafs engineers high-converting websites using integrated WhatsApp funnels:\n\n1. Zero Friction 1-Click WhatsApp Direct Connect\nRather than forcing visitors through tedious 10-field contact forms, our websites feature prominent, attractive floating WhatsApp triggers. With a single tap, visitors enter a private WhatsApp chat with your sales desk.\n\n2. Pre-Filled Message Context\nWhen a customer clicks 'Inquire on WhatsApp' on a specific product page or service card, the chat opens with an automatic pre-filled message: 'Hi! I am interested in your Luxury Restaurant Web Package and would like a free quote.' This eliminates typing effort for the customer and informs your sales team exactly what they need.\n\n3. 24/7 Automated Lead Capture & Qualification\nEven outside office hours, intelligent automated auto-responders greet the lead, collect their requirements, and provide a downloadable PDF brochure or pricing menu instantly.\n\n4. Higher Conversion, Lower Ad Costs\nBusinesses that switched from generic contact forms to WhatsApp-integrated websites experienced a 3x to 4x surge in qualified sales discussions, dramatically cutting customer acquisition costs.",
+    link: "https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20integrate%20an%20automated%20WhatsApp%20sales%20funnel%20on%20my%20website.",
+  },
+  {
+    id: "why-local-retail-restaurants-must-go-digital",
+    category: "local-business",
+    categoryName: "Local Businesses",
+    title: "From Offline to Digital: Why Local Retailers, Restaurants & Academies Must Build a Website Now",
+    excerpt:
+      "Quick-commerce giants and corporate chains are taking over local markets. Discover how a modern digital catalogue, online menu, and student portal empower local businesses to dominate their neighbourhood.",
+    readTime: "5 min read",
+    date: "Nov 2026",
+    tag: "Retail & Services",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+    content:
+      "Local grocery stores, clothing boutiques, dine-in restaurants, and coaching academies face unprecedented competition from venture-funded apps and national chains. However, local businesses possess a massive advantage: personal relationships and neighbourhood proximity.\n\nTo unlock that advantage, local businesses must establish their own digital presence:\n\n1. Interactive Digital Menus & Table Reservations for Restaurants\nPrinting physical paper menus is expensive, and paper menus get ruined quickly. A digital restaurant website lets diners scan a QR code or browse your gourmet culinary offerings on their phone from home, view mouth-watering food photos, and reserve a table or order direct delivery without giving up 30% commission to aggregator apps.\n\n2. Online Catalogues & Digital Billing for Retailers\nAllow your neighbourhood customers to view your latest arrivals, stock availability, and special festival discounts online. Customers can select items and send their grocery or clothing order straight to your WhatsApp for quick counter pickup or instant local home delivery.\n\n3. Coaching Institutes & Schools: Digital Portals for Admissions & Fees\nParents judge educational institutes by their digital infrastructure. A dedicated coaching website with online registration, syllabus downloads, previous year topper results, and automated fee payment links builds supreme confidence and attracts 2x more admissions every academic session.\n\n4. Guaranteed ROI with Fixed Transparent Pricing\nDigitaleafs builds turnkey web applications starting from ₹9,999 with zero technical headaches. We handle everything from domain registration and hosting to responsive mobile UI and WhatsApp integration.",
+    link: "https://wa.me/917851018751?text=Hi%20Digitaleafs!%20I%20want%20to%20build%20a%20digital%20website%20for%20my%20local%20store%20or%20restaurant.",
   },
 ];
 
@@ -121,11 +121,11 @@ export default function Blog() {
 
   const categories = [
     { id: "all", label: "All Topics" },
-    { id: "technology", label: "Technology" },
-    { id: "ai-automation", label: "AI & Automation" },
-    { id: "software-development", label: "Software Development" },
-    { id: "business-startup", label: "Business & Startup" },
-    { id: "latest-news", label: "Latest News" },
+    { id: "business-growth", label: "Business Growth" },
+    { id: "digital-strategy", label: "Digital Strategy" },
+    { id: "clinic-healthcare", label: "Healthcare & Clinics" },
+    { id: "sales-automation", label: "Sales & Automation" },
+    { id: "local-business", label: "Local Businesses" },
   ];
 
   useEffect(() => {
@@ -167,13 +167,13 @@ export default function Blog() {
         <div className="mb-8 lg:mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#F28D52]/10 border border-[#F28D52]/30 text-[#F28D52] mb-4">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>Technology, Engineering &amp; Growth Insights</span>
+            <span>Business Growth &amp; Digital Strategy Insights</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#F9F7E3] tracking-tight">
             Digitaleafs <span className="text-gradient-orange">Blog &amp; Insights</span>
           </h2>
           <p className="mt-3 text-base text-[#F9F7E3]/75 max-w-2xl leading-relaxed">
-            In-depth analysis, engineering strategies, and actionable business guides across key technology domains.
+            Actionable business guides, conversion strategies, and proven insights on why a modern website is essential to grow your revenue.
           </p>
         </div>
 
