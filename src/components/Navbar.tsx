@@ -3,13 +3,20 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Menu, X, ArrowRight, Phone, ChevronDown, Briefcase, Rocket, Sparkles } from "lucide-react";
+import { getCurrentOrUpcomingFestival, FestivalConfig } from "@/utils/festival";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [workDropdownOpen, setWorkDropdownOpen] = useState(false);
   const [mobileWorkOpen, setMobileWorkOpen] = useState(false);
+  const [festival, setFestival] = useState<FestivalConfig | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Dynamic festival detection based on current client date
+    setFestival(getCurrentOrUpcomingFestival());
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,18 +46,53 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo with high-res brand image */}
-          <a href="#" className="flex items-center gap-3 group">
-            <Image
-              src="/img/logo.png"
-              alt="Digitaleafs Logo"
-              width={160}
-              height={44}
-              priority
-              style={{ width: "auto" }}
-              className="h-9 sm:h-11 object-contain transition-transform duration-300 group-hover:scale-105"
-            />
-          </a>
+          {/* Logo with high-res brand image & dynamic festive icons on left & right */}
+          <div className="flex items-center gap-1.5 sm:gap-2 group/festive relative">
+            {/* Left Festival Icon */}
+            {festival && (
+              <span
+                role="img"
+                aria-label={festival.name}
+                title={festival.greeting}
+                className="animate-festive-left text-lg sm:text-2xl select-none filter drop-shadow-[0_0_8px_rgba(242,141,82,0.7)] hover:scale-125 transition-transform duration-200 cursor-pointer"
+              >
+                {festival.leftIcon}
+              </span>
+            )}
+
+            <a href="#" className="flex items-center group">
+              <Image
+                src="/img/logo.png"
+                alt="Digitaleafs Logo"
+                width={160}
+                height={44}
+                priority
+                style={{ width: "auto" }}
+                className="h-9 sm:h-11 object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </a>
+
+            {/* Right Festival Icon */}
+            {festival && (
+              <span
+                role="img"
+                aria-label={festival.name}
+                title={festival.greeting}
+                className="animate-festive-right text-lg sm:text-2xl select-none filter drop-shadow-[0_0_8px_rgba(242,141,82,0.7)] hover:scale-125 transition-transform duration-200 cursor-pointer"
+              >
+                {festival.rightIcon}
+              </span>
+            )}
+
+            {/* Hover Tooltip showing festival greeting */}
+            {festival && (
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover/festive:opacity-100 transition-all duration-300 z-50 whitespace-nowrap hidden sm:block">
+                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#1c1c1c]/95 border border-[#F28D52]/40 text-[#F9F7E3] shadow-2xl backdrop-blur-md">
+                  {festival.greeting}
+                </span>
+              </div>
+            )}
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#F9F7E3]/85">

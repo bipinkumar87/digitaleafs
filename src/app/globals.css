@@ -244,3 +244,32 @@ html, body {
 ::-webkit-scrollbar-thumb:hover {
   background: #E94C29;
 }
+
+/* Festive Dynamic Icon Animations */
+@keyframes festiveFloatLeft {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(-6deg);
+  }
+}
+
+@keyframes festiveFloatRight {
+  0%, 100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.12) rotate(6deg);
+  }
+}
+
+.animate-festive-left {
+  animation: festiveFloatLeft 3.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+.animate-festive-right {
+  animation: festiveFloatRight 3.2s ease-in-out infinite;
+  display: inline-block;
+}

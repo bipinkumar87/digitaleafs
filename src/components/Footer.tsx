@@ -1,10 +1,17 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MessageSquare } from "lucide-react";
+import { getCurrentOrUpcomingFestival, FestivalConfig } from "@/utils/festival";
 
 export default function Footer() {
+  const [festival, setFestival] = useState<FestivalConfig | null>(null);
+
+  useEffect(() => {
+    setFestival(getCurrentOrUpcomingFestival());
+  }, []);
   return (
     <footer className="bg-[#121212] border-t border-[#F9F7E3]/10 pt-20 pb-12 text-[#F9F7E3]/70 text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,16 +19,28 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <a href="#" className="flex items-center gap-2.5">
-              <Image
-                src="/img/logo.png"
-                alt="Digitaleafs Logo"
-                width={160}
-                height={44}
-                style={{ width: "auto" }}
-                className="h-10 object-contain"
-              />
-            </a>
+            <div className="flex items-center gap-2">
+              {festival && (
+                <span className="text-xl select-none filter drop-shadow-[0_0_8px_rgba(242,141,82,0.6)]" title={festival.greeting}>
+                  {festival.leftIcon}
+                </span>
+              )}
+              <a href="#" className="flex items-center">
+                <Image
+                  src="/img/logo.png"
+                  alt="Digitaleafs Logo"
+                  width={160}
+                  height={44}
+                  style={{ width: "auto" }}
+                  className="h-10 object-contain"
+                />
+              </a>
+              {festival && (
+                <span className="text-xl select-none filter drop-shadow-[0_0_8px_rgba(242,141,82,0.6)]" title={festival.greeting}>
+                  {festival.rightIcon}
+                </span>
+              )}
+            </div>
             <p className="text-xs sm:text-sm text-[#F9F7E3]/75 max-w-sm leading-relaxed">
               We engineer custom high-converting websites, fast Android &amp; iOS mobile apps, and business management software for local small businesses, clinics, retail shops, and coaching centers.
             </p>
