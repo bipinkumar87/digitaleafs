@@ -130,14 +130,6 @@ export default function Navbar() {
               </div>
             )}
 
-            {/* Festive Ribbon / Pill Badge for larger screens */}
-            {festival?.badgeText && (
-              <div className="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-[#F28D52]/20 via-[#E94C29]/20 to-transparent border border-[#F28D52]/40 text-[10px] font-bold text-[#F9F7E3] shadow-md backdrop-blur-md">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F28D52] animate-ping" />
-                <span>{festival.badgeText}</span>
-              </div>
-            )}
-
             {/* Luxury Hover Card Tooltip */}
             {festival && (
               <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover/festive:opacity-100 transition-all duration-300 z-50 whitespace-nowrap hidden sm:block">
