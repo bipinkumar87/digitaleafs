@@ -342,25 +342,27 @@ export default function Blog() {
       {/* Full Article Reader & Consultation Modal */}
       {selectedArticle && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-md animate-fadeIn"
           onClick={closeArticle}
         >
           <div 
-            className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#1a1a1a] border border-[#F28D52]/40 rounded-3xl p-6 sm:p-8 shadow-2xl scrollbar-none"
+            className="relative w-full max-w-3xl max-h-[90vh] flex flex-col bg-[#1a1a1a] border border-[#F28D52]/40 rounded-3xl shadow-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
+            {/* Fixed Close Button - stays pinned at top-right while scrolling */}
             <button
               type="button"
               onClick={closeArticle}
-              className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-[#E94C29] text-white transition-colors cursor-pointer z-10"
+              className="absolute top-4 right-4 sm:top-5 sm:right-5 p-2 sm:p-2.5 rounded-full bg-[#262626]/95 hover:bg-[#E94C29] border border-white/20 text-white transition-all duration-200 cursor-pointer z-30 shadow-2xl hover:scale-105"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {showConsultForm ? (
-              <div className="py-2">
+            {/* Scrollable Modal Content */}
+            <div className="overflow-y-auto p-5 sm:p-8 scrollbar-none">
+              {showConsultForm ? (
+                <div className="py-2">
                 {consultSubmitted ? (
                   <div className="text-center py-8 space-y-4">
                     <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto">
@@ -382,7 +384,7 @@ export default function Blog() {
                   </div>
                 ) : (
                   <div>
-                    <div className="mb-6">
+                    <div className="mb-6 pr-12 sm:pr-14">
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#F28D52]/10 border border-[#F28D52]/30 text-[#F28D52] mb-3">
                         <Sparkles className="w-3.5 h-3.5" />
                         <span>Topic: {selectedArticle.categoryName}</span>
@@ -519,7 +521,7 @@ export default function Blog() {
             ) : (
               <div>
                 {/* Category & Meta */}
-                <div className="flex flex-wrap items-center gap-3 mb-4">
+                <div className="flex flex-wrap items-center gap-3 mb-4 pr-12 sm:pr-14">
                   <span className="px-3 py-1 rounded-full bg-[#F28D52]/10 border border-[#F28D52]/30 text-[#F28D52] font-semibold text-xs">
                     {selectedArticle.categoryName}
                   </span>
@@ -527,7 +529,7 @@ export default function Blog() {
                     <Sparkles className="w-3 h-3 text-[#F28D52]" />
                     {selectedArticle.tag}
                   </span>
-                  <div className="flex items-center gap-1.5 text-xs text-[#F9F7E3]/60 ml-auto mr-10 sm:mr-0">
+                  <div className="flex items-center gap-1.5 text-xs text-[#F9F7E3]/60 ml-auto">
                     <Clock className="w-3.5 h-3.5 text-[#F28D52]" />
                     <span>{selectedArticle.readTime}</span>
                     <span className="text-white/20">•</span>
@@ -583,6 +585,7 @@ export default function Blog() {
                 </div>
               </div>
             )}
+            </div>
           </div>
         </div>
       )}
