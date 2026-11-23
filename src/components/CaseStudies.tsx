@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Clock, ArrowUpRight, ExternalLink } from "lucide-react";
+import { Clock, ArrowUpRight } from "lucide-react";
 
 interface CaseStudyItem {
   id: string;
@@ -15,8 +15,6 @@ interface CaseStudyItem {
   displayUrl?: string;
   image?: string;
   badge?: string;
-  metrics?: { label: string; value: string }[];
-  stack: string[];
   gradient: string;
   accent: string;
 }
@@ -37,12 +35,6 @@ export default function CaseStudies() {
       displayUrl: "rnp.digitaleafs.com",
       image: "/img/rnp-preview.jpg",
       badge: "Live Website",
-      metrics: [
-        { label: "Policy Inquiries", value: "+420%" },
-        { label: "WhatsApp Leads", value: "15+ Daily" },
-        { label: "Client Trust", value: "5.0 ★" },
-      ],
-      stack: ["Next.js", "Tailwind CSS", "LIC Calculator", "WhatsApp Funnel"],
       gradient: "from-[#F28D52]/25 via-[#1f1f1f] to-[#171717]",
       accent: "text-[#F28D52]",
     },
@@ -55,7 +47,6 @@ export default function CaseStudies() {
       displayUrl: "demo.resto.digitaleafs.com",
       image: "/img/resto-preview.jpg",
       badge: "Live Demo",
-      stack: ["Next.js", "Tailwind CSS", "Table Booking", "Interactive Menu"],
       gradient: "from-amber-500/20 via-[#1f1f1f] to-[#171717]",
       accent: "text-amber-400",
     },
@@ -104,7 +95,7 @@ export default function CaseStudies() {
           </div>
         </div>
 
-        {/* Case Studies 2x2 Grid */}
+        {/* Case Studies 2-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {filtered.map((study) => (
             <div
@@ -167,48 +158,26 @@ export default function CaseStudies() {
                     {study.description}
                   </p>
                 )}
-
-                {/* Metrics Highlight Banner */}
-                {study.metrics && study.metrics.length > 0 && (
-                  <div className="grid grid-cols-3 gap-2 sm:gap-3 my-5 sm:my-6 p-3 sm:p-4 rounded-xl bg-[#171717]/80 border border-[#F9F7E3]/10">
-                    {study.metrics.map((m, mIdx) => (
-                      <div key={mIdx} className="text-center">
-                        <div className={`text-lg sm:text-2xl font-extrabold ${study.accent}`}>
-                          {m.value}
-                        </div>
-                        <div className="text-[10px] sm:text-[11px] text-[#F9F7E3]/60 mt-0.5">
-                          {m.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
 
-              {/* Bottom Tech Stack & Live Link */}
-              <div className="pt-4 border-t border-[#F9F7E3]/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  {study.stack.map((item, sIdx) => (
-                    <span
-                      key={sIdx}
-                      className="text-[11px] sm:text-xs font-mono text-[#F9F7E3]/75 px-2.5 py-1 rounded-md bg-[#171717] border border-[#F9F7E3]/10"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-                {study.url && (
+              {/* Bottom Live Link Action */}
+              {study.url && (
+                <div className="pt-6 mt-4 border-t border-[#F9F7E3]/10 flex items-center justify-between">
+                  <div className="text-xs font-mono text-[#F9F7E3]/60 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#F28D52]"></span>
+                    <span>{study.displayUrl}</span>
+                  </div>
                   <a
                     href={study.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full btn-primary-gradient text-white text-xs font-bold shadow-lg hover:scale-105 transition-all cursor-pointer whitespace-nowrap self-start sm:self-auto"
+                    className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full btn-primary-gradient text-white text-xs sm:text-sm font-bold shadow-lg hover:scale-105 transition-all cursor-pointer whitespace-nowrap"
                   >
                     <span>Visit Live Site</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
+                    <ArrowUpRight className="w-4 h-4" />
                   </a>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
