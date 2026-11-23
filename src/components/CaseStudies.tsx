@@ -47,57 +47,6 @@ export default function CaseStudies() {
       accent: "text-[#F28D52]",
     },
     {
-      id: "clinic",
-      tag: "Clinic & Healthcare",
-      category: "clinic",
-      client: "Aarogyam Polyclinic & Diagnostics",
-      title: "Online Doctor Booking System with WhatsApp Reminders",
-      description:
-        "Replaced a manual register book with a 24/7 web booking engine and automated WhatsApp visit alerts, drastically eliminating waiting room congestion.",
-      metrics: [
-        { label: "Patient Bookings", value: "+380%" },
-        { label: "No-Show Drop", value: "-75%" },
-        { label: "Patient Rating", value: "4.9 ★" },
-      ],
-      stack: ["Next.js", "WhatsApp API", "PostgreSQL", "Calendar Engine"],
-      gradient: "from-[#F28D52]/20 via-[#1f1f1f] to-[#171717]",
-      accent: "text-[#F28D52]",
-    },
-    {
-      id: "retail",
-      tag: "Retail & Supermarket",
-      category: "retail",
-      client: "Royal Mart Grocery & Department Store",
-      title: "High-Speed POS Billing & WhatsApp Product Catalogue",
-      description:
-        "Built a lightning-fast counter billing software with barcode scanning and an interactive WhatsApp catalogue where neighbourhood customers order in 3 clicks.",
-      metrics: [
-        { label: "Billing Speed", value: "8 Seconds" },
-        { label: "Monthly Repeat Orders", value: "+52%" },
-        { label: "Stock Accuracy", value: "99.8%" },
-      ],
-      stack: ["React 19", "Node.js", "Barcode POS", "UPI QR Engine"],
-      gradient: "from-[#E94C29]/20 via-[#1f1f1f] to-[#171717]",
-      accent: "text-[#E94C29]",
-    },
-    {
-      id: "coaching",
-      tag: "Coaching & Education",
-      category: "coaching",
-      client: "Pinnacle Science Academy",
-      title: "Student Admission Portal, Online Test Engine & Mobile App",
-      description:
-        "Designed a complete student learning portal with online MCQ tests, instant rank generation, digital fee receipts, and homework notification app.",
-      metrics: [
-        { label: "Active Students", value: "1,450+" },
-        { label: "Fee Collection", value: "98% Online" },
-        { label: "Parent Satisfaction", value: "99%" },
-      ],
-      stack: ["Flutter App", "Next.js", "Quiz Engine", "SMS Gateway"],
-      gradient: "from-[#F28D52]/20 via-[#1f1f1f] to-[#171717]",
-      accent: "text-[#F28D52]",
-    },
-    {
       id: "resto-demo",
       tag: "Restaurant & Hospitality",
       category: "local",
@@ -137,7 +86,7 @@ export default function CaseStudies() {
               Case Studies &amp; <span className="text-gradient-orange">Featured Work</span>
             </h2>
             <p className="mt-3 text-base text-[#F9F7E3]/75 max-w-xl">
-              See how our custom websites and software helped local businesses, financial advisors, doctors, retailers, and coaching centers thrive.
+              Explore our live client deliveries and interactive demo projects engineered for modern businesses.
             </p>
           </div>
 
@@ -147,9 +96,6 @@ export default function CaseStudies() {
               { id: "all", label: "All Projects" },
               { id: "financial", label: "Insurance & Advisory" },
               { id: "local", label: "Restaurants & Dining" },
-              { id: "clinic", label: "Clinics" },
-              { id: "retail", label: "Retail Stores" },
-              { id: "coaching", label: "Coaching" },
             ].map((btn) => (
               <button
                 key={btn.id}
