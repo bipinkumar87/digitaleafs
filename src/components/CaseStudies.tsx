@@ -8,14 +8,14 @@ interface CaseStudyItem {
   id: string;
   tag: string;
   category: string;
-  client: string;
+  client?: string;
   title: string;
-  description: string;
+  description?: string;
   url?: string;
   displayUrl?: string;
   image?: string;
   badge?: string;
-  metrics: { label: string; value: string }[];
+  metrics?: { label: string; value: string }[];
   stack: string[];
   gradient: string;
   accent: string;
@@ -50,19 +50,11 @@ export default function CaseStudies() {
       id: "resto-demo",
       tag: "Restaurant & Hospitality",
       category: "local",
-      client: "Demo Restaurant & Fine Dining",
-      title: "Luxury Restaurant Digital Portal & Online Table Booking Engine",
-      description:
-        "Immersive luxury restaurant web application engineered with bespoke theatre-curtain visual styling, interactive gourmet culinary menu cards, online table reservation system, and mobile-first dining UI.",
+      title: "Luxury Restaurant Website",
       url: "https://demo.resto.digitaleafs.com/",
       displayUrl: "demo.resto.digitaleafs.com",
       image: "/img/resto-preview.jpg",
       badge: "Live Demo",
-      metrics: [
-        { label: "Table Reservations", value: "+320%" },
-        { label: "Online Menu Views", value: "3,000+ /mo" },
-        { label: "Customer Rating", value: "5.0 ★" },
-      ],
       stack: ["Next.js", "Tailwind CSS", "Table Booking", "Interactive Menu"],
       gradient: "from-amber-500/20 via-[#1f1f1f] to-[#171717]",
       accent: "text-amber-400",
@@ -162,29 +154,35 @@ export default function CaseStudies() {
                   </span>
                 </div>
 
-                <div className="text-xs font-semibold text-[#F28D52] tracking-wider uppercase mb-1">
-                  {study.client}
-                </div>
+                {study.client && (
+                  <div className="text-xs font-semibold text-[#F28D52] tracking-wider uppercase mb-1">
+                    {study.client}
+                  </div>
+                )}
                 <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-[#F28D52] transition-colors duration-200">
                   {study.title}
                 </h3>
-                <p className="mt-3 text-xs sm:text-sm text-[#F9F7E3]/75 leading-relaxed">
-                  {study.description}
-                </p>
+                {study.description && (
+                  <p className="mt-3 text-xs sm:text-sm text-[#F9F7E3]/75 leading-relaxed">
+                    {study.description}
+                  </p>
+                )}
 
                 {/* Metrics Highlight Banner */}
-                <div className="grid grid-cols-3 gap-2 sm:gap-3 my-5 sm:my-6 p-3 sm:p-4 rounded-xl bg-[#171717]/80 border border-[#F9F7E3]/10">
-                  {study.metrics.map((m, mIdx) => (
-                    <div key={mIdx} className="text-center">
-                      <div className={`text-lg sm:text-2xl font-extrabold ${study.accent}`}>
-                        {m.value}
+                {study.metrics && study.metrics.length > 0 && (
+                  <div className="grid grid-cols-3 gap-2 sm:gap-3 my-5 sm:my-6 p-3 sm:p-4 rounded-xl bg-[#171717]/80 border border-[#F9F7E3]/10">
+                    {study.metrics.map((m, mIdx) => (
+                      <div key={mIdx} className="text-center">
+                        <div className={`text-lg sm:text-2xl font-extrabold ${study.accent}`}>
+                          {m.value}
+                        </div>
+                        <div className="text-[10px] sm:text-[11px] text-[#F9F7E3]/60 mt-0.5">
+                          {m.label}
+                        </div>
                       </div>
-                      <div className="text-[10px] sm:text-[11px] text-[#F9F7E3]/60 mt-0.5">
-                        {m.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Bottom Tech Stack & Live Link */}
