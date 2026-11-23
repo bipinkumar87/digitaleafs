@@ -46,21 +46,48 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo with high-res brand image & dynamic festive icons on left & right */}
-          <div className="flex items-center gap-1.5 sm:gap-2 group/festive relative">
-            {/* Left Festival Icon */}
+          {/* Logo with high-res brand image & animated luxury festive capsules */}
+          <div className="flex items-center gap-2 sm:gap-3 group/festive relative">
+            {/* Left Festival Icon with animated aura & sparkle */}
             {festival && (
-              <span
-                role="img"
-                aria-label={festival.name}
-                title={festival.greeting}
-                className="animate-festive-left text-lg sm:text-2xl select-none filter drop-shadow-[0_0_8px_rgba(242,141,82,0.7)] hover:scale-125 transition-transform duration-200 cursor-pointer"
-              >
-                {festival.leftIcon}
-              </span>
+              <div className="relative flex items-center justify-center">
+                {/* Dynamic Ambient Glow Behind Icon */}
+                <div 
+                  className="absolute -inset-1 rounded-2xl blur-md animate-festive-aura pointer-events-none"
+                  style={{
+                    background: `radial-gradient(circle, ${festival.accentColor || '#F28D52'}88 0%, transparent 70%)`
+                  }}
+                />
+                
+                {/* Glassmorphic Pedestal Pill */}
+                <div className="relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/[0.07] hover:bg-white/[0.14] border border-[#F28D52]/40 hover:border-[#F28D52]/90 shadow-[0_4px_20px_rgba(242,141,82,0.25)] backdrop-blur-md transition-all duration-300 hover:scale-110 cursor-pointer">
+                  <span
+                    role="img"
+                    aria-label={festival.name}
+                    title={festival.greeting}
+                    className="animate-festive-flame text-base sm:text-2xl select-none"
+                  >
+                    {festival.leftIcon}
+                  </span>
+                  
+                  {/* Tiny golden twinkling sparkle */}
+                  <span className="absolute -top-1 -right-1 text-[9px] text-amber-300 animate-sparkle-spin pointer-events-none">
+                    ✨
+                  </span>
+                </div>
+              </div>
             )}
 
-            <a href="#" className="flex items-center group">
+            {/* Brand Logo with subtle hover lift and ambient festive backlight */}
+            <a href="#" className="flex items-center group relative">
+              {festival && (
+                <div 
+                  className="absolute inset-0 blur-xl opacity-25 group-hover:opacity-50 transition-opacity pointer-events-none rounded-full"
+                  style={{
+                    background: `linear-gradient(90deg, ${festival.accentColor || '#F28D52'}66, #E94C29 66%)`
+                  }}
+                />
+              )}
               <Image
                 src="/img/logo.png"
                 alt="Digitaleafs Logo"
@@ -68,28 +95,57 @@ export default function Navbar() {
                 height={44}
                 priority
                 style={{ width: "auto" }}
-                className="h-9 sm:h-11 object-contain transition-transform duration-300 group-hover:scale-105"
+                className="h-9 sm:h-11 object-contain transition-transform duration-300 group-hover:scale-105 relative z-10"
               />
             </a>
 
-            {/* Right Festival Icon */}
+            {/* Right Festival Icon with animated aura & sparkle */}
             {festival && (
-              <span
-                role="img"
-                aria-label={festival.name}
-                title={festival.greeting}
-                className="animate-festive-right text-lg sm:text-2xl select-none filter drop-shadow-[0_0_8px_rgba(242,141,82,0.7)] hover:scale-125 transition-transform duration-200 cursor-pointer"
-              >
-                {festival.rightIcon}
-              </span>
+              <div className="relative flex items-center justify-center">
+                {/* Dynamic Ambient Glow Behind Icon */}
+                <div 
+                  className="absolute -inset-1 rounded-2xl blur-md animate-festive-aura pointer-events-none"
+                  style={{
+                    background: `radial-gradient(circle, ${festival.accentColor || '#F28D52'}88 0%, transparent 70%)`,
+                    animationDelay: "1.4s"
+                  }}
+                />
+                
+                {/* Glassmorphic Pedestal Pill */}
+                <div className="relative flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-white/[0.07] hover:bg-white/[0.14] border border-[#F28D52]/40 hover:border-[#F28D52]/90 shadow-[0_4px_20px_rgba(242,141,82,0.25)] backdrop-blur-md transition-all duration-300 hover:scale-110 cursor-pointer">
+                  <span
+                    role="img"
+                    aria-label={festival.name}
+                    title={festival.greeting}
+                    className="animate-festive-float text-base sm:text-2xl select-none"
+                  >
+                    {festival.rightIcon}
+                  </span>
+                  
+                  {/* Tiny golden twinkling sparkle */}
+                  <span className="absolute -bottom-1 -left-1 text-[9px] text-amber-300 animate-sparkle-spin pointer-events-none" style={{ animationDelay: "1.2s" }}>
+                    ✨
+                  </span>
+                </div>
+              </div>
             )}
 
-            {/* Hover Tooltip showing festival greeting */}
+            {/* Festive Ribbon / Pill Badge for larger screens */}
+            {festival?.badgeText && (
+              <div className="hidden xl:flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-[#F28D52]/20 via-[#E94C29]/20 to-transparent border border-[#F28D52]/40 text-[10px] font-bold text-[#F9F7E3] shadow-md backdrop-blur-md">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#F28D52] animate-ping" />
+                <span>{festival.badgeText}</span>
+              </div>
+            )}
+
+            {/* Luxury Hover Card Tooltip */}
             {festival && (
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover/festive:opacity-100 transition-all duration-300 z-50 whitespace-nowrap hidden sm:block">
-                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#1c1c1c]/95 border border-[#F28D52]/40 text-[#F9F7E3] shadow-2xl backdrop-blur-md">
-                  {festival.greeting}
-                </span>
+              <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover/festive:opacity-100 transition-all duration-300 z-50 whitespace-nowrap hidden sm:block">
+                <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#1a1a1a]/95 border border-[#F28D52]/50 text-[#F9F7E3] shadow-[0_10px_25px_rgba(0,0,0,0.8)] backdrop-blur-xl">
+                  <span className="text-amber-400">✨</span>
+                  <span>{festival.greeting}</span>
+                  <span className="text-amber-400">✨</span>
+                </div>
               </div>
             )}
           </div>

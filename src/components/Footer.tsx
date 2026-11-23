@@ -19,11 +19,13 @@ export default function Footer() {
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               {festival && (
-                <span className="text-xl select-none filter drop-shadow-[0_0_8px_rgba(242,141,82,0.6)]" title={festival.greeting}>
-                  {festival.leftIcon}
-                </span>
+                <div className="relative flex items-center justify-center w-8 h-8 rounded-xl bg-white/[0.06] border border-[#F28D52]/30 shadow-md">
+                  <span className="text-base select-none animate-festive-flame" title={festival.greeting}>
+                    {festival.leftIcon}
+                  </span>
+                </div>
               )}
               <a href="#" className="flex items-center">
                 <Image
@@ -36,9 +38,11 @@ export default function Footer() {
                 />
               </a>
               {festival && (
-                <span className="text-xl select-none filter drop-shadow-[0_0_8px_rgba(242,141,82,0.6)]" title={festival.greeting}>
-                  {festival.rightIcon}
-                </span>
+                <div className="relative flex items-center justify-center w-8 h-8 rounded-xl bg-white/[0.06] border border-[#F28D52]/30 shadow-md">
+                  <span className="text-base select-none animate-festive-float" title={festival.greeting}>
+                    {festival.rightIcon}
+                  </span>
+                </div>
               )}
             </div>
             <p className="text-xs sm:text-sm text-[#F9F7E3]/75 max-w-sm leading-relaxed">
