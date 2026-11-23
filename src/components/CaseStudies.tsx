@@ -126,7 +126,8 @@ export default function CaseStudies() {
       : caseStudies.filter((item) => item.category === filter);
 
   return (
-    <section id="case-studies" className="py-20 lg:py-28 relative bg-[#171717] border-t border-[#F9F7E3]/10">
+    <section id="projects" className="py-20 lg:py-28 relative bg-[#171717] border-t border-[#F9F7E3]/10 scroll-mt-20">
+      <div id="case-studies" className="absolute -top-20 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

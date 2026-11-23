@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Solutions from "@/components/Solutions";
 import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
+import CaseStudies from "@/components/CaseStudies";
 import Products from "@/components/Products";
 import Blog from "@/components/Blog";
 import Process from "@/components/Process";
@@ -30,6 +31,9 @@ export default function Home() {
 
         {/* Transparent Rates & Pricing Section */}
         <Pricing />
+
+        {/* Client Projects & Featured Case Studies (rnp, demo resto, etc.) */}
+        <CaseStudies />
 
         {/* In-House Digital Products (Greetingsly & Ecosystem SaaS) */}
         <Products />
