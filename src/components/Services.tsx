@@ -18,26 +18,55 @@ export default function Services() {
 
   const categories = [
     { id: "all", label: "All Capabilities" },
-    { id: "web", label: "Web & Portals" },
+    { id: "web", label: "Web Applications" },
+    { id: "ecommerce", label: "E-commerce" },
+    { id: "ai", label: "AI & Automation" },
     { id: "mobile", label: "Mobile Apps" },
     { id: "software", label: "Billing & Software" },
-    { id: "growth", label: "SEO & Automation" },
   ];
 
   const services = [
     {
       category: "web",
       icon: <Code className="w-6 h-6 text-[#F28D52]" />,
-      title: "Custom High-Speed Websites",
+      title: "Custom Web Application Development",
       description:
-        "Custom handcrafted websites built with Next.js & modern design systems. Designed to load in under 1 second, rank on Google, and convert local visitors into loyal clients.",
+        "High-performance custom web applications and bespoke portals built with Next.js, React 19, and TypeScript. Engineered for sub-second speeds, flawless mobile responsiveness, and high conversion.",
       features: [
-        "Mobile-first responsive architecture",
-        "Sub-second page load speeds",
-        "Built-in WhatsApp & call action triggers",
-        "Clean, maintainable, modern code",
+        "Modern Next.js & React full-stack architecture",
+        "Sub-second load speeds & Core Web Vitals optimized",
+        "100% Full source code ownership & zero lock-in",
+        "Interactive dashboards & custom business workflows",
       ],
       technologies: ["Next.js", "React 19", "Tailwind CSS", "TypeScript"],
+    },
+    {
+      category: "ecommerce",
+      icon: <Layers className="w-6 h-6 text-[#E94C29]" />,
+      title: "E-commerce Website Development",
+      description:
+        "Custom online stores with zero ongoing sales commissions. Integrated UPI payment gateways (Google Pay, PhonePe, Paytm), instant WhatsApp order alerts, and automated stock management.",
+      features: [
+        "0% commission direct-to-bank UPI integration",
+        "Mobile-first fast cart & 1-step checkout funnel",
+        "Instant WhatsApp automated customer order receipt",
+        "Inventory tracking & discount coupon engine",
+      ],
+      technologies: ["Next.js", "Stripe / Razorpay", "UPI QR", "PostgreSQL"],
+    },
+    {
+      category: "ai",
+      icon: <Bot className="w-6 h-6 text-[#F28D52]" />,
+      title: "AI Integration Services & Automation",
+      description:
+        "Empower your business with 24/7 intelligent AI chatbots, custom OpenAI/LLM assistants, and automated WhatsApp lead qualification funnels that close sales while you sleep.",
+      features: [
+        "24/7 WhatsApp AI customer auto-responder",
+        "Custom ChatGPT / Claude business knowledgebase",
+        "Automated CRM sync & instant lead alerts",
+        "Voice & text customer inquiry triage",
+      ],
+      technologies: ["OpenAI API", "WhatsApp API", "Webhooks", "LangChain"],
     },
     {
       category: "mobile",
@@ -56,7 +85,7 @@ export default function Services() {
     {
       category: "software",
       icon: <Database className="w-6 h-6 text-[#A94322]" />,
-      title: "Custom POS Billing & Software",
+      title: "Custom POS Billing & Management Software",
       description:
         "Custom management software tailored to your daily operations: retail billing, clinic patient records, student fee management, and inventory stock control.",
       features: [
@@ -68,25 +97,11 @@ export default function Services() {
       technologies: ["PostgreSQL", "Node.js", "Electron", "Cloud DB"],
     },
     {
-      category: "growth",
-      icon: <Bot className="w-6 h-6 text-[#F28D52]" />,
-      title: "WhatsApp API & Chatbot Automation",
-      description:
-        "Automate your customer communication. Send instant appointment confirmations, digital invoices, order tracking, and interactive chatbot menus on WhatsApp.",
-      features: [
-        "Official WhatsApp Business API setup",
-        "Automated customer greeting & FAQs",
-        "Instant PDF bill dispatch via WhatsApp",
-        "Bulk festival offers & broadcast messages",
-      ],
-      technologies: ["WhatsApp API", "Webhooks", "Node.js", "Meta Cloud"],
-    },
-    {
-      category: "growth",
+      category: "web",
       icon: <Palette className="w-6 h-6 text-[#E94C29]" />,
       title: "Google Local SEO & Maps Domination",
       description:
-        "Get your business ranked on the top 3 spots of Google Maps and local search queries so new customers in your city find you before your competitors.",
+        "Get your business ranked on the top 3 spots of Google Maps and high-intent local search queries so new customers in Lucknow, Azamgarh, and all across India find you first.",
       features: [
         "Google My Business Profile optimization",
         "Local keyword ranking (City & Area)",
@@ -125,11 +140,14 @@ export default function Services() {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#171717]/5 border border-[#171717]/10 text-xs font-bold text-[#E94C29] mb-3">
+            <span>Website Development Company in India • Custom Software &amp; AI</span>
+          </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#171717] tracking-tight">
-            Complete Digital Solutions For <span className="text-gradient-fire">Any Business</span>
+            High-Impact Software &amp; <span className="text-gradient-fire">Web Development</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#444444] max-w-2xl">
-            From a simple 1-page shop website to complex custom mobile apps and billing systems, we craft high-impact software that drives real revenue.
+          <p className="mt-4 text-base sm:text-lg text-[#444444] max-w-2xl leading-relaxed">
+            From E-commerce Website Development to Custom Web Application Development and AI Integration Services, we engineer high-speed solutions for businesses in Lucknow, Azamgarh, and across India starting from ₹7,999.
           </p>
 
           {/* Filter Pills */}

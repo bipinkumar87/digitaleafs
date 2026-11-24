@@ -174,6 +174,71 @@ export default function Footer() {
 
         </div>
 
+        {/* SEO Topical & Regional Authority Matrix */}
+        <div className="py-8 border-b border-[#F9F7E3]/10 grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-[#F9F7E3]/60 leading-relaxed">
+          <div>
+            <h5 className="font-bold text-white uppercase tracking-wider mb-2.5 text-[11px]">
+              Core Capabilities &amp; Services
+            </h5>
+            <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+              <Link href="/services" className="hover:text-[#F28D52] transition-colors">
+                E-commerce Website Development
+              </Link>
+              <span>•</span>
+              <Link href="/services" className="hover:text-[#F28D52] transition-colors">
+                Custom Web Application Development
+              </Link>
+              <span>•</span>
+              <Link href="/services" className="hover:text-[#F28D52] transition-colors">
+                AI Integration Services
+              </Link>
+              <span>•</span>
+              <Link href="/services" className="hover:text-[#F28D52] transition-colors">
+                Next.js &amp; Mobile App Development
+              </Link>
+              <span>•</span>
+              <Link href="/solutions" className="hover:text-[#F28D52] transition-colors">
+                Clinic &amp; Hospital Management Software
+              </Link>
+              <span>•</span>
+              <Link href="/solutions" className="hover:text-[#F28D52] transition-colors">
+                Retail POS Billing &amp; Barcode Systems
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <h5 className="font-bold text-white uppercase tracking-wider mb-2.5 text-[11px]">
+              Popular Locations Served
+            </h5>
+            <div className="flex flex-wrap gap-x-4 gap-y-1.5">
+              <Link href="/locations/lucknow" className="hover:text-[#F28D52] transition-colors text-white/80 font-medium">
+                Website Developer in Lucknow
+              </Link>
+              <span>•</span>
+              <Link href="/locations/azamgarh" className="hover:text-[#F28D52] transition-colors text-white/80 font-medium">
+                Website Developer in Azamgarh
+              </Link>
+              <span>•</span>
+              <Link href="/" className="hover:text-[#F28D52] transition-colors">
+                Website Development Company in India
+              </Link>
+              <span>•</span>
+              <Link href="/locations/lucknow" className="hover:text-[#F28D52] transition-colors">
+                Web Design Gomti Nagar &amp; Hazratganj
+              </Link>
+              <span>•</span>
+              <Link href="/locations/azamgarh" className="hover:text-[#F28D52] transition-colors">
+                Web Developer Civil Lines &amp; Sidhari
+              </Link>
+              <span>•</span>
+              <Link href="/services" className="hover:text-[#F28D52] transition-colors">
+                Nationwide Remote Engineering
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#F9F7E3]/50 gap-4">
           <div>

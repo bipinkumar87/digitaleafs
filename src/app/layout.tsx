@@ -27,6 +27,12 @@ export const metadata: Metadata = {
   description:
     "High-converting custom websites, Android/iOS mobile apps, and business management software starting from ₹7,999. 100% full source code ownership, zero monthly retainers, direct lead developer support.",
   keywords: [
+    "Website Developer in Lucknow",
+    "Website Development Company in India",
+    "Website Developer in Azamgarh",
+    "E-commerce Website Development",
+    "Custom Web Application Development",
+    "AI Integration Services",
     "website development starting 7999",
     "landing page design 7999",
     "business website development 14999",
@@ -42,7 +48,7 @@ export const metadata: Metadata = {
     "next.js developer agency india",
     "digitaleafs software studio",
     "direct developer web design studio",
-    "website developer kanpur prayagraj varanasi",
+    "website developer kanpur prayagraj varanasi lucknow azamgarh",
   ],
   authors: [{ name: "Digitaleafs Engineering Team", url: "https://digitaleafs.com" }],
   creator: "Digitaleafs",
@@ -142,6 +148,10 @@ const jsonLd = {
         "https://digitaleafs.com",
       ],
       knowsAbout: [
+        "Website Development Company in India",
+        "E-commerce Website Development",
+        "Custom Web Application Development",
+        "AI Integration Services",
         "Custom Web Development",
         "Next.js and React Architecture",
         "Mobile App Development",
@@ -157,10 +167,11 @@ const jsonLd = {
       },
       areaServed: [
         { "@type": "Country", name: "India" },
+        { "@type": "City", name: "Lucknow" },
+        { "@type": "City", name: "Azamgarh" },
         { "@type": "City", name: "Varanasi" },
         { "@type": "City", name: "Kanpur" },
         { "@type": "City", name: "Prayagraj" },
-        { "@type": "City", name: "Lucknow" },
         { "@type": "City", name: "Delhi NCR" },
       ],
       address: {

@@ -5,9 +5,19 @@ import QuoteBanner from "@/components/QuoteBanner";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Software & Web Development Services — Starting ₹7,999",
+  title: "Website Development Company in India — E-commerce & Custom Web Apps",
   description:
-    "Explore our end-to-end engineering services: bespoke Next.js web applications, Android & iOS mobile apps, and business automation software starting from ₹7,999. 100% full source code ownership.",
+    "Leading Website Development Company in India. Expert in E-commerce Website Development, Custom Web Application Development, and AI Integration Services starting from ₹7,999 with 100% full source code ownership.",
+  keywords: [
+    "Website Development Company in India",
+    "E-commerce Website Development",
+    "Custom Web Application Development",
+    "AI Integration Services",
+    "Website Developer in Lucknow",
+    "Website Developer in Azamgarh",
+    "Next.js Development Company India",
+    "Custom Software Studio India",
+  ],
   alternates: {
     canonical: "https://digitaleafs.com/services",
   },
@@ -15,24 +25,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com/services",
-    title: "Software & Web Development Services — Digitaleafs",
+    title: "Website Development Company in India — Digitaleafs",
     description:
-      "End-to-end engineering: custom Next.js websites, mobile apps, and business automation software starting at ₹7,999 with 100% full source code ownership.",
+      "Specialized in E-commerce Website Development, Custom Web Application Development, and AI Integration Services starting from ₹7,999.",
     siteName: "Digitaleafs",
     images: [
       {
         url: "/img/logo.png",
         width: 1200,
         height: 630,
-        alt: "Digitaleafs Web & Software Services",
+        alt: "Website Development Company in India — Digitaleafs",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web & Software Development Services — Digitaleafs",
+    title: "Website Development Company in India — Digitaleafs",
     description:
-      "Bespoke websites, mobile apps, and automation software starting from ₹7,999. Zero retainers, 100% code ownership.",
+      "Bespoke web applications, e-commerce stores, and AI integration services from ₹7,999 with 100% code ownership.",
     images: ["/img/logo.png"],
   },
 };
