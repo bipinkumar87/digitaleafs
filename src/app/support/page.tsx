@@ -10,11 +10,46 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://digitaleafs.com/support",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://digitaleafs.com/support",
+    title: "Support Policy & SLA — Digitaleafs Studio",
+    description: "Official developer support SLA, incident tiers, and 30-day warranty policy.",
+    siteName: "Digitaleafs",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://digitaleafs.com",
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Support",
+          "item": "https://digitaleafs.com/support",
+        },
+      ],
+    },
+  ],
 };
 
 export default function SupportPage() {
   return (
     <div className="min-h-screen bg-[#171717] text-[#F9F7E3] selection:bg-[#E94C29] selection:text-white font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Top Navigation Bar */}
       <header className="sticky top-0 z-50 bg-[#171717]/90 backdrop-blur-md border-b border-white/10 py-4">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">

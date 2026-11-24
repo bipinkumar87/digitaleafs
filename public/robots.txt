@@ -3,5 +3,15 @@ Allow: /
 Disallow: /api/
 Disallow: /scratch/
 
-Sitemap: https://digitaleafs.com/sitemap.xml
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /scratch/
 
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /scratch/
+
+Host: https://digitaleafs.com
+Sitemap: https://digitaleafs.com/sitemap.xml

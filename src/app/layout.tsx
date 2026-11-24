@@ -11,6 +11,13 @@ const manrope = Manrope({
   display: "swap",
 });
 
+export const viewport = {
+  themeColor: "#171717",
+  colorScheme: "dark" as const,
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://digitaleafs.com"),
   title: {
@@ -35,10 +42,18 @@ export const metadata: Metadata = {
     "next.js developer agency india",
     "digitaleafs software studio",
     "direct developer web design studio",
+    "website developer kanpur prayagraj varanasi",
   ],
   authors: [{ name: "Digitaleafs Engineering Team", url: "https://digitaleafs.com" }],
   creator: "Digitaleafs",
   publisher: "Digitaleafs Studio",
+  category: "technology",
+  classification: "Software Engineering & Custom Web Development",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: "https://digitaleafs.com",
   },
@@ -102,6 +117,11 @@ const jsonLd = {
         "@id": "https://digitaleafs.com/#organization",
       },
       inLanguage: "en-IN",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://digitaleafs.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
     },
     {
       "@type": "ProfessionalService",
@@ -117,6 +137,32 @@ const jsonLd = {
       paymentAccepted: "UPI, Net Banking, Credit Card, Debit Card",
       telephone: "+91-7851018751",
       email: "contact@digitaleafs.com",
+      sameAs: [
+        "https://github.com/bipinkumar87",
+        "https://digitaleafs.com",
+      ],
+      knowsAbout: [
+        "Custom Web Development",
+        "Next.js and React Architecture",
+        "Mobile App Development",
+        "Clinic & Hospital Management Software",
+        "Retail POS & Billing Systems",
+        "WhatsApp AI Funnels & Lead Automation",
+        "Full Source Code Ownership",
+      ],
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "26.8467",
+        longitude: "80.9462",
+      },
+      areaServed: [
+        { "@type": "Country", name: "India" },
+        { "@type": "City", name: "Varanasi" },
+        { "@type": "City", name: "Kanpur" },
+        { "@type": "City", name: "Prayagraj" },
+        { "@type": "City", name: "Lucknow" },
+        { "@type": "City", name: "Delhi NCR" },
+      ],
       address: {
         "@type": "PostalAddress",
         addressCountry: "IN",
