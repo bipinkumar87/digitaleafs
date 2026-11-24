@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com/projects",
-    title: "Client Projects & Case Studies — Digitaleafs Studio",
+    title: "Client Projects & Case Studies — Digitaleafs",
     description:
       "Real-world web and software deliveries: high-converting insurance portals, restaurant reservation platforms, and custom business systems.",
     siteName: "Digitaleafs",

@@ -4,9 +4,9 @@ import Image from "next/image";
 import { ArrowLeft, Headphones, Clock, CheckCircle2, ShieldCheck, Mail, AlertTriangle, FileCode, MessageSquare, AlertOctagon, HeartHandshake, ShieldAlert } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Support Policy & SLA — Digitaleafs Studio",
+  title: "Support Policy & SLA — Digitaleafs",
   description:
-    "Official Customer Support, SLA & Incident Management Framework of Digitaleafs Studio. Developer-backed response protocols, working hours, 30-day warranty, and operational boundaries.",
+    "Official Customer Support, SLA & Incident Management Framework of Digitaleafs. Developer-backed response protocols, working hours, 30-day warranty, and operational boundaries.",
   alternates: {
     canonical: "https://digitaleafs.com/support",
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com/support",
-    title: "Support Policy & SLA — Digitaleafs Studio",
+    title: "Support Policy & SLA — Digitaleafs",
     description: "Official developer support SLA, incident tiers, and 30-day warranty policy.",
     siteName: "Digitaleafs",
   },

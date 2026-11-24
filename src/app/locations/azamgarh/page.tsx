@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com/locations/azamgarh",
-    title: "Website Developer in Azamgarh | Digitaleafs Studio",
+    title: "Website Developer in Azamgarh | Digitaleafs",
     description:
       "Custom business websites, clinic portals, and retail software in Azamgarh starting from ₹7,999 with 100% code ownership.",
     siteName: "Digitaleafs",

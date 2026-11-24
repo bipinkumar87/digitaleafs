@@ -63,7 +63,8 @@ const jsonLd = {
       "description": "Guides, case studies, and strategic playbooks for growing local businesses and healthcare clinics online.",
       "publisher": {
         "@type": "Organization",
-        "name": "Digitaleafs Studio",
+        "name": "Digitaleafs",
+        "alternateName": "Digitaleafs Studio",
         "url": "https://digitaleafs.com",
       },
       "blogPost": [

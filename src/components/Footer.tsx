@@ -250,7 +250,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#F9F7E3]/50 gap-4">
           <div>
-            &copy; 2026 Digitaleafs Studio. Designed for Excellence — Modern luxury · Elegant · Premium technology.
+            &copy; 2026 Digitaleafs — Custom Web &amp; Software Development Studio. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-[#F28D52] transition-colors">

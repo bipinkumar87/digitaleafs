@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com/locations/mau",
-    title: "Website Developer in Mau | Digitaleafs Studio",
+    title: "Website Developer in Mau | Digitaleafs",
     description:
       "Custom business websites, clinic portals, and retail software in Mau starting from ₹7,999 with 100% code ownership.",
     siteName: "Digitaleafs",

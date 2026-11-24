@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com/locations/gorakhpur",
-    title: "Website Developer in Gorakhpur | Digitaleafs Studio",
+    title: "Website Developer in Gorakhpur | Digitaleafs",
     description:
       "Custom business websites, coaching portals, and retail software in Gorakhpur starting from ₹7,999 with 100% code ownership.",
     siteName: "Digitaleafs",

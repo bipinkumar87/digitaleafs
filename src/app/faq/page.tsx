@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com/faq",
-    title: "Frequently Asked Questions — Digitaleafs Studio",
+    title: "Frequently Asked Questions — Digitaleafs",
     description:
       "Everything you need to know about pricing starting from ₹7,999, source code ownership, delivery speed, and UPI payment integration.",
     siteName: "Digitaleafs",

@@ -2,10 +2,10 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Digitaleafs — Custom Websites, Apps & Software Studio",
+    name: "Digitaleafs — Custom Web & Software Development Studio",
     short_name: "Digitaleafs",
     description:
-      "High-converting custom websites, Android/iOS mobile apps, and business software starting from ₹7,999. 100% full source code ownership.",
+      "Digitaleafs is a Custom Web & Software Development Studio building high-converting websites, apps, and software starting from ₹7,999.",
     start_url: "/",
     display: "standalone",
     background_color: "#171717",

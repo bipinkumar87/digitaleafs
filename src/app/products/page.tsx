@@ -72,7 +72,8 @@ const jsonLd = {
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Digitaleafs Studio",
+        "name": "Digitaleafs",
+        "alternateName": "Digitaleafs Studio",
         "url": "https://digitaleafs.com",
       },
     },

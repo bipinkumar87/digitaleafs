@@ -4,9 +4,9 @@ import Image from "next/image";
 import { ArrowLeft, FileText, CheckCircle2, ShieldCheck, Mail, Clock, Code, Award, AlertOctagon, UserX, Ban } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Digitaleafs Studio",
+  title: "Terms of Service — Digitaleafs",
   description:
-    "Official Terms of Service and Client Agreement of Digitaleafs Studio. Transparent terms governing fixed-price milestones, source code transfer, scope management, and developer protections.",
+    "Official Terms of Service and Client Agreement of Digitaleafs. Transparent terms governing fixed-price milestones, source code transfer, scope management, and developer protections.",
   alternates: {
     canonical: "https://digitaleafs.com/terms-of-service",
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com/terms-of-service",
-    title: "Terms of Service — Digitaleafs Studio",
+    title: "Terms of Service — Digitaleafs",
     description: "Terms governing milestone deliverables, source code ownership, and warranty.",
     siteName: "Digitaleafs",
   },

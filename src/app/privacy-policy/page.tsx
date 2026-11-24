@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com/privacy-policy",
-    title: "Privacy Policy — Digitaleafs Studio",
+    title: "Privacy Policy — Digitaleafs",
     description: "Confidentiality and data protection standards for Digitaleafs clients.",
     siteName: "Digitaleafs",
   },

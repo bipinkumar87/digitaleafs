@@ -21,12 +21,14 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://digitaleafs.com"),
   title: {
-    default: "Digitaleafs — Custom Websites, Mobile Apps & Software Development",
-    template: "%s | Digitaleafs Studio",
+    default: "Digitaleafs — Custom Web & Software Development Studio",
+    template: "%s | Digitaleafs",
   },
   description:
-    "High-converting custom websites, Android/iOS mobile apps, and business management software starting from ₹7,999. 100% full source code ownership, zero monthly retainers, direct lead developer support.",
+    "Digitaleafs is a Custom Web & Software Development Studio engineering high-converting websites, Android/iOS mobile apps, and management software starting from ₹7,999. 100% full source code ownership, zero retainers.",
   keywords: [
+    "Digitaleafs",
+    "Digitaleafs Studio",
     "Website Developer in Lucknow",
     "Website Development Company in India",
     "Website Developer in Azamgarh",
@@ -46,13 +48,12 @@ export const metadata: Metadata = {
     "website maintenance 1499 per month",
     "whatsapp ai automation bot",
     "next.js developer agency india",
-    "digitaleafs software studio",
     "direct developer web design studio",
     "website developer kanpur prayagraj varanasi lucknow azamgarh",
   ],
   authors: [{ name: "Digitaleafs Engineering Team", url: "https://digitaleafs.com" }],
   creator: "Digitaleafs",
-  publisher: "Digitaleafs Studio",
+  publisher: "Digitaleafs",
   category: "technology",
   classification: "Software Engineering & Custom Web Development",
   formatDetection: {
@@ -132,12 +133,13 @@ const jsonLd = {
     {
       "@type": "ProfessionalService",
       "@id": "https://digitaleafs.com/#organization",
-      name: "Digitaleafs Studio",
+      name: "Digitaleafs",
+      alternateName: "Digitaleafs Studio",
       url: "https://digitaleafs.com",
       logo: "https://digitaleafs.com/img/logo.png",
       image: "https://digitaleafs.com/img/logo.png",
       description:
-        "Custom websites, Android & iOS mobile applications, and management software engineered for small businesses, clinics, retail shops, and coaching centers.",
+        "Digitaleafs is a Custom Web & Software Development Studio engineering high-converting websites, Android & iOS mobile applications, and management software starting from ₹7,999.",
       priceRange: "₹7,999 - ₹1,25,000",
       currenciesAccepted: "INR",
       paymentAccepted: "UPI, Net Banking, Credit Card, Debit Card",

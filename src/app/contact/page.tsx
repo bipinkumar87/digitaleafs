@@ -62,7 +62,8 @@ const jsonLd = {
       "url": "https://digitaleafs.com/contact",
       "mainEntity": {
         "@type": "ProfessionalService",
-        "name": "Digitaleafs Studio",
+        "name": "Digitaleafs",
+        "alternateName": "Digitaleafs Studio",
         "telephone": "+91-7851018751",
         "email": "contact@digitaleafs.com",
         "url": "https://digitaleafs.com",

@@ -72,7 +72,8 @@ const jsonLd = {
       "name": "Custom Web & Software Development",
       "provider": {
         "@type": "Organization",
-        "name": "Digitaleafs Studio",
+        "name": "Digitaleafs",
+        "alternateName": "Digitaleafs Studio",
         "url": "https://digitaleafs.com",
       },
       "serviceType": "Software Engineering",

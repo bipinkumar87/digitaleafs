@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com/locations/lucknow",
-    title: "Website Developer in Lucknow | Digitaleafs Studio",
+    title: "Website Developer in Lucknow | Digitaleafs",
     description:
       "Custom websites, E-commerce stores, and business web apps starting from ₹7,999 in Lucknow. 100% source code ownership and direct developer support.",
     siteName: "Digitaleafs",
