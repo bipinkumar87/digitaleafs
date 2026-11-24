@@ -220,6 +220,14 @@ export default function Footer() {
                 Website Developer in Azamgarh
               </Link>
               <span>•</span>
+              <Link href="/locations/gorakhpur" className="hover:text-[#F28D52] transition-colors text-white/80 font-medium">
+                Website Developer in Gorakhpur
+              </Link>
+              <span>•</span>
+              <Link href="/locations/mau" className="hover:text-[#F28D52] transition-colors text-white/80 font-medium">
+                Website Developer in Mau
+              </Link>
+              <span>•</span>
               <Link href="/" className="hover:text-[#F28D52] transition-colors">
                 Website Development Company in India
               </Link>
