@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Terms of Service — Digitaleafs Studio",
   description:
     "Official Terms of Service and Client Agreement of Digitaleafs Studio. Transparent terms governing fixed-price milestones, source code transfer, scope management, and developer protections.",
+  alternates: {
+    canonical: "https://digitaleafs.com/terms-of-service",
+  },
 };
 
 export default function TermsOfServicePage() {

@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy — Digitaleafs",
   description:
     "Official Privacy Policy of Digitaleafs Studio. Learn how we handle your personal data, ensure 100% confidentiality, and protect your intellectual property.",
+  alternates: {
+    canonical: "https://digitaleafs.com/privacy-policy",
+  },
 };
 
 export default function PrivacyPolicyPage() {

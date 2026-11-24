@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Support Policy & SLA — Digitaleafs Studio",
   description:
     "Official Customer Support, SLA & Incident Management Framework of Digitaleafs Studio. Developer-backed response protocols, working hours, 30-day warranty, and operational boundaries.",
+  alternates: {
+    canonical: "https://digitaleafs.com/support",
+  },
 };
 
 export default function SupportPage() {
