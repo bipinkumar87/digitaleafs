@@ -145,7 +145,7 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#F9F7E3]/85">
             <a
-              href="#solutions"
+              href="/#solutions"
               className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
             >
               Solutions
@@ -153,7 +153,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#services"
+              href="/#services"
               className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
             >
               Services
@@ -161,7 +161,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#pricing"
+              href="/#pricing"
               className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
             >
               Pricing
@@ -211,7 +211,7 @@ export default function Navbar() {
 
                     {/* Option 1: Client Projects */}
                     <a
-                      href="#case-studies"
+                      href="/#case-studies"
                       onClick={() => setWorkDropdownOpen(false)}
                       className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group/item"
                     >
@@ -230,7 +230,7 @@ export default function Navbar() {
 
                     {/* Option 2: In-House Products */}
                     <a
-                      href="#products"
+                      href="/#products"
                       onClick={() => setWorkDropdownOpen(false)}
                       className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/[0.06] transition-colors group/item"
                     >
@@ -255,7 +255,7 @@ export default function Navbar() {
             </div>
 
             <a
-              href="#blog"
+              href="/#blog"
               className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
             >
               Blog
@@ -263,7 +263,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#faq"
+              href="/#faq"
               className="hover:text-[#F28D52] transition-colors duration-200 relative group py-1"
             >
               FAQ
@@ -333,7 +333,7 @@ export default function Navbar() {
         <div className="lg:hidden luxury-nav border-b border-[#F28D52]/20 px-6 pt-4 pb-6 mt-3 space-y-4">
           <div className="flex flex-col space-y-2">
             <a
-              href="#solutions"
+              href="/#solutions"
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
             >
@@ -341,7 +341,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#services"
+              href="/#services"
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
             >
@@ -349,7 +349,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#pricing"
+              href="/#pricing"
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
             >
@@ -379,7 +379,7 @@ export default function Navbar() {
               {mobileWorkOpen && (
                 <div className="pl-2 pr-1 pb-2 pt-1 space-y-2">
                   <a
-                    href="#case-studies"
+                    href="/#case-studies"
                     onClick={() => {
                       setMobileWorkOpen(false);
                       setMobileMenuOpen(false);
@@ -396,7 +396,7 @@ export default function Navbar() {
                   </a>
 
                   <a
-                    href="#products"
+                    href="/#products"
                     onClick={() => {
                       setMobileWorkOpen(false);
                       setMobileMenuOpen(false);
@@ -421,7 +421,7 @@ export default function Navbar() {
             </div>
 
             <a
-              href="#blog"
+              href="/#blog"
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
             >
@@ -429,7 +429,7 @@ export default function Navbar() {
             </a>
 
             <a
-              href="#faq"
+              href="/#faq"
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-semibold text-[#F9F7E3] hover:text-[#F28D52] py-2 transition-colors border-b border-white/5"
             >
