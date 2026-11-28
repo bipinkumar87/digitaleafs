@@ -244,11 +244,6 @@ export default function Pricing() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#F28D52]/10 border border-[#F28D52]/30 text-[#F28D52] mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>TRANSPARENT DEVELOPMENT &amp; MAINTENANCE PLANS • ZERO HIDDEN FEES</span>
-          </div>
-          
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#F9F7E3] tracking-tight leading-tight">
             Development &amp; <span className="text-gradient-orange">Maintenance Pricing</span>
           </h2>
