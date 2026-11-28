@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -47,13 +47,6 @@ export default function Hero() {
          ======================================================== */}
       <div className="w-full relative z-10 max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center mt-auto">
         <div className="w-full max-w-6xl xl:max-w-7xl space-y-2 sm:space-y-3">
-          
-          {/* Top Pill Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#1b1b1b]/80 border border-white/10 backdrop-blur-md text-xs font-semibold text-[#F9F7E3] shadow-lg">
-            <Sparkles className="w-3.5 h-3.5 text-[#F28D52]" />
-            <span>Direct Senior Developer Studio • Zero Middlemen</span>
-          </div>
-
           {/* Main Headline with 3D Sculpted Extrusion */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.85rem] xl:text-[3.25rem] font-black tracking-tight leading-[1.12] max-w-6xl xl:max-w-7xl mx-auto">
             <span className="text-3d-cream">
