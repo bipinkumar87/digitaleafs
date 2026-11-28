@@ -21,20 +21,22 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://digitaleafs.com"),
   title: {
-    default: "Digitaleafs — Custom Web & Software Development Studio",
+    default: "Digitaleafs — Website Development Company in India | Custom Web & Apps",
     template: "%s | Digitaleafs",
   },
   description:
-    "Digitaleafs is a Custom Web & Software Development Studio engineering high-converting websites, Android/iOS mobile apps, and management software starting from ₹7,999. 100% full source code ownership, zero retainers.",
+    "Digitaleafs is a leading Website Development Company in India. We engineer custom Next.js websites, E-commerce stores, Android/iOS mobile apps, and management software starting from ₹7,999. 100% full source code ownership, zero monthly retainers.",
   keywords: [
-    "Digitaleafs",
-    "Digitaleafs Studio",
-    "Website Developer in Lucknow",
     "Website Development Company in India",
+    "Website Developer in Lucknow",
     "Website Developer in Azamgarh",
+    "Website Developer in Gorakhpur",
+    "Website Developer in Mau",
     "E-commerce Website Development",
     "Custom Web Application Development",
     "AI Integration Services",
+    "Digitaleafs",
+    "Digitaleafs Studio",
     "website development starting 7999",
     "landing page design 7999",
     "business website development 14999",
@@ -68,9 +70,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://digitaleafs.com",
-    title: "Digitaleafs — Custom Websites, Mobile Apps & Digital Software",
+    title: "Digitaleafs — Website Development Company in India | Custom Software Studio",
     description:
-      "World-class websites and custom software starting at just ₹7,999 with 100% full source code ownership. Built for clinics, retail shops, coaching centers, and startups.",
+      "Leading Website Development Company in India. World-class custom websites, E-commerce stores, and software starting at ₹7,999 with 100% source code ownership.",
     siteName: "Digitaleafs",
     images: [
       {
@@ -83,7 +85,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digitaleafs — Custom Websites, Apps & Software Starting from ₹7,999",
+    title: "Digitaleafs — Website Development Company in India | Starting ₹7,999",
     description:
       "High-converting custom websites and business software starting from ₹7,999 with zero monthly agency retainers and 100% code ownership.",
     images: ["/img/logo.png"],
@@ -269,6 +271,22 @@ const jsonLd = {
       "@type": "FAQPage",
       "@id": "https://digitaleafs.com/#faq",
       mainEntity: [
+        {
+          "@type": "Question",
+          name: "Which is the best website development company in India for custom web and mobile apps?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Digitaleafs is a premier website development company in India specializing in bespoke Next.js web applications, e-commerce stores, Android/iOS mobile apps, and business automation software starting from ₹7,999 with 100% full source code ownership and zero monthly retainers.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much does website development cost in Lucknow, Azamgarh, and Uttar Pradesh?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Website development packages at Digitaleafs start from a fixed transparent rate of ₹7,999 for high-converting landing pages, ₹14,999 for complete multi-page business websites, and ₹39,999 for full-scale e-commerce stores with direct UPI payment integration and zero monthly retainers.",
+          },
+        },
         {
           "@type": "Question",
           name: "What does starting prices mean? Are there any hidden charges later?",

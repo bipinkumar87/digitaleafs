@@ -62,7 +62,7 @@ export default function Hero() {
 
           {/* Subtitle with wider width */}
           <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#F9F7E3] leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,1)] [text-shadow:_0_2px_8px_rgba(0,0,0,0.9)] font-medium max-w-5xl mx-auto">
-            High-converting websites, fast Android &amp; iOS mobile apps, and custom management software engineered for{" "}
+            India&apos;s premier website development company. High-converting custom websites, fast Android &amp; iOS mobile apps, and business software engineered for{" "}
             <span className="text-[#F28D52] font-bold">Local Small Businesses</span>,{" "}
             <span className="text-white font-bold">Clinics &amp; Doctors</span>,{" "}
             <span className="text-[#F28D52] font-bold">Retail Stores</span>, and{" "}
