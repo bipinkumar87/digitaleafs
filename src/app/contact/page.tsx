@@ -67,6 +67,10 @@ const jsonLd = {
         "telephone": "+91-7851018751",
         "email": "contact@digitaleafs.com",
         "url": "https://digitaleafs.com",
+        "sameAs": [
+          "https://www.instagram.com/digitaleafs",
+          "https://www.facebook.com/digitaleafs"
+        ],
         "priceRange": "₹7,999 - ₹1,25,000",
         "openingHours": "Mo-Sa 10:00-19:00",
         "contactPoint": {

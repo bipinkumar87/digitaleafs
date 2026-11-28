@@ -148,7 +148,8 @@ const jsonLd = {
       telephone: "+91-7851018751",
       email: "contact@digitaleafs.com",
       sameAs: [
-        "https://github.com/bipinkumar87",
+        "https://www.instagram.com/digitaleafs",
+        "https://www.facebook.com/digitaleafs",
         "https://digitaleafs.com",
       ],
       knowsAbout: [

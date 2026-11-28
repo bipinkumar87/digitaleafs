@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MessageSquare } from "lucide-react";
+import { Instagram, Facebook } from "@/components/Icons";
 import { getCurrentOrUpcomingFestival, FestivalConfig } from "@/utils/festival";
 
 export default function Footer() {
@@ -73,6 +74,29 @@ export default function Footer() {
                   contact@digitaleafs.com
                 </a>
               </div>
+            </div>
+
+            {/* Social Media Links - Instagram & Facebook Only */}
+            <div className="pt-2 flex items-center gap-3">
+              <span className="text-xs text-[#F9F7E3]/60 font-medium">Follow:</span>
+              <a
+                href="https://www.instagram.com/digitaleafs"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Digitaleafs on Instagram"
+                className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/10 hover:border-[#E1306C]/60 hover:bg-[#E1306C]/15 text-[#F9F7E3]/80 hover:text-[#E1306C] flex items-center justify-center transition-all group shadow-sm"
+              >
+                <Instagram className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </a>
+              <a
+                href="https://www.facebook.com/digitaleafs"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Digitaleafs on Facebook"
+                className="w-8 h-8 rounded-lg bg-white/[0.05] border border-white/10 hover:border-[#1877F2]/60 hover:bg-[#1877F2]/15 text-[#F9F7E3]/80 hover:text-[#1877F2] flex items-center justify-center transition-all group shadow-sm"
+              >
+                <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </a>
             </div>
           </div>
 
@@ -252,7 +276,26 @@ export default function Footer() {
           <div>
             &copy; 2026 Digitaleafs — Custom Web &amp; Software Development Studio. All rights reserved.
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <a
+              href="https://www.instagram.com/digitaleafs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 hover:text-[#E1306C] transition-colors"
+            >
+              <Instagram className="w-3.5 h-3.5" />
+              <span>Instagram</span>
+            </a>
+            <a
+              href="https://www.facebook.com/digitaleafs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 hover:text-[#1877F2] transition-colors"
+            >
+              <Facebook className="w-3.5 h-3.5" />
+              <span>Facebook</span>
+            </a>
+            <span className="text-white/20 hidden sm:inline">•</span>
             <Link href="/privacy-policy" className="hover:text-[#F28D52] transition-colors">
               Privacy Policy
             </Link>

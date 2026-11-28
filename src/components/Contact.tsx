@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Send, CheckCircle2, Shield, Clock } from "lucide-react";
+import { Instagram, Facebook } from "@/components/Icons";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -161,6 +162,31 @@ export default function Contact() {
                   <div className="text-xs text-[#666666]">Official Email Support</div>
                   <a href="mailto:contact@digitaleafs.com" className="font-bold text-[#171717] hover:text-[#E94C29] transition-colors">
                     contact@digitaleafs.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Social Channels - Instagram & Facebook Only */}
+              <div className="pt-2 flex flex-col sm:flex-row sm:items-center gap-2 text-xs">
+                <span className="text-[#666666] font-medium">Follow Socials:</span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="https://www.instagram.com/digitaleafs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#171717]/10 text-xs font-semibold text-[#171717] hover:border-[#E1306C] hover:text-[#E1306C] transition-all shadow-sm"
+                  >
+                    <Instagram className="w-3.5 h-3.5 text-[#E1306C]" />
+                    <span>Instagram</span>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/digitaleafs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#171717]/10 text-xs font-semibold text-[#171717] hover:border-[#1877F2] hover:text-[#1877F2] transition-all shadow-sm"
+                  >
+                    <Facebook className="w-3.5 h-3.5 text-[#1877F2]" />
+                    <span>Facebook</span>
                   </a>
                 </div>
               </div>
