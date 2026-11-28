@@ -242,7 +242,7 @@ export default function NewYearOfferModal() {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>30 Days Free Support SLA</span>
+                  <span>30 Days Free Support (5 Times Updates)</span>
                 </div>
               </div>
             </div>
