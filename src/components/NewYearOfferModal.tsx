@@ -108,20 +108,42 @@ export default function NewYearOfferModal() {
     <>
       {/* Floating Re-Open Badge (Shown on bottom-left if user closed the modal) */}
       {!isOpen && hasDismissed && !timeLeft.isExpired && (
-        <div className="fixed bottom-6 left-6 z-40 animate-fade-in">
+        <div className="fixed bottom-6 left-4 sm:left-6 z-40 animate-fade-in group">
+          {/* Pulsing Ambient Glowing Aura */}
+          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-amber-400 via-[#F28D52] to-[#E94C29] opacity-75 blur-md group-hover:opacity-100 transition-opacity animate-pulse pointer-events-none" />
+
           <button
             type="button"
             onClick={handleReopen}
-            className="group flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-[#1b1b1b]/95 hover:bg-[#222222] border border-[#F28D52]/40 hover:border-[#F28D52] shadow-[0_8px_30px_rgba(242,141,82,0.25)] text-white text-xs font-bold transition-all hover:scale-105 cursor-pointer backdrop-blur-md"
+            className="relative flex items-center gap-2 sm:gap-2.5 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-[#1c1511] via-[#231a15] to-[#1a120e] border-2 border-[#F28D52] hover:border-amber-300 shadow-[0_10px_35px_rgba(242,141,82,0.45)] text-white text-xs sm:text-sm font-extrabold transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer backdrop-blur-xl"
             title="Click to view New Year 2027 Special Offer"
           >
-            <span className="flex h-2.5 w-2.5 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F28D52] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E94C29]"></span>
+            {/* Live Indicator with Dual Ping Ring */}
+            <span className="flex h-3 w-3 relative shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-90"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-gradient-to-tr from-[#F28D52] to-amber-300 shadow-sm"></span>
             </span>
-            <span className="text-amber-300">🎉 New Year Offer:</span>
-            <span className="text-[#F28D52] font-mono font-black">₹9,999</span>
-            <span className="text-[#F9F7E3]/60 hidden sm:inline">• Ends 5 Jan</span>
+
+            {/* Festive Icon + Headline */}
+            <div className="flex items-center gap-1.5 whitespace-nowrap">
+              <span className="text-base sm:text-lg animate-bounce select-none">🎉</span>
+              <span className="text-amber-300 font-extrabold tracking-tight">New Year Offer:</span>
+            </div>
+
+            {/* Glowing Price Capsule */}
+            <span className="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#F28D52] to-[#E94C29] text-white font-mono font-black text-xs sm:text-sm shadow-md shadow-[#E94C29]/40 tracking-tight">
+              ₹9,999
+            </span>
+
+            {/* Ends 5 Jan & 47% OFF Pill */}
+            <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/30">
+              Ends 5 Jan • 47% OFF
+            </span>
+
+            {/* Right Arrow */}
+            <span className="text-amber-300 group-hover:translate-x-1 transition-transform font-black">
+              →
+            </span>
           </button>
         </div>
       )}
