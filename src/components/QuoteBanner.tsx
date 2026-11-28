@@ -61,16 +61,12 @@ export default function QuoteBanner() {
           <button
             type="button"
             onClick={() => {
-              window.dispatchEvent(
-                new CustomEvent("open-consultation", {
-                  detail: { topic: "Starting from ₹9,999 Offer" },
-                })
-              );
+              window.dispatchEvent(new CustomEvent("open-new-year-offer"));
             }}
             className="w-full sm:w-auto px-9 sm:px-11 py-4 rounded-full btn-primary-gradient font-extrabold text-sm sm:text-base flex items-center justify-center gap-3 shadow-2xl hover:scale-105 transition-all cursor-pointer group"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-300 animate-pulse" />
-            <span>Claim ₹9,999 Offer Now</span>
+            <span>Claim New Year ₹9,999 Offer Now</span>
             <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
           </button>
 
