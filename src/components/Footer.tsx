@@ -80,7 +80,7 @@ export default function Footer() {
             <div className="pt-2 flex items-center gap-3">
               <span className="text-xs text-[#F9F7E3]/60 font-medium">Follow:</span>
               <a
-                href="https://www.instagram.com/digitaleafs"
+                href="https://www.instagram.com/digitaleafs?evlk=MWlvdnUya2F6c2kyNg=="
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Digitaleafs on Instagram"
@@ -278,7 +278,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <a
-              href="https://www.instagram.com/digitaleafs"
+              href="https://www.instagram.com/digitaleafs?evlk=MWlvdnUya2F6c2kyNg=="
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 hover:text-[#E1306C] transition-colors"

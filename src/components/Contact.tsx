@@ -171,7 +171,7 @@ export default function Contact() {
                 <span className="text-[#666666] font-medium">Follow Socials:</span>
                 <div className="flex items-center gap-2">
                   <a
-                    href="https://www.instagram.com/digitaleafs"
+                    href="https://www.instagram.com/digitaleafs?evlk=MWlvdnUya2F6c2kyNg=="
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#171717]/10 text-xs font-semibold text-[#171717] hover:border-[#E1306C] hover:text-[#E1306C] transition-all shadow-sm"
