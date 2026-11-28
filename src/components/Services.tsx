@@ -10,8 +10,7 @@ import {
   Database, 
   ArrowUpRight, 
   CheckCircle, 
-  Layers,
-  Sparkles 
+  Layers 
 } from "lucide-react";
 
 export default function Services() {
@@ -141,10 +140,6 @@ export default function Services() {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#171717] border border-[#F28D52]/30 text-[#F28D52] shadow-md mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#F28D52]" />
-            <span>Website Development Company in India • Custom Software &amp; AI</span>
-          </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#171717] tracking-tight">
             High-Impact Software &amp; <span className="text-gradient-fire">Web Development</span>
           </h2>
